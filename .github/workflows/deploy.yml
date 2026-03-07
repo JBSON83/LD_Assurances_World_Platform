@@ -18,6 +18,21 @@ jobs:
           username: ${{ secrets.HOST_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd LD_Assurances_World_Platform
-            git pull origin main
+            # Check if docker is installed, if not, install it (Ubuntu/Debian)
+            if ! [ -x "$(command -v docker)" ]; then
+              echo "Installing Docker..."
+              curl -fsSL https://get.docker.com -o get-docker.sh
+              sh get-docker.sh
+            fi
+            
+            # Setup project directory
+            if [ ! -d "LD_Assurances_World_Platform" ]; then
+              git clone https://github.com/JBSON83/LD_Assurances_World_Platform.git
+              cd LD_Assurances_World_Platform
+            else
+              cd LD_Assurances_World_Platform
+              git pull origin main
+            fi
+            
+            # Launch
             docker-compose up -d --build

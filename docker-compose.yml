@@ -15,7 +15,7 @@ services:
   frontend:
     image: nginx:alpine
     volumes:
-      - ./LD_Assurances_World_Platform/web:/usr/share/nginx/html
+      - ./web:/usr/share/nginx/html
     ports:
       - "80:80"
     restart: always
