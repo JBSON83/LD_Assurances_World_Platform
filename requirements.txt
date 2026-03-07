@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+gunicorn
+pydantic
+requests
+# Ai agents dependencies
+# langchain (if used)
+# openai (if used)

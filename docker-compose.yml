@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8001:8001"
+    environment:
+      - PAYMENT_API_KEY=${PAYMENT_API_KEY}
+      - FLW_SECRET_KEY=${FLW_SECRET_KEY}
+    restart: always
+
+  frontend:
+    image: nginx:alpine
+    volumes:
+      - ./LD_Assurances_World_Platform/web:/usr/share/nginx/html
+    ports:
+      - "80:80"
+    restart: always
