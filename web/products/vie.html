@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assurance Vie | LD Assurances Cameroon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --secondary: #3b82f6;
+            --dark: #0b1121;
+            --glass: rgba(15, 23, 42, 0.7);
+            --text: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            padding: 2rem;
+            background-image: radial-gradient(circle at 15% 50%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .highlight {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 5px solid var(--primary);
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--primary);
+            color: #000;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 800;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="../index.html"
+            style="color: #94a3b8; text-decoration: none; display: inline-block; margin-bottom: 1rem;">← Retour</a>
+        <div class="glass-card">
+            <h1>Sécurisez l'avenir de vos proches</h1>
+            <p class="highlight">Epargnez à votre rythme et garantissez un capital pour votre famille.</p>
+            <div class="benefit-card">
+                <h3>Epargne Retraite</h3>
+                <p>Préparez vos vieux jours avec des taux d'intérêt garantis et des avantages fiscaux.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Prévoyance Décès</h3>
+                <p>Assurez le versement d'un capital immédiat à vos bénéficiaires en cas de coup dur.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Education des Enfants</h3>
+                <p>Garantissez le financement des études supérieures de vos enfants, quoi qu'il arrive.</p>
+            </div>
+            <a href="#" class="cta-btn">Préparer mon Avenir</a>
+        </div>
+    </div>
+</body>
+
+</html>

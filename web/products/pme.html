@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assurance PME | LD Assurances Cameroon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #3b82f6;
+            --dark: #0b1121;
+            --glass: rgba(15, 23, 42, 0.7);
+            --text: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .sme-services {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-box {
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: background 0.3s;
+        }
+
+        .service-box:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="../index.html"
+            style="color: #94a3b8; text-decoration: none; display: inline-block; margin-bottom: 1rem;">← Retour</a>
+        <div class="glass-card">
+            <h1>Partenaire de croissance des PME</h1>
+            <p style="color: #94a3b8;">LD Assurances accompagne les entrepreneurs camerounais avec des solutions
+                sur-mesure.</p>
+            <div class="sme-services">
+                <div class="service-box">
+                    <h3>Multirisque Professionnelle</h3>
+                    <p>Protection de vos locaux, stocks et matériel d'exploitation contre tous les risques.</p>
+                </div>
+                <div class="service-box">
+                    <h3>RC Personne Morale</h3>
+                    <p>Couvrez la responsabilité de votre entreprise face aux dommages causés aux tiers.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Santé des Salariés</h3>
+                    <p>Fidélisez vos talents avec une couverture santé groupe adaptée à votre budget.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Assurance Transport</h3>
+                    <p>Sécurisez vos marchandises lors des imports/exports et livraisons locales.</p>
+                </div>
+            </div>
+            <a href="#" class="cta-btn">Demander un Audit Client</a>
+        </div>
+    </div>
+</body>
+
+</html>

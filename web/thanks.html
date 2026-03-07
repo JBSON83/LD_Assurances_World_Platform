@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci | LD Assurances</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="titch.css">
+    <script src="pixel.js"></script>
+    <style>
+        body {
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .success-card {
+            max-width: 600px;
+            padding: 4rem;
+        }
+
+        .check-icon {
+            width: 80px;
+            height: 80px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            color: white;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="success-card titch-glass animate-fade-in">
+        <div class="check-icon">✓</div>
+        <h1 class="text-gradient">Félicitations !</h1>
+        <p style="color: var(--text-dim); margin-top: 1.5rem; font-size: 1.2rem;">Votre demande de protection a été
+            enregistrée avec succès. Un agent vous contactera d'ici 15 minutes pour finaliser l'émission de votre
+            contrat.</p>
+        <div style="margin-top: 3rem;">
+            <a href="index.html" class="titch-btn">Retour à l'accueil</a>
+        </div>
+    </div>
+    <script>
+        LD_Pixel.emit("PurchaseComplete", { status: "success" });
+    </script>
+</body>
+
+</html>

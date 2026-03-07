@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assurance Habitation | LD Assurances Cameroon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --secondary: #fbbf24;
+            --dark: #0b1121;
+            --glass: rgba(15, 23, 42, 0.7);
+            --text: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            padding: 2rem;
+            background-image: radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 25px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .item h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 800;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="../index.html"
+            style="color: #94a3b8; text-decoration: none; display: inline-block; margin-bottom: 1rem;">← Retour</a>
+        <div class="glass-card">
+            <h1>Multirisque Habitation</h1>
+            <p style="color: #94a3b8;">Protégez votre foyer et vos biens contre les imprévus au Cameroun.</p>
+            <div class="grid">
+                <div class="item">
+                    <h3>Incendie & Explosion</h3>
+                    <p>Couverture intégrale de vos bâtiments et contenus.</p>
+                </div>
+                <div class="item">
+                    <h3>Vol & Vandalisme</h3>
+                    <p>Protection contre les intrusions et dommages criminels.</p>
+                </div>
+                <div class="item">
+                    <h3>Dégât des Eaux</h3>
+                    <p>Indemnisation rapide en cas de fuites ou inondations.</p>
+                </div>
+                <div class="item">
+                    <h3>RC Vie Privée</h3>
+                    <p>Protection contre les dommages causés aux tiers par vous ou vos proches.</p>
+                </div>
+            </div>
+            <a href="#" class="cta-btn">Assurer ma Maison</a>
+        </div>
+    </div>
+</body>
+
+</html>

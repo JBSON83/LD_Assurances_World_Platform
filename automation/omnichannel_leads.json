@@ -1,0 +1,83 @@
+{
+    "name": "LD_Assurances_Omnichannel_Leads",
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "new-lead",
+                "options": {}
+            },
+            "name": "Webhook: New Lead",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                250,
+                300
+            ],
+            "id": "1"
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "http://localhost:8001/chat",
+                "sendBody": true,
+                "bodyParameters": {
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "value": "={{$node[\"Webhook: New Lead\"].json[\"body\"][\"message\"]}}"
+                        }
+                    ]
+                },
+                "options": {}
+            },
+            "name": "Lola AI Bridge",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                450,
+                300
+            ],
+            "id": "2"
+        },
+        {
+            "parameters": {
+                "channelId": "YOUR_WHATSAPP_CHANNEL_ID",
+                "text": "=🚀 *Nouveau Prospect LD Assurances !*\n\nQuestion: {{$node[\"Webhook: New Lead\"].json[\"body\"][\"message\"]}}\n\n🤖 *Lola conseille:* {{$node[\"Lola AI Bridge\"].json[\"reply\"]}}",
+                "options": {}
+            },
+            "name": "WhatsApp Notification",
+            "type": "n8n-nodes-base.whatsApp",
+            "typeVersion": 1,
+            "position": [
+                650,
+                300
+            ],
+            "id": "3"
+        }
+    ],
+    "connections": {
+        "Webhook: New Lead": {
+            "main": [
+                [
+                    {
+                        "node": "Lola AI Bridge",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Lola AI Bridge": {
+            "main": [
+                [
+                    {
+                        "node": "WhatsApp Notification",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}

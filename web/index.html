@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LD Assurances | L'Excellence Digitale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="titch.css">
+    <style>
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent),
+                radial-gradient(circle at bottom left, rgba(251, 191, 36, 0.05), transparent);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            padding: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-dim);
+            margin-bottom: 3rem;
+        }
+
+        .product-link {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-weight: 600;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .product-link:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-content titch-glass animate-fade-in">
+            <span
+                style="color: var(--secondary); font-weight: 800; letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem;">World
+                Class Intelligence</span>
+            <h1 class="text-gradient">LD Assurances</h1>
+            <p>Découvrez la puissance du <strong>Swarm Agentique</strong> pour une protection premium, sans compromis,
+                au Cameroun.</p>
+            <div style="margin-bottom: 3rem;">
+                <a href="products/auto.html" class="product-link">Auto</a>
+                <a href="products/sante.html" class="product-link">Santé</a>
+                <a href="products/micro.html" class="product-link">Micro</a>
+                <a href="products/vie.html" class="product-link">Vie</a>
+                <a href="products/pme.html" class="product-link">PME</a>
+            </div>
+            <button class="titch-btn pulse">Démarrer l'Expertise</button>
+        </div>
+    </section>
+
+    <!-- AI Chat Widget -->
+    <div id="chat-widget">
+        <div id="chat-window" class="titch-glass">
+            <div class="chat-header">
+                <div class="avatar">L</div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem;">Lola</div>
+                    <div style="font-size: 0.7rem; opacity: 0.8; display: flex; align-items: center; gap: 5px;">
+                        <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></span>
+                        Agent Intelligence Active
+                    </div>
+                </div>
+            </div>
+            <div id="chat-body" class="chat-body">
+                <div class="msg msg-ai">Bonjour ! Je suis Lola, votre assistante IA LD Assurances. Comment puis-je vous
+                    aider ?</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Posez votre question...">
+                <button onclick="sendMessage()" class="titch-btn" style="padding: 0.8rem; min-width: 50px;">→</button>
+            </div>
+        </div>
+        <div id="chat-trigger" onclick="toggleChat()">
+            <svg viewBox="0 0 24 24" style="width: 30px; height: 30px; fill: white;">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const win = document.getElementById('chat-window');
+            win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const body = document.getElementById('chat-body');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const userMsg = document.createElement('div');
+            userMsg.className = 'msg msg-user';
+            userMsg.innerText = text;
+            body.appendChild(userMsg);
+            input.value = '';
+            body.scrollTop = body.scrollHeight;
+
+            try {
+                const response = await fetch('http://localhost:8001/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text })
+                });
+                const data = await response.json();
+
+                const aiMsg = document.createElement('div');
+                aiMsg.className = 'msg msg-ai';
+                aiMsg.innerText = data.reply;
+                body.appendChild(aiMsg);
+            } catch (e) {
+                const aiMsg = document.createElement('div');
+                aiMsg.className = 'msg msg-ai';
+                aiMsg.innerText = "Désolé, je rencontre une difficulté de connexion. (Lola Offline)";
+                body.appendChild(aiMsg);
+            }
+            body.scrollTop = body.scrollHeight;
+        }
+    </script>
+</body>
+
+</html>

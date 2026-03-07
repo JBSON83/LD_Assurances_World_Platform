@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Premium | LD Assurances</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../titch.css">
+    <script src="../pixel.js"></script>
+    <style>
+        body {
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .product-card {
+            max-width: 800px;
+            width: 100%;
+            padding: 4rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dim);
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .price-display {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 20px;
+            border: 1px dashed var(--primary);
+            text-align: center;
+            display: none;
+        }
+
+        .price-display h2 {
+            font-size: 3rem;
+            color: var(--secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product-card titch-glass animate-fade-in">
+        <a href="../index.html"
+            style="color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block;">←
+            Retour</a>
+        <h1 class="text-gradient" style="font-size: 3rem; margin-bottom: 1rem;">Auto Premium</h1>
+        <p style="color: var(--text-dim); margin-bottom: 3rem;">Estimation instantanée basée sur les zones ASAC
+            Cameroun.</p>
+
+        <div class="form-group">
+            <label>Zone de Circulation</label>
+            <select id="zone">
+                <option value="1">Douala / Yaoundé (Zone 1)</option>
+                <option value="2">Villes Moyennes (Zone 2)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Puissance Fiscale (CV)</label>
+            <input type="number" id="cv" placeholder="Ex: 7">
+        </div>
+
+        <button onclick="calculate()" class="titch-btn" style="width: 100%;">Calculer le tarif</button>
+
+        <div id="result" class="price-display">
+            <p>Estimation de votre protection</p>
+            <h2 id="price-val">0 FCFA</h2>
+            <button onclick="goToCheckout()" class="titch-btn pulse"
+                style="margin-top: 2rem; background: var(--secondary); color: black;">Souscription Express</button>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const cv = parseInt(document.getElementById('cv').value) || 0;
+            if (cv <= 0) return;
+            let price = 50000 + (cv * 3000);
+            if (document.getElementById('zone').value == "1") price += 20000;
+            document.getElementById('price-val').innerText = price.toLocaleString() + " FCFA";
+            document.getElementById('result').style.display = "block";
+            LD_Pixel.emit("ViewContent", { value: price, currency: "XAF", product_name: "Auto" });
+        }
+
+        function goToCheckout() {
+            LD_Pixel.trackLead("AutoSub", { amount: document.getElementById('price-val').innerText });
+            window.location.href = "../pay.html";
+        }
+    </script>
+</body>
+
+</html>
