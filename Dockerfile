@@ -23,4 +23,4 @@ EXPOSE 8000
 
 # Start command
 # We run the backend by default. Frontend can be served by Nginx on the host or another container.
-CMD ["python", "LD_Assurances_World_Platform/core/server.py"]
+CMD ["python", "core/server.py"]
