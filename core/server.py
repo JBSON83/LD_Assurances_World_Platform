@@ -12,6 +12,7 @@ if project_root not in sys.path:
 
 from services.front_desk.lola_agent import FrontDeskAgent
 from services.payments.gateway import PaymentGateway
+from services.copywriter.scribe_agent import ScribeAgent
 
 app = FastAPI(title="LD Assurances Platform API")
 
@@ -25,6 +26,7 @@ app.add_middleware(
 
 lola = FrontDeskAgent()
 gateway = PaymentGateway()
+scribe = ScribeAgent()
 
 @app.get("/")
 async def root():
@@ -49,7 +51,6 @@ async def flutterwave_webhook(request: Request):
     Webhook pour recevoir les confirmations de paiement de Flutterwave.
     """
     # En production, on vérifierait la signature 'verif-hash'
-    signature = request.headers.get("verif-hash")
     data = await request.json()
     
     print(f"🔔 [WEBHOOK] Notification Flutterwave reçue: {data.get('event')}")
@@ -57,9 +58,22 @@ async def flutterwave_webhook(request: Request):
     if data.get("status") == "successful":
         tx_ref = data.get("tx_ref")
         amount = data.get("amount")
-        # Ici on déclencherait la génération du contrat via Scribe
-        print(f"✅ [SUCCÈS] Transaction {tx_ref} confirmée pour {amount} !")
-        return {"status": "acknowledged"}
+        customer = data.get("customer", {})
+        
+        # Déclenchement de la génération du contrat via Scribe
+        user_data = {
+            "name": customer.get("name", "Client"),
+            "tx_ref": tx_ref,
+            "email": customer.get("email")
+        }
+        
+        # Simulation du type de produit (en réel, on le récupèrerait de la DB via tx_ref)
+        product_type = "Automobile" 
+        
+        contract_path = scribe.generate_contract(user_data, product_type)
+        
+        print(f"✅ [SUCCÈS] Transaction {tx_ref} confirmée. Contrat généré : {contract_path}")
+        return {"status": "acknowledged", "contract_generated": True}
     
     return {"status": "ignored"}
 
