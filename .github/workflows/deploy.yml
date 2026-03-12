@@ -19,21 +19,31 @@ jobs:
           username: ${{ secrets.HOST_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Check if docker is installed, if not, install it (Ubuntu/Debian)
+            echo "🚀 Démarrage du déploiement sur Hostinger..."
+            
+            # Installation de Docker si absent
             if ! [ -x "$(command -v docker)" ]; then
-              echo "Installing Docker..."
+              echo "📦 Installation de Docker..."
               curl -fsSL https://get.docker.com -o get-docker.sh
               sh get-docker.sh
             fi
-            
-            # Setup project directory
-            if [ ! -d "LD_Assurances_World_Platform" ]; then
+
+            # Gestion du dépôt Git
+            PROJECT_DIR="LD_Assurances_World_Platform"
+            if [ ! -d "$PROJECT_DIR" ]; then
+              echo "📥 Clonage du dépôt..."
               git clone https://github.com/JBSON83/LD_Assurances_World_Platform.git
-              cd LD_Assurances_World_Platform
+              cd "$PROJECT_DIR"
             else
-              cd LD_Assurances_World_Platform
-              git pull origin main
+              echo "🔄 Mise à jour du code (git pull)..."
+              cd "$PROJECT_DIR"
+              git fetch --all
+              git reset --hard origin/main
             fi
             
-            # Launch
+            # Lancement Docker
+            echo "🐳 Reconstruction et lancement des containers..."
+            docker-compose down || true
             docker-compose up -d --build
+            
+            echo "✅ Déploiement terminé !"
