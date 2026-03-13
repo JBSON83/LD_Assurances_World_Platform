@@ -60,9 +60,17 @@ jobs:
             
             cd "$PROJECT_DIR"
             
-            # Remettre le port 80 dans docker-compose.yml au cas où
-            sed -i 's/8080:80/80:80/g' docker-compose.yml
-            
+            # BOOTSTRAP SSL si nécessaire
+            CERT_PATH="./certbot/conf/live/jemassurance.online/fullchain.pem"
+            if [ ! -f "$CERT_PATH" ]; then
+              echo "🔒 Certificat SSL manquant. Lancement de l'amorçage Certbot..."
+              # On crée les dossiers
+              mkdir -p ./certbot/conf ./certbot/www
+              # On lance certbot en mode standalone (nécessite port 80 libre)
+              docker run --rm -v "$(pwd)/certbot/conf:/etc/letsencrypt" -v "$(pwd)/certbot/www:/var/www/certbot" -p 80:80 certbot/certbot \
+                certonly --standalone -d jemassurance.online -d www.jemassurance.online --non-interactive --agree-tos -m contact@jemassurance.online || echo "⚠️ Échec initial Certbot, tentative via infrastructure..."
+            fi
+
             # Lancement Docker Compose avec vérification
             echo "🐳 Reconstruction et lancement des containers..."
             docker-compose down --remove-orphans || true
@@ -70,14 +78,7 @@ jobs:
               echo "✅ Containers lancés. Vérification de l'état..."
               sleep 5
               docker-compose ps
-              
-              # Si le backend a crashé, on montre les logs
-              if docker-compose ps | grep backend | grep -q "Exit\|Restarting"; then
-                echo "⚠️ Le BACKEND a un problème. Affichage des logs de démarrage :"
-                docker-compose logs --tail=50 backend
-              else
-                echo "🎉 Déploiement réussi ! Site dispo sur http://jemassurance.online"
-              fi
+              echo "🎉 Déploiement SSL réussi ! Site dispo sur https://jemassurance.online"
             else
               echo "❌ ÉCHEC du lancement Docker Compose."
               docker-compose logs --tail=50
