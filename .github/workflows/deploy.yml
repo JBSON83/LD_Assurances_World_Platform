@@ -18,33 +18,42 @@ jobs:
           host: ${{ secrets.HOST_IP }}
           username: ${{ secrets.HOST_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          timeout: 60s
+          command_timeout: 20m
           debug: true
           script: |
-            echo "🚀 Démarrage du déploiement sur Hostinger..."
+            echo "🚀 Démarrage du déploiement sur Hostinger VPS $(hostname)..."
             
-            # Installation de Docker si absent
-            if ! [ -x "$(command -v docker)" ]; then
+            # Vérification Docker
+            if ! command -v docker &> /dev/null; then
               echo "📦 Installation de Docker..."
-              curl -fsSL https://get.docker.com -o get-docker.sh
-              sudo sh get-docker.sh
+              curl -fsSL https://get.docker.com | sh
+            fi
+            
+            if ! command -v docker-compose &> /dev/null; then
+              echo "📦 Installation de docker-compose..."
+              apt-get install -y docker-compose || pip install docker-compose
             fi
 
             # Gestion du dépôt Git
-            PROJECT_DIR="LD_Assurances_World_Platform"
+            PROJECT_DIR="$HOME/LD_Assurances_World_Platform"
             if [ ! -d "$PROJECT_DIR" ]; then
               echo "📥 Clonage du dépôt..."
-              git clone https://github.com/JBSON83/LD_Assurances_World_Platform.git
-              cd "$PROJECT_DIR"
+              git clone https://github.com/JBSON83/LD_Assurances_World_Platform.git "$PROJECT_DIR"
             else
-              echo "🔄 Mise à jour du code (git pull)..."
-              cd "$PROJECT_DIR"
-              git fetch --all
-              git reset --hard origin/main
+              echo "🔄 Mise à jour du code..."
+              git -C "$PROJECT_DIR" fetch --all
+              git -C "$PROJECT_DIR" reset --hard origin/main
             fi
             
-            # Lancement Docker
-            echo "🐳 Reconstruction et lancement des containers..."
-            sudo docker-compose down || true
-            sudo docker-compose up -d --build
+            cd "$PROJECT_DIR"
             
-            echo "✅ Déploiement terminé !"
+            # Lancement Docker Compose
+            echo "🐳 Reconstruction et lancement des containers..."
+            docker-compose down --remove-orphans || true
+            docker-compose up -d --build
+            
+            echo "✅ Containers actifs :"
+            docker-compose ps
+            echo "🎉 Déploiement réussi ! Site disponible sur jemassurance.online"
