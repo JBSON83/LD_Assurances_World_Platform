@@ -25,6 +25,13 @@ jobs:
           script: |
             echo "🚀 Démarrage du déploiement sur Hostinger VPS $(hostname)..."
             
+            # Libération du port 80 (souvent occupé par Nginx/Apache par défaut)
+            echo "🧹 Libération du port 80..."
+            sudo systemctl stop nginx &> /dev/null || true
+            sudo systemctl disable nginx &> /dev/null || true
+            sudo systemctl stop apache2 &> /dev/null || true
+            sudo fuser -k 80/tcp &> /dev/null || true
+            
             # Vérification Docker
             if ! command -v docker &> /dev/null; then
               echo "📦 Installation de Docker..."
@@ -33,7 +40,7 @@ jobs:
             
             if ! command -v docker-compose &> /dev/null; then
               echo "📦 Installation de docker-compose..."
-              apt-get install -y docker-compose || pip install docker-compose
+              apt-get update && apt-get install -y docker-compose || pip install docker-compose
             fi
 
             # Gestion du dépôt Git
