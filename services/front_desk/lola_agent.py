@@ -8,7 +8,12 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")
 from core.ingest_docs import DocIngestor
 
 class FrontDeskAgent:
-    def __init__(self, db_path="c:/Users/diffo_jb/OneDrive/Documents/WorkflowAntigravity/LD_Assurances_World_Platform/core/knowledge_vault.db"):
+    def __init__(self, db_path="core/knowledge_vault.db"):
+        # On s'assure que le chemin est relatif à la racine du projet
+        if not os.path.isabs(db_path):
+            base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+            db_path = os.path.join(base_dir, db_path)
+            
         self.ingestor = DocIngestor(db_path=db_path)
         self.name = "Lola"
 
