@@ -14,7 +14,11 @@ class FrontDeskAgent:
             base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
             db_path = os.path.join(base_dir, db_path)
             
-        self.ingestor = DocIngestor(db_path=db_path)
+        try:
+            self.ingestor = DocIngestor(db_path=db_path)
+        except Exception as e:
+            print(f"❌ CRITICAL ERROR initializing DocIngestor with path {db_path}: {e}")
+            raise
         self.name = "Lola"
 
     def handle_message(self, message):

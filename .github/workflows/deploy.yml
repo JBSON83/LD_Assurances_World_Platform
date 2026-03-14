@@ -25,12 +25,12 @@ jobs:
           script: |
             echo "🚀 Démarrage du déploiement sur Hostinger VPS $(hostname)..."
             
-            # Libération AGGRESSIVE du port 80
-            echo "🧹 Libération agressive du port 80..."
-            sudo systemctl stop nginx &> /dev/null || true
-            sudo systemctl stop apache2 &> /dev/null || true
-            sudo fuser -k 80/tcp &> /dev/null || true
-            sudo lsof -t -i:80 | xargs sudo kill -9 &> /dev/null || true
+            # Libération RADICALE du port 80
+            echo "🧹 Libération radicale du port 80 (Kill total services système)..."
+            sudo systemctl stop nginx apache2 2>/dev/null || true
+            sudo systemctl disable nginx apache2 2>/dev/null || true
+            sudo fuser -k 80/tcp 2>/dev/null || true
+            sudo lsof -t -i:80 | xargs sudo kill -9 2>/dev/null || true
             
             # Nettoyage Docker
             echo "🧼 Nettoyage système Docker..."
@@ -59,6 +59,12 @@ jobs:
             fi
             
             cd "$PROJECT_DIR"
+
+            # Fix permissions pour SQLite
+            echo "🔑 Fix des permissions SQLite..."
+            mkdir -p core
+            touch core/knowledge_vault.db
+            chmod -R 777 core/
             
             # Lancement Docker Compose avec vérification
             echo "🐳 Reconstruction et lancement des containers..."
@@ -67,7 +73,8 @@ jobs:
               echo "✅ Containers lancés. Vérification de l'état..."
               sleep 5
               docker-compose ps
-              echo "🎉 Déploiement rétabli ! Site dispo sur http://jemassurance.online:8080 (port de secours)"
+              echo "🎉 Déploiement rétabli sur PORT 80 ! Site dispo sur http://jemassurance.online"
+              docker-compose logs --tail=20 backend
             else
               echo "❌ ÉCHEC du lancement Docker Compose."
               docker-compose logs --tail=50
