@@ -63,6 +63,7 @@ jobs:
             # Fix permissions pour SQLite
             echo "🔑 Fix des permissions SQLite..."
             mkdir -p core
+            rm -rf core/knowledge_vault.db # On supprime si c'est un dossier ou fichier corrompu
             touch core/knowledge_vault.db
             chmod -R 777 core/
             
