@@ -29,8 +29,16 @@ jobs:
             echo "🧹 Libération radicale du port 80 (Kill total services système)..."
             sudo systemctl stop nginx apache2 2>/dev/null || true
             sudo systemctl disable nginx apache2 2>/dev/null || true
+            
+            # Arrêt de tous les containers Docker qui pourraient utiliser le port 80
+            echo "🐳 Arrêt des containers Docker existants..."
+            docker ps -q --filter "publish=80" | xargs -r docker stop || true
+            
             sudo fuser -k 80/tcp 2>/dev/null || true
             sudo lsof -t -i:80 | xargs sudo kill -9 2>/dev/null || true
+            
+            # Une petite pause pour laisser le système respirer
+            sleep 2
             
             # Nettoyage Docker
             echo "🧼 Nettoyage système Docker..."
