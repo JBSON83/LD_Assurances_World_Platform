@@ -1,228 +1,167 @@
 :root {
-    /* Token de Prestige - Palette Titch */
-    --primary: #00f2ff; /* Bleu Azur Électrique */
-    --primary-glow: rgba(0, 242, 255, 0.25);
-    --secondary: #d4af37; /* Or Métallique */
-    --dark-bg: #03050a; /* Noir Profond */
-    --card-bg: rgba(10, 15, 25, 0.4);
-    --border: rgba(255, 255, 255, 0.04);
-    --text-main: #ffffff;
-    --text-dim: rgba(255, 255, 255, 0.5);
+    --primary: #22d3ee;
+    --primary-glow: rgba(34, 211, 238, 0.3);
+    --secondary: #fbbf24;
+    --dark-bg: #020617;
+    --card-bg: rgba(30, 41, 59, 0.4);
+    --border: rgba(255, 255, 255, 0.05);
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
     --font-main: 'Outfit', sans-serif;
-    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- BASE & TYPOGRAPHY --- */
-*, *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
     background: var(--dark-bg);
     color: var(--text-main);
     font-family: var(--font-main);
-    line-height: 1.7;
+    line-height: 1.6;
     overflow-x: hidden;
-    margin: 0;
     -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 { 
-    letter-spacing: -0.02em; 
-    line-height: 1.1; 
-    font-weight: 800;
-}
-
+h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.1; font-weight: 800; }
 .text-gradient {
-    background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+    background: linear-gradient(to right, #fff, var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 .gold-gradient {
-    background: linear-gradient(135deg, #fceabb 0%, #d4af37 50%, #fceabb 100%);
+    background: linear-gradient(135deg, #fbbf24, #d97706);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* --- GLASSMORPHISM PRESTIGE --- */
 .titch-glass {
     background: var(--card-bg);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border: 1px solid var(--border);
-    border-radius: 40px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border-radius: 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* --- BUTTONS --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.1) 0%, transparent 60%);
+}
+
+.trust-badge {
+    display: inline-flex;
+    padding: 8px 16px;
+    background: rgba(34, 211, 238, 0.1);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 32px;
+    color: var(--primary);
+}
+
 .titch-btn {
     background: var(--primary);
     color: #000;
-    padding: 1.2rem 3rem;
+    padding: 16px 40px;
     border-radius: 100px;
-    font-weight: 800;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
     border: none;
     cursor: pointer;
     transition: var(--transition-smooth);
     box-shadow: 0 0 20px var(--primary-glow);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
+.titch-btn:hover { transform: scale(1.05); box-shadow: 0 0 40px var(--primary-glow); }
 
-.titch-btn:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 40px var(--primary-glow);
+.steps-container { padding: 100px 20px; text-align: center; }
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 60px auto;
 }
-
-/* --- HERO & SECTIONS --- */
-.hero { 
-    padding: 12rem 2rem; 
-    text-align: center; 
-    background: radial-gradient(circle at 50% 0%, rgba(0, 242, 255, 0.08) 0%, transparent 50%);
-}
-
-.benefit-icon { font-size: 3rem; margin-bottom: 2rem; }
-
-/* --- PARTNERS LUXE --- */
-.partners-section { 
-    padding: 6rem 2rem; 
-    border-top: 1px solid var(--border);
-    background: rgba(255,255,255,0.01);
-}
-.partners-grid { 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 5rem; 
-    opacity: 0.3;
-}
-.partner-logo { 
-    font-size: 1.1rem; 
-    font-weight: 900; 
-    letter-spacing: 6px; 
-    text-transform: uppercase;
-}
-
-/* --- STEPS REINVENTED --- */
-.steps-grid { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 3rem; 
-    max-width: 1300px; 
-    margin: 5rem auto; 
-}
-.step-card { 
-    padding: 4rem 3rem; 
-    transition: var(--transition-smooth);
+.step-card {
+    padding: 60px 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
-.step-card:hover { 
-    background: rgba(255,255,255,0.03);
-    border-color: var(--primary);
-}
-.step-num { 
-    font-size: 8rem; 
-    font-weight: 900; 
-    color: var(--primary); 
-    opacity: 0.03; 
-    position: absolute; 
-    top: -20px; 
-    left: 20px;
-}
+.benefit-icon { font-size: 3.5rem; margin-bottom: 24px; display: block; }
 
-/* --- CONTACT FORM PURE --- */
-.contact-section { 
-    padding: 10rem 2rem; 
-    max-width: 1400px; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 8rem; 
+.contact-section {
+    padding: 120px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
-.form-row { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 2rem; 
-}
-.form-group label { 
-    font-size: 0.7rem; 
-    font-weight: 900; 
-    text-transform: uppercase; 
-    letter-spacing: 3px; 
-    color: var(--text-dim); 
-    margin-bottom: 1rem;
+.contact-info { margin-bottom: 60px; }
+.contact-form-container { max-width: 800px; margin: 0 auto; padding: 60px 40px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+.form-group { text-align: left; margin-bottom: 24px; }
+.form-group label {
     display: block;
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    margin-bottom: 12px;
 }
-.titch-input { 
-    width: 100%; 
-    padding: 1.5rem; 
-    border-radius: 24px; 
-    border: 1px solid var(--border); 
-    background: rgba(255,255,255,0.02); 
-    color: white; 
+.titch-input {
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    color: #fff;
     font-family: inherit;
     transition: var(--transition-smooth);
 }
-.titch-input:focus { 
-    outline: none; 
-    border-color: var(--primary); 
-    background: rgba(255,255,255,0.05);
-}
+.titch-input:focus { outline: none; border-color: var(--primary); background: rgba(255, 255, 255, 0.06); }
 
-/* --- FLOATING CHANNELS (REFINED) --- */
 #direct-channels {
     position: fixed;
-    bottom: 40px;
-    left: 40px;
-    z-index: 9999;
+    bottom: 32px;
+    left: 32px;
+    z-index: 10000;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 .channel-btn {
-    width: 60px;
-    height: 60px;
-    border-radius: 100px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--card-bg);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--border);
-    backdrop-filter: blur(20px);
     transition: var(--transition-smooth);
-    text-decoration: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
-.channel-btn svg {
-    width: 35px;
-    height: 35px;
-    fill: white;
-    transition: var(--transition-smooth);
-}
-.channel-btn.whatsapp:hover { background: #25D366; border-color: #25D366; }
-.channel-btn.telegram:hover { background: #0088cc; border-color: #0088cc; }
-.channel-btn:hover svg { fill: white; filter: drop-shadow(0 0 8px rgba(255,255,255,0.5)); }
-.channel-btn:hover {
-    transform: scale(1.1) translateY(-10px);
-    border-color: var(--primary);
+.channel-btn svg { width: 28px; height: 28px; fill: #fff; }
+.channel-btn:hover { transform: translateY(-8px); border-color: var(--primary); }
+.channel-btn.whatsapp:hover { background: #22c55e; box-shadow: 0 0 20px rgba(34, 197, 94, 0.4); }
+.channel-btn.telegram:hover { background: #0ea5e9; box-shadow: 0 0 20px rgba(14, 165, 233, 0.4); }
+
+@media (max-width: 1024px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 3.5rem !important; }
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 1100px) {
-    .steps-grid, .contact-section { grid-template-columns: 1fr; gap: 4rem; }
-}
-@media (max-width: 600px) {
-    .hero h1 { font-size: 2.8rem; }
-    .form-row { grid-template-columns: 1fr; }
-}
-@media (max-width: 1100px) {
-    .steps-grid, .contact-section { grid-template-columns: 1fr; gap: 4rem; }
-}
-@media (max-width: 600px) {
-    .hero h1 { font-size: 2.8rem; }
-    .form-row { grid-template-columns: 1fr; }
 }
