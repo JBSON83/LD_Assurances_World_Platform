@@ -25,21 +25,19 @@ jobs:
           script: |
             echo "🚀 Démarrage du déploiement sur Hostinger VPS $(hostname)..."
             
-            # Libération RADICALE du port 80 et 443
+            # Libération des ports 80 et 443
             echo "🧹 Libération des ports 80 et 443..."
             sudo systemctl stop nginx apache2 2>/dev/null || true
             sudo systemctl disable nginx apache2 2>/dev/null || true
             
-            # Arrêt de tous les containers Docker qui pourraient utiliser les ports
+            # Arrêt des containers Docker existants
             echo "🐳 Arrêt des containers Docker existants..."
             docker ps -q --filter "publish=80" | xargs -r docker stop || true
             docker ps -q --filter "publish=443" | xargs -r docker stop || true
-
             sudo fuser -k 80/tcp 2>/dev/null || true
             sudo fuser -k 443/tcp 2>/dev/null || true
-            sudo lsof -t -i:80 | xargs sudo kill -9 2>/dev/null || true
             
-            # Ouverture des ports dans le firewall (UFW)
+            # Ouverture des ports dans le firewall
             echo "🛡️ Ouverture des ports 80, 443 et 8001..."
             sudo ufw allow 80/tcp || true
             sudo ufw allow 443/tcp || true
@@ -79,9 +77,12 @@ jobs:
             chmod -R 777 core/
 
             # ============================
-            # 🔒 SSL Let's Encrypt Setup
+            # SSL Let's Encrypt Setup
             # ============================
             echo "🔒 Configuration SSL Let's Encrypt..."
+            DOMAIN="jemassurance.online"
+            CERT_PATH="/etc/letsencrypt/live/$DOMAIN"
+            SSL_OK=false
 
             # Installer Certbot si absent
             if ! command -v certbot &>/dev/null; then
@@ -92,84 +93,51 @@ jobs:
 
             # Créer le dossier webroot
             sudo mkdir -p /var/www/certbot
-            sudo chmod -R 755 /var/www/certbot
-
-            DOMAIN="jemassurance.online"
-            CERT_PATH="/etc/letsencrypt/live/$DOMAIN"
 
             if [ ! -d "$CERT_PATH" ]; then
               echo "🆕 Génération du certificat SSL (première fois)..."
-              # Mode standalone : certbot prend le port 80 temporairement
-              sudo certbot certonly --standalone \
+              if sudo certbot certonly --standalone \
                 -d "$DOMAIN" \
                 -d "www.$DOMAIN" \
                 --non-interactive \
                 --agree-tos \
                 --email admin@jemassurance.online \
-                --no-eff-email || {
-                  echo "⚠️ SSL échoué - Rollback vers mode HTTP uniquement..."
-                  # Restauration du nginx.conf HTTP pour garder le site en ligne
-                  cat > "$PROJECT_DIR/nginx.conf" << 'NGINX_HTTP'
-server {
-    listen 80 default_server;
-    server_name jemassurance.online www.jemassurance.online;
-    location / {
-        root /usr/share/nginx/html;
-        index index.html;
-        try_files $uri $uri/ /index.html;
-    }
-    location /api/ {
-        proxy_pass http://backend:8001/;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-NGINX_HTTP
-                  # Restaurer docker-compose sans SSL
-                  cat > "$PROJECT_DIR/docker-compose.yml" << 'DC_HTTP'
-version: '3.8'
-services:
-  backend:
-    build: .
-    volumes:
-      - .:/app
-    ports:
-      - "8001:8001"
-    environment:
-      - PAYMENT_API_KEY=${PAYMENT_API_KEY}
-      - FLW_SECRET_KEY=${FLW_SECRET_KEY}
-    restart: always
-  frontend:
-    image: nginx:alpine
-    volumes:
-      - ./web:/usr/share/nginx/html
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-    ports:
-      - "80:80"
-    depends_on:
-      - backend
-    restart: always
-DC_HTTP
-                }
+                --no-eff-email; then
+                echo "✅ Certificat SSL généré avec succès !"
+                SSL_OK=true
+              else
+                echo "⚠️ SSL échoué - Le site restera en HTTP"
+                SSL_OK=false
+              fi
             else
               echo "🔄 Renouvellement SSL si nécessaire..."
               sudo certbot renew --quiet --non-interactive || true
+              SSL_OK=true
             fi
-            
+
+            # Si SSL a échoué, revenir au nginx.conf HTTP simple
+            if [ "$SSL_OK" = false ]; then
+              echo "📋 Restauration nginx.conf HTTP (fallback)..."
+              cp nginx.conf.backup_before_ssl nginx.conf || true
+              cp docker-compose.yml.backup_before_ssl docker-compose.yml || true
+            fi
+
             # Nettoyage Docker
             echo "🧼 Nettoyage système Docker..."
             docker system prune -af --volumes || true
 
-            # Lancement Docker Compose avec vérification
+            # Lancement Docker Compose
             echo "🐳 Reconstruction et lancement des containers..."
             docker-compose down --remove-orphans || true
             if docker-compose up -d --build; then
               echo "✅ Containers lancés. Vérification de l'état..."
               sleep 5
               docker-compose ps
-              echo "🎉 Déploiement terminé ! Site dispo sur https://jemassurance.online"
+              if [ "$SSL_OK" = true ]; then
+                echo "🎉 Déploiement terminé ! Site dispo sur https://jemassurance.online"
+              else
+                echo "🌐 Déploiement terminé en HTTP ! Site dispo sur http://jemassurance.online"
+              fi
               docker-compose logs --tail=20 backend
             else
               echo "❌ ÉCHEC du lancement Docker Compose."
