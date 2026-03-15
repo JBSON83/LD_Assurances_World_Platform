@@ -120,12 +120,9 @@
 <body>
     <section class="hero">
         <div class="hero-content titch-glass animate-fade-in">
-            <span
-                style="color: var(--secondary); font-weight: 800; letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem;">World
-                Class Intelligence</span>
+            <div class="trust-badge animate-fade-in">🛡️ Agréé CIMA & Certification Digitale</div>
             <h1 class="text-gradient">LD Assurances</h1>
-            <p>Découvrez la puissance du <strong>Swarm Agentique</strong> pour une protection premium, sans compromis,
-                au Cameroun.</p>
+            <p><strong>L'indemnisation réinventée.</strong> Recevez vos remboursements via Mobile Money en moins de 24h. 100% Digital, 0km de déplacement.</p>
             <div style="margin-bottom: 3rem;">
                 <a href="products/auto.html" class="product-link">Auto</a>
                 <a href="products/sante.html" class="product-link">Santé</a>
@@ -138,6 +135,126 @@
             <button class="titch-btn pulse" onclick="toggleChat()">Démarrer l'Expertise</button>
         </div>
     </section>
+
+    <!-- Section Étapes (Inspiration COVA) -->
+    <section class="steps-container">
+        <h2 class="text-gradient" style="font-size: 3rem; margin-bottom: 1rem;">L'Assurance en 3 minutes</h2>
+        <p style="color: var(--text-dim); margin-bottom: 4rem;">Simple, Rapide et Transparent.</p>
+        <div class="steps-grid">
+            <div class="step-card titch-glass">
+                <span class="step-num">01</span>
+                <span class="benefit-icon">📱</span>
+                <h3>Simulez</h3>
+                <p style="color: var(--text-dim);">Choisissez votre produit et obtenez votre tarif instantanément grâce à Lola.</p>
+            </div>
+            <div class="step-card titch-glass">
+                <span class="step-num">02</span>
+                <span class="benefit-icon">💳</span>
+                <h3>Payez</h3>
+                <p style="color: var(--text-dim);">Rglez en toute sécurité via MTN MoMo ou Orange Money. Zéro paperasse.</p>
+            </div>
+            <div class="step-card titch-glass">
+                <span class="step-num">03</span>
+                <span class="benefit-icon">📄</span>
+                <h3>Protégé</h3>
+                <p style="color: var(--text-dim);">Recevez votre contrat par WhatsApp et Email. Indemnisation express garantie.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Partenaires (Trust Wall) -->
+    <section class="partners-section">
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; color: var(--text-dim);">Nos Partenaires de Confiance</p>
+        <div class="partners-grid">
+            <!-- Logos simulés ou placeholders pro -->
+            <span style="font-weight: 800; font-size: 1.2rem; opacity: 0.5;">ACTIVA</span>
+            <span style="font-weight: 800; font-size: 1.2rem; opacity: 0.5;">SUNU</span>
+            <span style="font-weight: 800; font-size: 1.2rem; opacity: 0.5;">ZENITHE</span>
+            <span style="font-weight: 800; font-size: 1.2rem; opacity: 0.5;">PRUDENTIAL</span>
+            <span style="font-weight: 800; font-size: 1.2rem; opacity: 0.5;">SAHAM</span>
+        </div>
+    </section>
+
+    <!-- Section Contact (Ergonomie & Design) -->
+    <section id="contact" class="contact-section">
+        <div class="contact-info animate-slide-up">
+            <h2 class="text-gradient">Parlons de votre protection</h2>
+            <p style="color: var(--text-dim); margin-bottom: 3rem;">Nos experts sont disponibles pour vous accompagner dans le choix de la meilleure couverture.</p>
+            
+            <div class="contact-method">
+                <div class="contact-icon">📱</div>
+                <div>
+                    <h4 style="margin: 0;">WhatsApp Express</h4>
+                    <p style="margin: 0; color: var(--text-dim); font-size: 0.9rem;">+237 640 65 67 93</p>
+                </div>
+            </div>
+
+            <div class="contact-method">
+                <div class="contact-icon">📍</div>
+                <div>
+                    <h4 style="margin: 0;">Siège Social</h4>
+                    <p style="margin: 0; color: var(--text-dim); font-size: 0.9rem;">Carrefour Arno, Akwa, Douala</p>
+                </div>
+            </div>
+
+            <div class="contact-method">
+                <div class="contact-icon">✉️</div>
+                <div>
+                    <h4 style="margin: 0;">Email Officiel</h4>
+                    <p style="margin: 0; color: var(--text-dim); font-size: 0.9rem;">contact@ldassurances.cm</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-container titch-glass animate-slide-up" style="animation-delay: 0.2s;">
+            <form class="titch-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nom complet</label>
+                        <input type="text" class="titch-input" placeholder="Ex: Jean Dupont">
+                    </div>
+                    <div class="form-group">
+                        <label>Téléphone (MoMo/OM)</label>
+                        <input type="tel" class="titch-input" placeholder="Ex: 6xx xxx xxx">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Votre Email</label>
+                    <input type="email" class="titch-input" placeholder="votre@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Produit d'intérêt</label>
+                    <select class="titch-input">
+                        <option value="auto">Assurance Automobile</option>
+                        <option value="sante">Assurance Santé</option>
+                        <option value="habitation">Assurance Habitation</option>
+                        <option value="autre">Autre demande</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea class="titch-input" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                </div>
+
+                <button type="submit" class="titch-btn" style="width: 100%; margin-top: 1rem;">Envoyer ma demande</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Canaux Directs (WhatsApp & Telegram) -->
+    <div id="direct-channels">
+        <a href="https://wa.me/237640656793" class="channel-btn whatsapp" data-tooltip="WhatsApp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span style="font-size: 1.2rem;">🟢</span>
+        </a>
+        <a href="https://t.me/ldassurances" class="channel-btn telegram" data-tooltip="Telegram" target="_blank">
+            <i class="fab fa-telegram"></i>
+            <span style="font-size: 1.2rem;">🔵</span>
+        </a>
+    </div>
 
     <!-- AI Chat Widget -->
     <div id="chat-widget">
@@ -185,7 +302,7 @@
             </div>
             <div>
                 <h4 style="margin-bottom: 1rem;">Informations Légales</h4>
-                <p style="font-size: 0.8rem; color: var(--text-dim);">Capital Social: 5 000 000 000 FCFA<br>Agréé CIMA (Conférence Interafricaine des Marchés d'Assurances)<br>© 2026 LD Assurances S.A.</p>
+                <p style="font-size: 0.8rem; color: var(--text-dim);">NIU: P076413521919Z<br>Capital Social: 5 000 000 000 FCFA (Entièrement Libéré)<br>Agréé CIMA<br>© 2026 LD Assurances S.A.</p>
             </div>
         </div>
     </footer>

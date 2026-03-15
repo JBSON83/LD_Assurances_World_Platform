@@ -15,10 +15,7 @@
     <script src="../pixel.js"></script>
     <style>
         body {
-            padding: 4rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 2rem;
             min-height: 100vh;
         }
 
@@ -85,7 +82,7 @@
                 <option value="taxi">Transport Public (Taxi/Bus)</option>
             </select>
             <button class="titch-btn pulse" onclick="calculateAuto()" style="width: 100%;">Calculer ma Prime</button>
-            <div id="auto-result" style="text-align: center; font-size: 1.5rem; font-weight: 800; color: var(--secondary); margin-top: 1rem;"></div>
+            <div id="auto-result" style="text-align: center; font-size: 1.5rem; font-weight: 800; color: var(--secondary); margin-top: 1rem;">Prime estimée : 50 000 FCFA</div>
         </div>
     </div>
 
@@ -123,8 +120,8 @@
         </div>
     </div>
 
-    <!-- Footer Légal -->
-    <footer style="margin-top: 5rem; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <!-- Footer Légal Unifié -->
+    <footer style="margin-top: 5rem; padding: 4rem 2rem; background: rgba(15, 23, 42, 0.4); border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
         <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; text-align: left;">
             <div>
                 <h3 class="text-gradient">LD Assurances SA</h3>
@@ -136,17 +133,25 @@
             </div>
             <div>
                 <h4 style="margin-bottom: 1rem;">Contact</h4>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">Tél: +237 640 65 67 93<br>Email: contact@ldassurances.cm</p>
+                <p style="font-size: 0.9rem; color: var(--text-dim);">Tél: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@ldassurances.cm</p>
             </div>
             <div>
                 <h4 style="margin-bottom: 1rem;">Informations Légales</h4>
-                <p style="font-size: 0.8rem; color: var(--text-dim);">Capital Social: 5 000 000 000 FCFA<br>Agréé CIMA<br>© 2026 LD Assurances</p>
+                <p style="font-size: 0.8rem; color: var(--text-dim);">NIU: P076413521919Z<br>Capital Social: 5 000 000 000 FCFA (Entièrement Libéré)<br>Agréé CIMA<br>© 2026 LD Assurances S.A.</p>
             </div>
         </div>
     </footer>
 
     <script>
-            window.location.href = "../pay.html";
+        function calculateAuto() {
+            // Un accident n'attend pas, votre calcul non plus.
+            const resultDiv = document.getElementById('auto-result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerText = "Estimation : 50 000 FCFA (Zone 1)";
+            
+            setTimeout(() => {
+                window.location.href = "../pay.html";
+            }, 1500);
         }
     </script>
 </body>
