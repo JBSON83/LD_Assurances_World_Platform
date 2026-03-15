@@ -25,37 +25,35 @@ jobs:
           script: |
             echo "🚀 Démarrage du déploiement sur Hostinger VPS $(hostname)..."
             
-            # Libération RADICALE du port 80
-            echo "🧹 Libération radicale du port 80 (Kill total services système)..."
+            # Libération RADICALE du port 80 et 443
+            echo "🧹 Libération des ports 80 et 443..."
             sudo systemctl stop nginx apache2 2>/dev/null || true
             sudo systemctl disable nginx apache2 2>/dev/null || true
             
-            # Arrêt de tous les containers Docker qui pourraient utiliser le port 80
+            # Arrêt de tous les containers Docker qui pourraient utiliser les ports
             echo "🐳 Arrêt des containers Docker existants..."
             docker ps -q --filter "publish=80" | xargs -r docker stop || true
-            
+            docker ps -q --filter "publish=443" | xargs -r docker stop || true
+
             sudo fuser -k 80/tcp 2>/dev/null || true
+            sudo fuser -k 443/tcp 2>/dev/null || true
             sudo lsof -t -i:80 | xargs sudo kill -9 2>/dev/null || true
             
             # Ouverture des ports dans le firewall (UFW)
-            echo "🛡️ Ouverture des ports 80 et 8001..."
+            echo "🛡️ Ouverture des ports 80, 443 et 8001..."
             sudo ufw allow 80/tcp || true
+            sudo ufw allow 443/tcp || true
             sudo ufw allow 8001/tcp || true
             
-            # Une petite pause pour laisser le système respirer
             sleep 2
             
-            # Nettoyage Docker
-            echo "🧼 Nettoyage système Docker..."
-            docker system prune -af --volumes || true
-            
-            # Vérification Docker
-            if ! command -v docker &> /dev/null; then
+            # Vérification et installation Docker
+            if ! command -v docker &>/dev/null; then
               echo "📦 Installation Docker..."
               curl -fsSL https://get.docker.com | sh
             fi
             
-            if ! command -v docker-compose &> /dev/null; then
+            if ! command -v docker-compose &>/dev/null; then
               echo "📦 Installation docker-compose..."
               apt-get update && apt-get install -y docker-compose || pip install docker-compose
             fi
@@ -76,10 +74,94 @@ jobs:
             # Fix permissions pour SQLite
             echo "🔑 Fix des permissions SQLite..."
             mkdir -p core
-            rm -rf core/knowledge_vault.db # On supprime si c'est un dossier ou fichier corrompu
+            rm -rf core/knowledge_vault.db
             touch core/knowledge_vault.db
             chmod -R 777 core/
+
+            # ============================
+            # 🔒 SSL Let's Encrypt Setup
+            # ============================
+            echo "🔒 Configuration SSL Let's Encrypt..."
+
+            # Installer Certbot si absent
+            if ! command -v certbot &>/dev/null; then
+              echo "📦 Installation Certbot..."
+              sudo apt-get update -qq
+              sudo apt-get install -y certbot
+            fi
+
+            # Créer le dossier webroot
+            sudo mkdir -p /var/www/certbot
+            sudo chmod -R 755 /var/www/certbot
+
+            DOMAIN="jemassurance.online"
+            CERT_PATH="/etc/letsencrypt/live/$DOMAIN"
+
+            if [ ! -d "$CERT_PATH" ]; then
+              echo "🆕 Génération du certificat SSL (première fois)..."
+              # Mode standalone : certbot prend le port 80 temporairement
+              sudo certbot certonly --standalone \
+                -d "$DOMAIN" \
+                -d "www.$DOMAIN" \
+                --non-interactive \
+                --agree-tos \
+                --email admin@jemassurance.online \
+                --no-eff-email || {
+                  echo "⚠️ SSL échoué - Rollback vers mode HTTP uniquement..."
+                  # Restauration du nginx.conf HTTP pour garder le site en ligne
+                  cat > "$PROJECT_DIR/nginx.conf" << 'NGINX_HTTP'
+server {
+    listen 80 default_server;
+    server_name jemassurance.online www.jemassurance.online;
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+        try_files $uri $uri/ /index.html;
+    }
+    location /api/ {
+        proxy_pass http://backend:8001/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+NGINX_HTTP
+                  # Restaurer docker-compose sans SSL
+                  cat > "$PROJECT_DIR/docker-compose.yml" << 'DC_HTTP'
+version: '3.8'
+services:
+  backend:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8001:8001"
+    environment:
+      - PAYMENT_API_KEY=${PAYMENT_API_KEY}
+      - FLW_SECRET_KEY=${FLW_SECRET_KEY}
+    restart: always
+  frontend:
+    image: nginx:alpine
+    volumes:
+      - ./web:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+DC_HTTP
+                }
+            else
+              echo "🔄 Renouvellement SSL si nécessaire..."
+              sudo certbot renew --quiet --non-interactive || true
+            fi
             
+            # Nettoyage Docker
+            echo "🧼 Nettoyage système Docker..."
+            docker system prune -af --volumes || true
+
             # Lancement Docker Compose avec vérification
             echo "🐳 Reconstruction et lancement des containers..."
             docker-compose down --remove-orphans || true
@@ -87,7 +169,7 @@ jobs:
               echo "✅ Containers lancés. Vérification de l'état..."
               sleep 5
               docker-compose ps
-              echo "🎉 Déploiement rétabli sur PORT 80 ! Site dispo sur http://jemassurance.online"
+              echo "🎉 Déploiement terminé ! Site dispo sur https://jemassurance.online"
               docker-compose logs --tail=20 backend
             else
               echo "❌ ÉCHEC du lancement Docker Compose."
