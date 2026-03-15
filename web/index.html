@@ -168,46 +168,27 @@
         </div>
     </div>
 
-    <script>
-        function toggleChat() {
-            const win = document.getElementById('chat-window');
-            win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        async function sendMessage() {
-            const input = document.getElementById('chat-input');
-            const body = document.getElementById('chat-body');
-            const text = input.value.trim();
-            if (!text) return;
-
-            const userMsg = document.createElement('div');
-            userMsg.className = 'msg msg-user';
-            userMsg.innerText = text;
-            body.appendChild(userMsg);
-            input.value = '';
-            body.scrollTop = body.scrollHeight;
-
-            try {
-                const response = await fetch('/api/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: text })
-                });
-                const data = await response.json();
-
-                const aiMsg = document.createElement('div');
-                aiMsg.className = 'msg msg-ai';
-                aiMsg.innerText = data.reply;
-                body.appendChild(aiMsg);
-            } catch (e) {
-                const aiMsg = document.createElement('div');
-                aiMsg.className = 'msg msg-ai';
-                aiMsg.innerText = "Désolé, je rencontre une difficulté de connexion. (Lola Offline)";
-                body.appendChild(aiMsg);
-            }
-            body.scrollTop = body.scrollHeight;
-        }
-    </script>
+    <!-- Footer Légal Unifié -->
+    <footer style="margin-top: 5rem; padding: 4rem 2rem; background: rgba(15, 23, 42, 0.4); border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; text-align: left;">
+            <div>
+                <h3 class="text-gradient">LD Assurances SA</h3>
+                <p style="font-size: 0.9rem; color: var(--text-dim);">L'excellence digitale au service de votre foyer et de votre entreprise au Cameroun. Première plateforme d'assurance agentique.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1rem;">Siège Social</h4>
+                <p style="font-size: 0.9rem; color: var(--text-dim);">Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1rem;">Contact</h4>
+                <p style="font-size: 0.9rem; color: var(--text-dim);">Tél: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@ldassurances.cm</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1rem;">Informations Légales</h4>
+                <p style="font-size: 0.8rem; color: var(--text-dim);">Capital Social: 5 000 000 000 FCFA<br>Agréé CIMA (Conférence Interafricaine des Marchés d'Assurances)<br>© 2026 LD Assurances S.A.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
