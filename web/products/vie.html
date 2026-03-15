@@ -78,26 +78,45 @@
     </style>
 </head>
 
-<body>
-    <div class="container">
+<body class="product-page">
+    <div class="product-header animate-fade-in">
         <a href="../index.html"
-            style="color: #94a3b8; text-decoration: none; display: inline-block; margin-bottom: 1rem;">← Retour</a>
-        <div class="glass-card">
-            <h1>Sécurisez l'avenir de vos proches</h1>
-            <p class="highlight">Epargnez à votre rythme et garantissez un capital pour votre famille.</p>
-            <div class="benefit-card">
-                <h3>Epargne Retraite</h3>
-                <p>Préparez vos vieux jours avec des taux d'intérêt garantis et des avantages fiscaux.</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Prévoyance Décès</h3>
-                <p>Assurez le versement d'un capital immédiat à vos bénéficiaires en cas de coup dur.</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Education des Enfants</h3>
-                <p>Garantissez le financement des études supérieures de vos enfants, quoi qu'il arrive.</p>
-            </div>
-            <a href="#" class="cta-btn">Préparer mon Avenir</a>
+            style="color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block;">←
+            Retour</a>
+        <h1 class="text-gradient" style="background: linear-gradient(to right, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Assurance Vie</h1>
+        <p>Epargnez à votre rythme et garantissez un capital pour votre famille.</p>
+    </div>
+
+    <div class="product-grid animate-fade-in">
+        <div class="product-plan titch-glass">
+            <h3>RETRAITE</h3>
+            <div class="product-price">Epargne</div>
+            <ul class="product-features">
+                <li>✓ Taux garantis</li>
+                <li>✓ Avantages fiscaux</li>
+                <li>✓ Retrait flexible</li>
+            </ul>
+            <button class="titch-btn" style="padding: 0.8rem 1.5rem;">Simuler</button>
+        </div>
+        <div class="product-plan titch-glass" style="border-color: var(--secondary);">
+            <h3 style="color: var(--secondary);">PRÉVOYANCE</h3>
+            <div class="product-price">Décès</div>
+            <ul class="product-features">
+                <li>✓ Capital Immédiat</li>
+                <li>✓ Doublement Accident</li>
+                <li>✓ Frais Funéraires</li>
+            </ul>
+            <button class="titch-btn" style="background: var(--secondary); color: black;">Détails</button>
+        </div>
+        <div class="product-plan titch-glass">
+            <h3>ÉDUCATION</h3>
+            <div class="product-price">Enfants</div>
+            <ul class="product-features">
+                <li>✓ Rente Éducation</li>
+                <li>✓ Majorité Capital</li>
+                <li>✓ Études Supérieures</li>
+            </ul>
+            <button class="titch-btn" style="padding: 0.8rem 1.5rem;">Choisir</button>
         </div>
     </div>
 </body>

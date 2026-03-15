@@ -7,91 +7,41 @@
     <title>Santé Premium | LD Assurances</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../titch.css">
-    <style>
-        body {
-            padding: 4rem 2rem;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 5rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .plan {
-            padding: 3rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .plan h3 {
-            margin-bottom: 1rem;
-        }
-
-        .price {
-            font-size: 2rem;
-            color: var(--secondary);
-            font-weight: 800;
-            margin-bottom: 2rem;
-        }
-
-        .features {
-            list-style: none;
-            color: var(--text-dim);
-            margin-bottom: 3rem;
-            flex-grow: 1;
-        }
-
-        .features li {
-            margin-bottom: 1rem;
-        }
-    </style>
 </head>
 
-<body>
-    <div class="header animate-fade-in">
+<body class="product-page">
+    <div class="product-header animate-fade-in">
         <a href="../index.html"
             style="color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block;">←
             Accueil</a>
-        <h1 class="text-gradient" style="font-size: 4rem;">Santé Premium</h1>
+        <h1 class="text-gradient">Santé Premium</h1>
         <p>Accès exclusif aux meilleurs réseaux de soins du Cameroun.</p>
     </div>
 
-    <div class="grid animate-fade-in">
-        <div class="plan titch-glass">
+    <div class="product-grid animate-fade-in">
+        <div class="product-plan titch-glass">
             <h3>ESSENTIEL</h3>
-            <div class="price">15,000 F</div>
-            <ul class="features">
+            <div class="product-price">15,000 F</div>
+            <ul class="product-features">
                 <li>✓ Hospitalisation 100%</li>
                 <li>✓ Réseau National</li>
             </ul>
             <button class="titch-btn" style="padding: 0.8rem 1.5rem;">Choisir</button>
         </div>
-        <div class="plan titch-glass" style="border-color: var(--secondary);">
+        <div class="product-plan titch-glass" style="border-color: var(--secondary);">
             <h3 style="color: var(--secondary);">SÉRÉNITÉ</h3>
-            <div class="price">25,000 F</div>
-            <ul class="features">
+            <div class="product-price">25,000 F</div>
+            <ul class="product-features">
                 <li>✓ Hospitalisation 100%</li>
                 <li>✓ Pharmacie 80%</li>
                 <li>✓ Optique & Dentaire</li>
             </ul>
             <button class="titch-btn" style="background: var(--secondary); color: black;">Populaire</button>
         </div>
-        <div class="plan titch-glass">
+        <div class="product-plan titch-glass">
             <h3>PRESTIGE</h3>
-            <div class="price">45,000 F</div>
-            <ul class="features">
+            <div class="product-price">45,000 F</div>
+            <ul class="product-features">
                 <li>✓ Évacuation Europe</li>
                 <li>✓ Chambre VIP</li>
                 <li>✓ Service Concierge</li>
