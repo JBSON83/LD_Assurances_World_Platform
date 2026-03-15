@@ -118,28 +118,28 @@
 </head>
 
 <body>
-    <section class="hero">
-        <div class="hero-content titch-glass animate-fade-in">
-            <div class="trust-badge animate-fade-in">🛡️ Agréé CIMA & Certification Digitale</div>
-            <h1 class="text-gradient">LD Assurances</h1>
-            <p><strong>L'indemnisation réinventée.</strong> Recevez vos remboursements via Mobile Money en moins de 24h. 100% Digital, 0km de déplacement.</p>
-            <div style="margin-bottom: 3rem;">
-                <a href="products/auto.html" class="product-link">Auto</a>
-                <a href="products/sante.html" class="product-link">Santé</a>
-                <a href="products/micro.html" class="product-link">Micro</a>
-                <a href="products/vie.html" class="product-link">Vie</a>
-                <a href="products/pme.html" class="product-link">PME</a>
-                <a href="products/habitation.html" class="product-link">Habitation</a>
-                <a href="products/voyage.html" class="product-link">Voyage</a>
+    <section class="hero animate-fade-in">
+        <div class="titch-glass" style="padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; position: relative; overflow: hidden;">
+            <div class="trust-badge">🛡️ Certification CIMA Digitale</div>
+            <h1 style="font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 2rem;">
+                LD <span class="gold-gradient">Assurances</span>
+            </h1>
+            <p style="font-size: 1.3rem; color: var(--text-dim); margin-bottom: 3.5rem; max-width: 750px; margin-inline: auto; line-height: 1.6;">
+                <strong>L'indemnisation réinventée.</strong> Recevez vos remboursements via Mobile Money en moins de 24h. 100% Digital, 0km de déplacement.
+            </p>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; margin-bottom: 4rem; opacity: 0.5; font-size: 0.8rem; font-weight: 900; letter-spacing: 3px;">
+                <span>AUTO</span> <span>SANTÉ</span> <span>MICRO</span> <span>VIE</span> <span>PME</span> <span>HABITATION</span>
             </div>
+            
             <button class="titch-btn pulse" onclick="toggleChat()">Démarrer l'Expertise</button>
         </div>
     </section>
 
     <!-- Section Étapes (Inspiration COVA) -->
-    <section class="steps-container">
-        <h2 class="text-gradient" style="font-size: 3rem; margin-bottom: 1rem;">L'Assurance en 3 minutes</h2>
-        <p style="color: var(--text-dim); margin-bottom: 4rem;">Simple, Rapide et Transparent.</p>
+    <section class="steps-container" style="text-align: center;">
+        <h2 class="text-gradient" style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">L'Assurance en 3 minutes</h2>
+        <p style="color: var(--text-dim); margin-bottom: 4rem; text-align: center;">Simple, Rapide et Transparent.</p>
         <div class="steps-grid">
             <div class="step-card titch-glass">
                 <span class="step-num">01</span>
@@ -177,9 +177,9 @@
 
     <!-- Section Contact (Ergonomie & Design) -->
     <section id="contact" class="contact-section">
-        <div class="contact-info animate-slide-up">
-            <h2 class="text-gradient">Parlons de votre protection</h2>
-            <p style="color: var(--text-dim); margin-bottom: 3rem;">Nos experts sont disponibles pour vous accompagner dans le choix de la meilleure couverture.</p>
+        <div class="contact-info animate-slide-up" style="text-align: center; grid-column: 1 / -1;">
+            <h2 class="text-gradient" style="text-align: center;">Parlons de votre protection</h2>
+            <p style="color: var(--text-dim); margin-bottom: 3rem; text-align: center;">Nos experts sont disponibles pour vous accompagner dans le choix de la meilleure couverture.</p>
             
             <div class="contact-method">
                 <div class="contact-icon">📱</div>
@@ -246,13 +246,11 @@
 
     <!-- Canaux Directs (WhatsApp & Telegram) -->
     <div id="direct-channels">
-        <a href="https://wa.me/237640656793" class="channel-btn whatsapp" data-tooltip="WhatsApp" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-            <span style="font-size: 1.2rem;">🟢</span>
+        <a href="https://wa.me/237640656793" class="channel-btn whatsapp" data-tooltip="WhatsApp" target="_blank" style="display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 24 24" style="width: 32px; height: 32px; fill: white;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.185-.573c.948.517 2.003.789 3.143.792 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.585-5.766-5.765-5.766zm3.377 8.203c-.145.405-.85.741-1.213.789-.363.048-.726.082-2.129-.481-1.788-.716-2.941-2.526-3.03-2.646-.088-.12-.718-.951-.718-1.815 0-.865.454-1.29.615-1.465.161-.174.354-.219.472-.219s.236.002.339.006c.108.005.253-.041.397.303.145.344.496 1.206.539 1.297.043.091.071.196.012.314-.059.118-.088.196-.176.299-.088.103-.186.23-.265.31-.088.089-.18.186-.077.362.103.176.458.756 1.011 1.248.711.633 1.309.829 1.5.922.19.093.303.077.417-.053.114-.13.485-.563.615-.754.13-.191.259-.16.436-.094.177.066 1.123.528 1.317.625.194.097.323.144.37.227.047.083.047.48-.098.885z"/></svg>
         </a>
-        <a href="https://t.me/ldassurances" class="channel-btn telegram" data-tooltip="Telegram" target="_blank">
-            <i class="fab fa-telegram"></i>
-            <span style="font-size: 1.2rem;">🔵</span>
+        <a href="https://t.me/ldassurances" class="channel-btn telegram" data-tooltip="Telegram" target="_blank" style="display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 24 24" style="width: 32px; height: 32px; fill: white;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.36-.49 1-.74 3.9-1.69 6.51-2.81 7.83-3.34 3.71-1.43 4.47-1.69 4.97-1.7.11 0 .35.03.5.15.12.1.15.24.16.33.01.06.02.21 0 .29z"/></svg>
         </a>
     </div>
 
