@@ -1,0 +1,96 @@
+name: Deploy to Hostinger VPS
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST_IP }}
+          username: ${{ secrets.HOST_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          timeout: 60s
+          command_timeout: 20m
+          debug: true
+          script: |
+            echo "🚀 Démarrage du déploiement sur Hostinger VPS $(hostname)..."
+            
+            # Libération RADICALE du port 80
+            echo "🧹 Libération radicale du port 80 (Kill total services système)..."
+            sudo systemctl stop nginx apache2 2>/dev/null || true
+            sudo systemctl disable nginx apache2 2>/dev/null || true
+            
+            # Arrêt de tous les containers Docker qui pourraient utiliser le port 80
+            echo "🐳 Arrêt des containers Docker existants..."
+            docker ps -q --filter "publish=80" | xargs -r docker stop || true
+            
+            sudo fuser -k 80/tcp 2>/dev/null || true
+            sudo lsof -t -i:80 | xargs sudo kill -9 2>/dev/null || true
+            
+            # Ouverture des ports dans le firewall (UFW)
+            echo "🛡️ Ouverture des ports 80 et 8001..."
+            sudo ufw allow 80/tcp || true
+            sudo ufw allow 8001/tcp || true
+            
+            # Une petite pause pour laisser le système respirer
+            sleep 2
+            
+            # Nettoyage Docker
+            echo "🧼 Nettoyage système Docker..."
+            docker system prune -af --volumes || true
+            
+            # Vérification Docker
+            if ! command -v docker &> /dev/null; then
+              echo "📦 Installation Docker..."
+              curl -fsSL https://get.docker.com | sh
+            fi
+            
+            if ! command -v docker-compose &> /dev/null; then
+              echo "📦 Installation docker-compose..."
+              apt-get update && apt-get install -y docker-compose || pip install docker-compose
+            fi
+
+            # Gestion du dépôt Git
+            PROJECT_DIR="$HOME/LD_Assurances_World_Platform"
+            if [ ! -d "$PROJECT_DIR" ]; then
+              echo "📥 Clonage du dépôt..."
+              git clone https://github.com/JBSON83/LD_Assurances_World_Platform.git "$PROJECT_DIR"
+            else
+              echo "🔄 Mise à jour du code..."
+              git -C "$PROJECT_DIR" fetch --all
+              git -C "$PROJECT_DIR" reset --hard origin/main
+            fi
+            
+            cd "$PROJECT_DIR"
+
+            # Fix permissions pour SQLite
+            echo "🔑 Fix des permissions SQLite..."
+            mkdir -p core
+            rm -rf core/knowledge_vault.db # On supprime si c'est un dossier ou fichier corrompu
+            touch core/knowledge_vault.db
+            chmod -R 777 core/
+            
+            # Lancement Docker Compose avec vérification
+            echo "🐳 Reconstruction et lancement des containers..."
+            docker-compose down --remove-orphans || true
+            if docker-compose up -d --build; then
+              echo "✅ Containers lancés. Vérification de l'état..."
+              sleep 5
+              docker-compose ps
+              echo "🎉 Déploiement rétabli sur PORT 80 ! Site dispo sur http://jemassurance.online"
+              docker-compose logs --tail=20 backend
+            else
+              echo "❌ ÉCHEC du lancement Docker Compose."
+              docker-compose logs --tail=50
+              exit 1
+            fi

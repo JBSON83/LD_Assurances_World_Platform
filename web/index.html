@@ -66,52 +66,78 @@
     </header>
 
     <section class="hero animate-fade-in">
-        <div class="titch-glass hero-content">
-            <div class="trust-badge">🛡️ Certification CIMA Digitale</div>
-            <h1 class="hero-title">
-                LD <span class="gold-gradient">Assurances</span>
-            </h1>
-            <p class="hero-subtitle">
-                <strong>L'indemnisation réinventée.</strong> Recevez vos remboursements via Mobile Money en moins de 24h. 100% Digital, 0km de déplacement.
-            </p>
-            
-            <div class="hero-labels">
-                <span>AUTO</span> <span>SANTÉ</span> <span>MICRO</span> <span>VIE</span> <span>PME</span> <span>HABITATION</span>
+        <div class="hero-bg-overlay"></div>
+        <div class="titch-glass hero-content-expert">
+            <div class="hero-top-meta">
+                <span class="trust-badge-expert">🛡️ Certification CIMA Digitale</span>
+                <span class="status-badge-expert">● Agentic Live</span>
             </div>
             
-            <button class="titch-btn pulse" onclick="toggleChat()">Démarrer l'Expertise</button>
+            <h1 class="hero-title-expert">
+                LD <span class="gold-gradient">Assurances</span>
+            </h1>
+            
+            <p class="hero-subtitle-expert">
+                <strong>L'excellence redéfinie.</strong> Une protection premium pilotée par l'intelligence artificielle. Indemnisation express via Mobile Money en moins de 24h.
+            </p>
+            
+            <div class="hero-trust-bar">
+                <div class="trust-item">
+                    <span class="trust-val">5B+</span>
+                    <span class="trust-label">Capital FCFA</span>
+                </div>
+                <div class="divider"></div>
+                <div class="trust-item">
+                    <span class="trust-val">100%</span>
+                    <span class="trust-label">Digital</span>
+                </div>
+                <div class="divider"></div>
+                <div class="trust-item">
+                    <span class="trust-val">< 24h</span>
+                    <span class="trust-label">Remboursement</span>
+                </div>
+            </div>
+            
+            <div class="hero-actions">
+                <button class="titch-btn-expert pulse" onclick="toggleChat()">Démarrer l'Expertise</button>
+                <div class="action-hint">Expertise IA gratuite & instantanée</div>
+            </div>
+
+            <div class="hero-labels-expert">
+                <span>AUTO</span> <span>SANTÉ</span> <span>MICRO</span> <span>VIE</span> <span>PME</span> <span>HABITATION</span>
+            </div>
         </div>
     </section>
 
-    <!-- Section Étapes (Inspiration COVA) -->
-    <section class="steps-container">
-        <h2 class="text-gradient">L'Assurance en 3 minutes</h2>
-        <p class="section-subtitle">Simple, Rapide et Transparent.</p>
+    <!-- Section Étapes (Expert v3.0) -->
+    <section class="expert-section animate-fade-in">
+        <h2 class="text-gradient" style="text-align: center;">L'Assurance en 3 minutes</h2>
+        <p class="section-subtitle">Une expérience fluide, rapide et transparente.</p>
         <div class="steps-grid">
-            <div class="step-card titch-glass">
+            <div class="step-card expert-card">
                 <span class="step-num">01</span>
                 <span class="benefit-icon">📱</span>
                 <h3>Simulez</h3>
-                <p>Choisissez votre produit et obtenez votre tarif instantanément grâce à Lola.</p>
+                <p>Choisissez votre produit et obtenez votre tarif instantanément grâce à Lola, notre intelligence agentique.</p>
             </div>
-            <div class="step-card titch-glass">
+            <div class="step-card expert-card">
                 <span class="step-num">02</span>
                 <span class="benefit-icon">💳</span>
                 <h3>Payez</h3>
-                <p>Réglez en toute sécurité via MTN MoMo ou Orange Money. Zéro paperasse.</p>
+                <p>Réglez en toute sécurité via MTN MoMo ou Orange Money. Validation immédiate et zéro paperasse.</p>
             </div>
-            <div class="step-card titch-glass">
+            <div class="step-card expert-card">
                 <span class="step-num">03</span>
                 <span class="benefit-icon">📄</span>
                 <h3>Protégé</h3>
-                <p>Recevez votre contrat par WhatsApp et Email. Indemnisation express garantie.</p>
+                <p>Recevez votre contrat par WhatsApp et Email. Une couverture premium avec indemnisation express.</p>
             </div>
         </div>
     </section>
 
-    <!-- Section Partenaires -->
+    <!-- Section Partenaires (Expert v3.0) -->
     <section class="partners-section">
-        <p class="section-label">Nos Partenaires de Confiance</p>
+        <p class="section-label" style="text-align: center;">Nos Partenaires de Confiance</p>
         <div class="partners-grid">
             <span class="partner-box">ACTIVA</span>
             <span class="partner-box">SUNU</span>
@@ -121,74 +147,76 @@
         </div>
     </section>
 
-    <!-- Section Contact -->
+    <!-- Section Contact (Expert v3.0) -->
     <section id="contact" class="contact-section">
-        <div class="contact-info animate-slide-up">
-            <h2 class="text-gradient">Parlons de votre protection</h2>
-            <p class="section-subtitle">Nos experts sont disponibles pour vous accompagner dans le choix de la meilleure couverture.</p>
-            
-            <div class="contact-grid">
-                <div class="contact-method">
-                    <div class="contact-icon">📱</div>
-                    <div>
-                        <h4>WhatsApp Express</h4>
-                        <p>+237 640 65 67 93</p>
+        <div class="contact-grid">
+            <div class="contact-info animate-slide-up">
+                <h2 class="text-gradient">Parlons de votre protection</h2>
+                <p class="section-subtitle" style="text-align: left; margin: 0 0 3rem;">Nos experts sont disponibles pour vous accompagner dans le choix de la meilleure couverture.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>WhatsApp Express</h4>
+                            <p>+237 640 65 67 93</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="contact-method">
-                    <div class="contact-icon">📍</div>
-                    <div>
-                        <h4>Siège Social</h4>
-                        <p>Carrefour Arno, Akwa, Douala</p>
+                    <div class="contact-method">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Siège Social</h4>
+                            <p>Carrefour Arno, Akwa, Douala</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="contact-method">
-                    <div class="contact-icon">✉️</div>
-                    <div>
-                        <h4>Email Officiel</h4>
-                        <p>contact@ldassurances.cm</p>
+                    <div class="contact-method">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email Officiel</h4>
+                            <p>contact@ldassurances.cm</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="contact-form-container titch-glass animate-slide-up" style="animation-delay: 0.2s;">
-            <form class="titch-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Nom complet</label>
-                        <input type="text" class="titch-input" placeholder="Ex: Jean Dupont">
+            <div class="contact-form-container animate-slide-up">
+                <form class="titch-form">
+                    <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="form-group">
+                            <label>Nom complet</label>
+                            <input type="text" class="titch-input" placeholder="Ex: Jean Dupont">
+                        </div>
+                        <div class="form-group">
+                            <label>Téléphone</label>
+                            <input type="tel" class="titch-input" placeholder="Ex: 6xx xxx xxx">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Téléphone (MoMo/OM)</label>
-                        <input type="tel" class="titch-input" placeholder="Ex: 6xx xxx xxx">
+                    
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Votre Email</label>
+                        <input type="email" class="titch-input" placeholder="votre@email.com">
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Votre Email</label>
-                    <input type="email" class="titch-input" placeholder="votre@email.com">
-                </div>
 
-                <div class="form-group">
-                    <label>Produit d'intérêt</label>
-                    <select class="titch-input">
-                        <option value="auto">Assurance Automobile</option>
-                        <option value="sante">Assurance Santé</option>
-                        <option value="habitation">Assurance Habitation</option>
-                        <option value="autre">Autre demande</option>
-                    </select>
-                </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Produit d'intérêt</label>
+                        <select class="titch-input">
+                            <option value="auto">Assurance Automobile</option>
+                            <option value="sante">Assurance Santé</option>
+                            <option value="habitation">Assurance Habitation</option>
+                            <option value="autre">Autre demande</option>
+                        </select>
+                    </div>
 
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea class="titch-input" placeholder="Comment pouvons-nous vous aider ?"></textarea>
-                </div>
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label>Message</label>
+                        <textarea class="titch-input" placeholder="Comment pouvons-nous vous aider ?" style="height: 120px;"></textarea>
+                    </div>
 
-                <button type="submit" class="titch-btn" style="width: 100%; margin-top: 1rem;">Envoyer ma demande</button>
-            </form>
+                    <button type="submit" class="titch-btn-expert" style="width: 100%;">Envoyer ma demande</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -202,7 +230,7 @@
         </a>
     </div>
 
-    <!-- Footer Légal Unifié -->
+    <!-- Footer Expert v3.0 -->
     <footer class="titch-footer">
         <div class="footer-grid">
             <div class="footer-col">
