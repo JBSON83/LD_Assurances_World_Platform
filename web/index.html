@@ -48,87 +48,34 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="titch.css">
-    <style>
-        .hero {
-            height: 100vh;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent),
-                radial-gradient(circle at bottom left, rgba(251, 191, 36, 0.05), transparent);
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
-            width: 100%;
-            padding: 4rem;
-        }
-
-        .hero h1 {
-            font-size: 5rem;
-            line-height: 1;
-            margin-bottom: 2rem;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            color: var(--text-dim);
-            margin-bottom: 3rem;
-        }
-
-        .product-link {
-            text-decoration: none;
-            color: var(--text-dim);
-            font-weight: 600;
-            margin: 0 1rem;
-            transition: color 0.3s;
-            white-space: nowrap;
-        }
-
-        .product-link:hover {
-            color: var(--primary);
-        }
-
-        /* Tablette */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .hero-content { padding: 2.5rem 2rem; }
-            .hero p { font-size: 1.2rem; }
-        }
-
-        /* Mobile */
-        @media (max-width: 480px) {
-            .hero { height: auto; padding: 2rem 0.5rem; min-height: 100svh; }
-            .hero h1 { font-size: 2.4rem; margin-bottom: 1rem; }
-            .hero p { font-size: 1rem; margin-bottom: 1.5rem; }
-            .hero-content { padding: 2rem 1.2rem; }
-            .product-link { margin: 0.3rem 0.5rem; font-size: 0.9rem; }
-        }
-
-        /* Petit mobile */
-        @media (max-width: 375px) {
-            .hero h1 { font-size: 1.9rem; }
-            .hero p { font-size: 0.9rem; }
-            .hero-content { padding: 1.5rem 0.8rem; }
-        }
-    </style>
 </head>
 
 <body>
+    <header class="titch-header">
+        <div class="logo">
+            <h2>LD<span>.</span></h2>
+        </div>
+        <nav class="product-links">
+            <a href="products/auto.html" class="product-link">AUTO</a>
+            <a href="products/sante.html" class="product-link">SANTÉ</a>
+            <a href="products/habitation.html" class="product-link">HABITATION</a>
+            <a href="products/voyage.html" class="product-link">VOYAGE</a>
+            <a href="products/vie.html" class="product-link">VIE</a>
+            <a href="products/pme.html" class="product-link">PME</a>
+        </nav>
+    </header>
+
     <section class="hero animate-fade-in">
-        <div class="titch-glass" style="padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; position: relative; overflow: hidden;">
+        <div class="titch-glass hero-content">
             <div class="trust-badge">🛡️ Certification CIMA Digitale</div>
-            <h1 style="font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 2rem;">
+            <h1 class="hero-title">
                 LD <span class="gold-gradient">Assurances</span>
             </h1>
-            <p style="font-size: 1.3rem; color: var(--text-dim); margin-bottom: 3.5rem; max-width: 750px; margin-inline: auto; line-height: 1.6;">
+            <p class="hero-subtitle">
                 <strong>L'indemnisation réinventée.</strong> Recevez vos remboursements via Mobile Money en moins de 24h. 100% Digital, 0km de déplacement.
             </p>
             
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; margin-bottom: 4rem; opacity: 0.5; font-size: 0.8rem; font-weight: 900; letter-spacing: 3px;">
+            <div class="hero-labels">
                 <span>AUTO</span> <span>SANTÉ</span> <span>MICRO</span> <span>VIE</span> <span>PME</span> <span>HABITATION</span>
             </div>
             
@@ -137,71 +84,72 @@
     </section>
 
     <!-- Section Étapes (Inspiration COVA) -->
-    <section class="steps-container" style="text-align: center;">
-        <h2 class="text-gradient" style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">L'Assurance en 3 minutes</h2>
-        <p style="color: var(--text-dim); margin-bottom: 4rem; text-align: center;">Simple, Rapide et Transparent.</p>
+    <section class="steps-container">
+        <h2 class="text-gradient">L'Assurance en 3 minutes</h2>
+        <p class="section-subtitle">Simple, Rapide et Transparent.</p>
         <div class="steps-grid">
             <div class="step-card titch-glass">
                 <span class="step-num">01</span>
                 <span class="benefit-icon">📱</span>
                 <h3>Simulez</h3>
-                <p style="color: var(--text-dim);">Choisissez votre produit et obtenez votre tarif instantanément grâce à Lola.</p>
+                <p>Choisissez votre produit et obtenez votre tarif instantanément grâce à Lola.</p>
             </div>
             <div class="step-card titch-glass">
                 <span class="step-num">02</span>
                 <span class="benefit-icon">💳</span>
                 <h3>Payez</h3>
-                <p style="color: var(--text-dim);">Rglez en toute sécurité via MTN MoMo ou Orange Money. Zéro paperasse.</p>
+                <p>Réglez en toute sécurité via MTN MoMo ou Orange Money. Zéro paperasse.</p>
             </div>
             <div class="step-card titch-glass">
                 <span class="step-num">03</span>
                 <span class="benefit-icon">📄</span>
                 <h3>Protégé</h3>
-                <p style="color: var(--text-dim);">Recevez votre contrat par WhatsApp et Email. Indemnisation express garantie.</p>
+                <p>Recevez votre contrat par WhatsApp et Email. Indemnisation express garantie.</p>
             </div>
         </div>
     </section>
 
-    <!-- Section Partenaires (Trust Wall) -->
+    <!-- Section Partenaires -->
     <section class="partners-section">
-        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; color: var(--text-dim);">Nos Partenaires de Confiance</p>
+        <p class="section-label">Nos Partenaires de Confiance</p>
         <div class="partners-grid">
-            <!-- Logos simulés ou placeholders pro -->
-            <span style="font-weight: 800; font-size: 1.2rem; opacity: 0.5;">ACTIVA</span>
-            <span style="font-weight: 800; font-size: 1.2rem; opacity: 0.5;">SUNU</span>
-            <span style="font-weight: 800; font-size: 1.2rem; opacity: 0.5;">ZENITHE</span>
-            <span style="font-weight: 800; font-size: 1.2rem; opacity: 0.5;">PRUDENTIAL</span>
-            <span style="font-weight: 800; font-size: 1.2rem; opacity: 0.5;">SAHAM</span>
+            <span class="partner-box">ACTIVA</span>
+            <span class="partner-box">SUNU</span>
+            <span class="partner-box">ZENITHE</span>
+            <span class="partner-box">PRUDENTIAL</span>
+            <span class="partner-box">SAHAM</span>
         </div>
     </section>
 
-    <!-- Section Contact (Ergonomie & Design) -->
+    <!-- Section Contact -->
     <section id="contact" class="contact-section">
-        <div class="contact-info animate-slide-up" style="text-align: center; grid-column: 1 / -1;">
-            <h2 class="text-gradient" style="text-align: center;">Parlons de votre protection</h2>
-            <p style="color: var(--text-dim); margin-bottom: 3rem; text-align: center;">Nos experts sont disponibles pour vous accompagner dans le choix de la meilleure couverture.</p>
+        <div class="contact-info animate-slide-up">
+            <h2 class="text-gradient">Parlons de votre protection</h2>
+            <p class="section-subtitle">Nos experts sont disponibles pour vous accompagner dans le choix de la meilleure couverture.</p>
             
-            <div class="contact-method">
-                <div class="contact-icon">📱</div>
-                <div>
-                    <h4 style="margin: 0;">WhatsApp Express</h4>
-                    <p style="margin: 0; color: var(--text-dim); font-size: 0.9rem;">+237 640 65 67 93</p>
+            <div class="contact-grid">
+                <div class="contact-method">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <h4>WhatsApp Express</h4>
+                        <p>+237 640 65 67 93</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="contact-method">
-                <div class="contact-icon">📍</div>
-                <div>
-                    <h4 style="margin: 0;">Siège Social</h4>
-                    <p style="margin: 0; color: var(--text-dim); font-size: 0.9rem;">Carrefour Arno, Akwa, Douala</p>
+                <div class="contact-method">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Siège Social</h4>
+                        <p>Carrefour Arno, Akwa, Douala</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="contact-method">
-                <div class="contact-icon">✉️</div>
-                <div>
-                    <h4 style="margin: 0;">Email Officiel</h4>
-                    <p style="margin: 0; color: var(--text-dim); font-size: 0.9rem;">contact@ldassurances.cm</p>
+                <div class="contact-method">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h4>Email Officiel</h4>
+                        <p>contact@ldassurances.cm</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -254,6 +202,28 @@
         </a>
     </div>
 
+    <!-- Footer Légal Unifié -->
+    <footer class="titch-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3 class="text-gradient">LD Assurances SA</h3>
+                <p>L'excellence digitale au service de votre foyer et de votre entreprise au Cameroun. Première plateforme d'assurance agentique.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Siège Social</h4>
+                <p>Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Tél: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@ldassurances.cm</p>
+            </div>
+            <div class="footer-col">
+                <h4>Légal</h4>
+                <p>NIU: P076413521919Z<br>Capital: 5 000 000 000 FCFA<br>Agréé CIMA<br>© 2026 LD Assurances S.A.</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- AI Chat Widget -->
     <div id="chat-widget">
         <div id="chat-window" class="titch-glass">
@@ -268,8 +238,7 @@
                 </div>
             </div>
             <div id="chat-body" class="chat-body">
-                <div class="msg msg-ai">Bonjour ! Je suis Lola, votre assistante IA LD Assurances. Comment puis-je vous
-                    aider ?</div>
+                <div class="msg msg-ai">Bonjour ! Je suis Lola, votre assistante IA LD Assurances. Comment puis-je vous aider ?</div>
             </div>
             <div class="chat-footer">
                 <input type="text" id="chat-input" class="chat-input" placeholder="Posez votre question...">
@@ -283,27 +252,38 @@
         </div>
     </div>
 
-    <!-- Footer Légal Unifié -->
-    <footer style="margin-top: 5rem; padding: 4rem 2rem; background: rgba(15, 23, 42, 0.4); border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
-        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; text-align: left;">
-            <div>
-                <h3 class="text-gradient">LD Assurances SA</h3>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">L'excellence digitale au service de votre foyer et de votre entreprise au Cameroun. Première plateforme d'assurance agentique.</p>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 1rem;">Siège Social</h4>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 1rem;">Contact</h4>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">Tél: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@ldassurances.cm</p>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 1rem;">Informations Légales</h4>
-                <p style="font-size: 0.8rem; color: var(--text-dim);">NIU: P076413521919Z<br>Capital Social: 5 000 000 000 FCFA (Entièrement Libéré)<br>Agréé CIMA<br>© 2026 LD Assurances S.A.</p>
-            </div>
-        </div>
-    </footer>
-</body>
+    <script>
+        function toggleChat() {
+            const window = document.getElementById('chat-window');
+            window.classList.toggle('active');
+        }
 
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const body = document.getElementById('chat-body');
+            const text = input.value.trim();
+            if (!text) return;
+
+            // User Message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'msg msg-user';
+            userMsg.textContent = text;
+            body.appendChild(userMsg);
+            input.value = '';
+
+            // AI Loading
+            const loadingMsg = document.createElement('div');
+            loadingMsg.className = 'msg msg-ai';
+            loadingMsg.textContent = '...';
+            body.appendChild(loadingMsg);
+            body.scrollTop = body.scrollHeight;
+
+            // Simulate AI Response (Agentic Feel)
+            setTimeout(() => {
+                loadingMsg.textContent = "Je prends en charge votre demande. Un expert LD Assurances vous contactera si nécessaire ou je peux simuler votre devis ici.";
+                body.scrollTop = body.scrollHeight;
+            }, 1000);
+        }
+    </script>
+</body>
 </html>

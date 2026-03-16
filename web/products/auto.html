@@ -65,59 +65,111 @@
 </head>
 
 <body class="product-page">
+    <header class="titch-header">
+        <div class="logo">
+            <h2>LD<span>.</span></h2>
+        </div>
+        <nav class="product-links">
+            <a href="../index.html" class="product-link">ACCUEIL</a>
+            <a href="sante.html" class="product-link">SANTÉ</a>
+            <a href="habitation.html" class="product-link">HABITATION</a>
+            <a href="voyage.html" class="product-link">VOYAGE</a>
+            <a href="pme.html" class="product-link">PME</a>
+        </nav>
+    </header>
+
     <div class="product-header animate-fade-in">
-        <a href="../index.html" style="color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block;">← Retour</a>
-        <h1 class="text-gradient">Assurance Auto Premium</h1>
-        <p>Prenez la route avec sérénité grâce à la protection la plus complète du Cameroun.</p>
+        <h1 class="text-gradient hero-title">Assurance Auto <span class="gold-gradient">Premium</span></h1>
+        <p class="section-subtitle">Prenez la route avec une sérénité absolue. La protection la plus complète du Cameroun, gérée par nos experts et notre IA.</p>
     </div>
 
     <!-- Simulateur de Tarif -->
-    <div class="titch-glass" style="max-width: 600px; margin: 0 auto 3rem; padding: 2.5rem; border-radius: 20px;">
-        <h2 style="text-align: center; margin-bottom: 1.5rem;">Simulateur Instantané</h2>
-        <div style="display: grid; gap: 1rem;">
-            <select id="auto-type" class="titch-btn" style="background: var(--glass); text-align: left; width: 100%;">
-                <option value="4">Véhicule Particulier (4-7 CV)</option>
-                <option value="8">Véhicule Particulier (8-10 CV)</option>
-                <option value="11">Puissance Elevée (11 CV+)</option>
-                <option value="taxi">Transport Public (Taxi/Bus)</option>
-            </select>
-            <button class="titch-btn pulse" onclick="calculateAuto()" style="width: 100%;">Calculer ma Prime</button>
-            <div id="auto-result" style="text-align: center; font-size: 1.5rem; font-weight: 800; color: var(--secondary); margin-top: 1rem;">Prime estimée : 50 000 FCFA</div>
+    <div class="titch-glass" style="max-width: 700px; margin: 0 auto 5rem; padding: 3rem; border-radius: 24px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--secondary-gradient);"></div>
+        <h2 style="text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Simulateur de Prime <span class="gold-gradient">Instantané</span></h2>
+        <div style="display: grid; gap: 1.5rem;">
+            <div class="form-group">
+                <label style="color: var(--text-dim); font-weight: 600; margin-bottom: 0.5rem; display: block;">Type de Véhicule & Puissance</label>
+                <select id="auto-type" class="titch-input" style="width: 100%;">
+                    <option value="4">Véhicule Particulier (4-7 CV)</option>
+                    <option value="8">Véhicule Particulier (8-10 CV)</option>
+                    <option value="11">Puissance Elevée (11 CV+)</option>
+                    <option value="taxi">Transport Public (Taxi/Bus)</option>
+
+    <!-- Grille de Garanties -->
+    <div class="steps-grid" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
+        <div class="step-card titch-glass">
+            <span class="step-num">01</span>
+            <h3 style="margin-top: 1rem;">TIERS SIMPLE</h3>
+            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">La base légale obligatoire pour circuler en toute conformité.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
+                <li style="margin-bottom: 0.5rem;">✓ Responsabilité Civile (RC)</li>
+                <li style="margin-bottom: 0.5rem;">✓ Défense et Recours</li>
+                <li style="margin-bottom: 0.5rem;">✓ Assistance 24h/24</li>
+            </ul>
+            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;">Choisir</button>
+        </div>
+        <div class="step-card titch-glass" style="border-color: var(--secondary); transform: translateY(-10px);">
+            <div style="background: var(--secondary-gradient); color: black; font-size: 0.7rem; padding: 0.3rem 1.2rem; border-radius: 20px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 1px;">POPULAIRE</div>
+            <span class="step-num" style="color: var(--secondary);">02</span>
+            <h3 style="margin-top: 1rem; color: var(--secondary);">DOMMAGES COLLISION</h3>
+            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Le compromis idéal pour protéger votre véhicule en cas d'accident avec un tiers identifié.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
+                <li style="margin-bottom: 0.5rem;">✓ Tiers Simple +</li>
+                <li style="margin-bottom: 0.5rem;">✓ Vol et Incendie</li>
+                <li style="margin-bottom: 0.5rem;">✓ Bris de Glaces</li>
+                <li style="margin-bottom: 0.5rem;">✓ Dommages Collision</li>
+            </ul>
+            <button class="titch-btn pulse" style="width: 100%; margin-top: 2rem; padding: 1rem; background: var(--secondary-gradient); color: black;">Devenir Premium</button>
+        </div>
+        <div class="step-card titch-glass">
+            <span class="step-num">03</span>
+            <h3 style="margin-top: 1rem;">TOUS RISQUES</h3>
+            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">La protection absolue pour votre véhicule, quelles que soient les circonstances.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
+                <li style="margin-bottom: 0.5rem;">✓ Dommages Collision +</li>
+                <li style="margin-bottom: 0.5rem;">✓ Dommages Tous Accidents</li>
+                <li style="margin-bottom: 0.5rem;">✓ Vandalisme & Événements Naturels</li>
+                <li style="margin-bottom: 0.5rem;">✓ Valeur à Neuf (Option)</li>
+            </ul>
+            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;">Souscription Gold</button>
         </div>
     </div>
 
-    <!-- Grille de Garanties -->
-    <div class="product-grid animate-fade-in">
-        <div class="product-plan titch-glass">
-            <h3>TIERS SIMPLE</h3>
-            <div class="product-price">Économique</div>
-            <ul class="product-features">
-                <li>✓ Responsabilité Civile</li>
-                <li>✓ Défense & Recours</li>
-                <li>✓ Sécurité Routière</li>
-            </ul>
+    <!-- Simulateur Premium -->
+    <section style="padding: 100px 20px; text-align: center;">
+        <div class="titch-glass" style="max-width: 900px; margin: 0 auto; padding: 4rem 2rem;">
+            <h2 class="text-gradient" style="margin-bottom: 2rem;">Simulateur d'Expertise</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: left; margin-bottom: 3rem;">
+                <div class="form-group">
+                    <label>Valeur du véhicule</label>
+                    <input type="text" class="titch-input" placeholder="Ex: 5 000 000 F">
+                </div>
+                <div class="form-group">
+                    <label>Puissance (CV)</label>
+                    <input type="number" class="titch-input" placeholder="Ex: 7">
+                </div>
+                <div class="form-group">
+                    <label>Usage</label>
+                    <select class="titch-input">
+                        <option>Privé / Promenade</option>
+                        <option>Professionnel</option>
+                        <option>Transport</option>
+                    </select>
+                </div>
+            </div>
+            <button class="titch-btn" style="padding: 1rem 3rem;">Calculer mon Tarif Instantané</button>
         </div>
-        <div class="product-plan titch-glass" style="border-color: var(--secondary);">
-            <div style="background: var(--secondary); color: black; font-size: 0.7rem; padding: 0.2rem 1rem; border-radius: 20px; position: absolute; top: -10px; right: 20px; font-weight: 800;">RECOMMANDÉ</div>
-            <h3 style="color: var(--secondary);">DOMMAGES COLLISION</h3>
-            <div class="product-price">Sérénité</div>
-            <ul class="product-features">
-                <li>✓ Tiers Simple +</li>
-                <li>✓ Bris de Glace (Pare-brise)</li>
-                <li>✓ Incendie du véhicule</li>
-                <li>✓ Vol & Vandalisme</li>
-            </ul>
-        </div>
-        <div class="product-plan titch-glass">
-            <h3>TOUS RISQUES</h3>
-            <div class="product-price">Excellence</div>
-            <ul class="product-features">
-                <li>✓ Protection Intégrale</li>
-                <li>✓ Dommages Tout Accident</li>
-                <li>✓ Assistance 24h/24</li>
-                <li>✓ Véhicule de Relais</li>
-            </ul>
-        </div>
+    </section>
+
+    <!-- Canaux Directs (WhatsApp & Telegram) -->
+    <div id="direct-channels" style="position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000;">
+        <a href="https://wa.me/237640656793" class="channel-btn whatsapp" style="width: 50px; height: 50px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" target="_blank">
+            <svg viewBox="0 0 32 32" style="width: 28px; height: 28px; fill: white;"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.733 5.307 2.016 7.64L0 32l8.6-.2.03-.016C10.875 31.135 13.344 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm-3.136 21.64c-.452-.02-.876-.236-1.12-.605-.18-.276-1.504-2.528-2.616-4.32-.2-.336-.316-.716-.316-1.12 0-1.12.91-2.03 2.03-2.03h.71c.11 0 .216.036.31.09.28.16.54.49.54 1.13 0 .44-.19.86-.5 1.14l-1.04.93s.06.12.13.25c.67 1.14 1.76 2.37 2.92 3.05.13.07.25.13.25.13l.93-1.04c.28-.31.7-.5 1.14-.5.64 0 .97.26 1.13.54.05.09.09.2.09.31v.71c0 1.12-.91 2.03-2.03 2.03-.4 0-.78-.11-1.12-.31-1.79-1.11-4.04-2.43-4.32-2.61-.37-.24-.58-.67-.6-1.12z"/></svg>
+        </a>
+        <a href="https://t.me/ldassurances" class="channel-btn telegram" style="width: 50px; height: 50px; background: #0088cc; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" target="_blank">
+            <svg viewBox="0 0 24 24" style="width: 25px; height: 25px; fill: white;"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-1.181 4.908-1.683 7.55-.213 1.119-.623 1.493-1.021 1.53-.865.08-1.521-.571-2.359-1.121-1.312-.861-2.053-1.393-3.328-2.233-1.474-.972-.518-1.506.321-2.379.22-.228 4.037-3.702 4.112-4.022.01-.041.018-.194-.074-.275-.092-.081-.227-.053-.325-.031-.138.031-2.35 1.494-6.626 4.381-.626.431-1.192.641-1.698.629-.556-.013-1.625-.316-2.42-.575-.975-.318-1.748-.487-1.68-.975.029-.244.364-.492 1.004-.744 3.924-1.708 6.541-2.835 7.848-3.38 3.743-1.558 4.52-1.829 5.027-1.839.112-.002.364.026.527.158.138.112.176.262.188.375.013.111.026.362.011.534z"/></svg>
+        </a>
     </div>
 
     <!-- Footer Légal Unifié -->
@@ -125,7 +177,7 @@
         <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; text-align: left;">
             <div>
                 <h3 class="text-gradient">LD Assurances SA</h3>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">L'excellence digitale au service de votre foyer et de votre entreprise au Cameroun.</p>
+                <p style="font-size: 0.9rem; color: var(--text-dim);">L'excellence digitale au service de votre foyer et de votre entreprise au Cameroun. Première plateforme d'assurance agentique.</p>
             </div>
             <div>
                 <h4 style="margin-bottom: 1rem;">Siège Social</h4>
@@ -144,16 +196,24 @@
 
     <script>
         function calculateAuto() {
-            // Un accident n'attend pas, votre calcul non plus.
             const resultDiv = document.getElementById('auto-result');
             resultDiv.style.display = 'block';
-            resultDiv.innerText = "Estimation : 50 000 FCFA (Zone 1)";
+            resultDiv.classList.add('animate-fade-in');
             
+            // Simulation d'une petite pause IA
+            const btn = document.querySelector('.titch-btn');
+            const originalText = btn.innerText;
+            btn.innerText = "Consultation de Lola...";
+            btn.disabled = true;
+
             setTimeout(() => {
-                window.location.href = "../pay.html";
-            }, 1500);
+                btn.innerText = "Continuer vers le Paiement";
+                btn.disabled = false;
+                btn.onclick = () => window.location.href = "../pay.html";
+            }, 1000);
         }
     </script>
 </body>
+
 
 </html>

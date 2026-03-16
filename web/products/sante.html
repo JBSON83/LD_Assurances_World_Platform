@@ -15,61 +15,83 @@
 </head>
 
 <body class="product-page">
-    <div class="product-header animate-fade-in">
-        <a href="../index.html" style="color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block;">← Retour</a>
-        <h1 class="text-gradient">Santé Privilège</h1>
-        <p>Accédez aux meilleurs hôpitaux du Cameroun sans avance de frais. Une protection vitale pour votre famille.</p>
-        <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-            <span class="titch-glass" style="padding: 0.5rem 1rem; font-size: 0.8rem;">📍 Douala</span>
-            <span class="titch-glass" style="padding: 0.5rem 1rem; font-size: 0.8rem;">📍 Yaoundé</span>
-            <span class="titch-glass" style="padding: 0.5rem 1rem; font-size: 0.8rem;">📍 Bafoussam</span>
+    <div class="product-header animate-fade-in" style="text-align: center; padding: 4rem 2rem;">
+        <a href="../index.html" class="product-link" style="color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block; font-weight: 600;">← Retour à l'accueil</a>
+        <h1 class="text-gradient" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Assurance <span class="gold-gradient">Santé Premium</span></h1>
+        <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">Votre santé est votre bien le plus précieux. Accédez aux meilleurs soins au Cameroun et à l'international avec LD Assurances.</p>
+    </div>
+
+    <div class="steps-grid" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
+        <div class="step-card titch-glass">
+            <span class="step-num">01</span>
+            <h3 style="margin-top: 1rem;">ESSENTIEL</h3>
+            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">La couverture fondamentale pour vos besoins de santé courants au Cameroun.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
+                <li style="margin-bottom: 0.5rem;">✓ Hospitalisation (100%)</li>
+                <li style="margin-bottom: 0.5rem;">✓ Consultations & Pharmacie</li>
+                <li style="margin-bottom: 0.5rem;">✓ Analyses Médicales</li>
+                <li style="margin-bottom: 0.5rem;">✓ Réseau Local Premium</li>
+            </ul>
+            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;">Choisir</button>
+        </div>
+        <div class="step-card titch-glass" style="border-color: var(--secondary); transform: translateY(-10px);">
+            <div style="background: var(--secondary-gradient); color: black; font-size: 0.7rem; padding: 0.3rem 1.2rem; border-radius: 20px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 1px;">SÉRÉNITÉ</div>
+            <span class="step-num" style="color: var(--secondary);">02</span>
+            <h3 style="margin-top: 1rem; color: var(--secondary);">SÉRÉNITÉ PLUS</h3>
+            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Une protection étendue incluant le dentaire, l'optique et la maternité.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
+                <li style="margin-bottom: 0.5rem;">✓ Pack Essentiel +</li>
+                <li style="margin-bottom: 0.5rem;">✓ Dentaire & Optique</li>
+                <li style="margin-bottom: 0.5rem;">✓ Forfait Maternité</li>
+                <li style="margin-bottom: 0.5rem;">✓ Évacuation Sanitaire</li>
+            </ul>
+            <button class="titch-btn pulse" style="width: 100%; margin-top: 2rem; padding: 1rem; background: var(--secondary-gradient); color: black;">Devenir Premium</button>
+        </div>
+        <div class="step-card titch-glass">
+            <span class="step-num">03</span>
+            <h3 style="margin-top: 1rem;">ÉLITE MONDE</h3>
+            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">L'excellence de la santé sans frontières. Accès aux hôpitaux du monde entier.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
+                <li style="margin-bottom: 0.5rem;">✓ Couverture Internationale</li>
+                <li style="margin-bottom: 0.5rem;">✓ Plafonds Illimités</li>
+                <li style="margin-bottom: 0.5rem;">✓ Conciergerie Médicale</li>
+                <li style="margin-bottom: 0.5rem;">✓ Check-up Annuel Gold</li>
+            </ul>
+            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;">Souscription Élite</button>
         </div>
     </div>
 
-    <div class="product-grid animate-fade-in">
-        <div class="product-plan titch-glass">
-            <h3>ESSENTIEL</h3>
-            <div class="product-price">15 000 F <span style="font-size: 1rem;">/mois</span></div>
-            <ul class="product-features">
-                <li>✓ Hospitalisation 100%</li>
-                <li>✓ Consultations Généralistes</li>
-                <li>✓ Examens de Laboratoire</li>
-                <li>✓ Pharmacie Générique</li>
-            </ul>
-            <button class="titch-btn" style="padding: 0.8rem 1.5rem;">Choisir</button>
-        </div>
-        <div class="product-plan titch-glass" style="border-color: var(--secondary);">
-            <div style="background: var(--secondary); color: black; font-size: 0.7rem; padding: 0.2rem 1rem; border-radius: 20px; position: absolute; top: -10px; right: 20px; font-weight: 800;">TOP VENTE</div>
-            <h3 style="color: var(--secondary);">SÉRÉNITÉ PLUS</h3>
-            <div class="product-price">35 000 F <span style="font-size: 1rem;">/mois</span></div>
-            <ul class="product-features">
-                <li>✓ Tout l'Essentiel +</li>
-                <li>✓ Dentaire & Optique</li>
-                <li>✓ Maternité & Accouchement</li>
-                <li>✓ Tiers-Payant National</li>
-            </ul>
-            <button class="titch-btn" style="background: var(--secondary); color: black;">Souscrire</button>
-        </div>
-        <div class="product-plan titch-glass">
-            <h3>ÉLITE MONDE</h3>
-            <div class="product-price">Dès 75 000 F</div>
-            <ul class="product-features">
-                <li>✓ Couverture Internationale</li>
-                <li>✓ Évacuation Sanitaire</li>
-                <li>✓ Cliniques VIP</li>
-                <li>✓ Conciergerie Médicale</li>
-            </ul>
-            <button class="titch-btn" style="padding: 0.8rem 1.5rem;">Devis VIP</button>
-        </div>
+    <!-- Canaux Directs (WhatsApp & Telegram) -->
+    <div id="direct-channels">
+        <a href="https://wa.me/237640656793" class="channel-btn whatsapp" data-tooltip="WhatsApp" target="_blank">
+            <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.733 5.307 2.016 7.64L0 32l8.6-.2.03-.016C10.875 31.135 13.344 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm-3.136 21.64c-.452-.02-.876-.236-1.12-.605-.18-.276-1.504-2.528-2.616-4.32-.2-.336-.316-.716-.316-1.12 0-1.12.91-2.03 2.03-2.03h.71c.11 0 .216.036.31.09.28.16.54.49.54 1.13 0 .44-.19.86-.5 1.14l-1.04.93s.06.12.13.25c.67 1.14 1.76 2.37 2.92 3.05.13.07.25.13.25.13l.93-1.04c.28-.31.7-.5 1.14-.5.64 0 .97.26 1.13.54.05.09.09.2.09.31v.71c0 1.12-.91 2.03-2.03 2.03-.4 0-.78-.11-1.12-.31-1.79-1.11-4.04-2.43-4.32-2.61-.37-.24-.58-.67-.6-1.12z"/></svg>
+        </a>
+        <a href="https://t.me/ldassurances" class="channel-btn telegram" data-tooltip="Telegram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-1.181 4.908-1.683 7.55-.213 1.119-.623 1.493-1.021 1.53-.865.08-1.521-.571-2.359-1.121-1.312-.861-2.053-1.393-3.328-2.233-1.474-.972-.518-1.506.321-2.379.22-.228 4.037-3.702 4.112-4.022.01-.041.018-.194-.074-.275-.092-.081-.227-.053-.325-.031-.138.031-2.35 1.494-6.626 4.381-.626.431-1.192.641-1.698.629-.556-.013-1.625-.316-2.42-.575-.975-.318-1.748-.487-1.68-.975.029-.244.364-.492 1.004-.744 3.924-1.708 6.541-2.835 7.848-3.38 3.743-1.558 4.52-1.829 5.027-1.839.112-.002.364.026.527.158.138.112.176.262.188.375.013.111.026.362.011.534z"/></svg>
+        </a>
     </div>
 
     <!-- Footer Légal Unifié -->
-    <footer style="margin-top: 5rem; padding: 4rem 2rem; background: rgba(15, 23, 42, 0.4); border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
-        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; text-align: left;">
-            <div>
+    <footer class="titch-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
                 <h3 class="text-gradient">LD Assurances SA</h3>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">L'excellence digitale au service de votre santé au Cameroun.</p>
+                <p>L'excellence digitale au service de votre foyer et de votre entreprise au Cameroun.</p>
             </div>
+            <div class="footer-col">
+                <h4>Siège Social</h4>
+                <p>Carrefour Arno, Akwa<br>Douala, Cameroun</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Tél: +237 640 65 67 93<br>Email: contact@ldassurances.cm</p>
+            </div>
+            <div class="footer-col">
+                <h4>Légal</h4>
+                <p>© 2026 LD Assurances S.A.</p>
+            </div>
+        </div>
+    </footer>
             <div>
                 <h4 style="margin-bottom: 1rem;">Siège Social</h4>
                 <p style="font-size: 0.9rem; color: var(--text-dim);">Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
@@ -85,5 +107,6 @@
         </div>
     </footer>
 </body>
+
 
 </html>
