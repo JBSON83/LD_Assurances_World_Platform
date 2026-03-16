@@ -1,0 +1,12 @@
+.git
+.github
+Dossier fiscal LD ASSURANCES
+FICHE PRODUIT D'ASSURANCE
+docs
+knowledge_base
+marketing
+shared_data/contracts
+*.pyc
+__pycache__
+node_modules
+.env
