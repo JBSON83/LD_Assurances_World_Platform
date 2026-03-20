@@ -12,59 +12,185 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../titch.css">
     <style>
-        body {
-            padding: 4rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
+        body { padding: 0; min-height: 100vh; }
 
-        .momo-card {
-            max-width: 600px;
-            width: 100%;
-            padding: 4rem;
+        .hero-micro {
             text-align: center;
-            border-color: #ec489933;
+            padding: 6rem 2rem 3rem;
         }
 
-        .momo-logo {
-            width: 80px;
-            margin-bottom: 2rem;
+        .price-tag {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin: 1.5rem 0 0.5rem;
         }
 
-        .price-badge {
-            font-size: 4rem;
-            font-weight: 800;
-            color: var(--secondary);
-            margin: 2rem 0;
+        .pink { color: #ec4899; }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto 5rem;
+            padding: 0 2rem;
         }
+
+        .offer-card {
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.04);
+            transition: all 0.4s ease;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-8px);
+            border-color: #ec4899;
+            box-shadow: 0 30px 60px rgba(236, 72, 153, 0.15);
+        }
+
+        .offer-icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
+        .offer-price { font-size: 2.2rem; font-weight: 800; color: #ec4899; margin: 1rem 0; }
+        .offer-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .offer-card p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        .offer-card ul { list-style: none; padding: 0; text-align: left; margin-bottom: 2rem; }
+        .offer-card ul li { color: var(--text-dim); font-size: 0.9rem; padding: 0.4rem 0; }
     </style>
 </head>
 
 <body class="product-page">
-    <div class="product-header animate-fade-in">
-        <a href="../index.html"
-            style="color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block;">←
-            Retour</a>
-        <h1 class="text-gradient" style="background: linear-gradient(to right, #fff, #ec4899); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Micro Protection</h1>
-        <p>La sécurité pour tous, à partir de 100 FCFA par jour.</p>
+
+    <!-- Header Navigation -->
+    <header class="titch-header">
+        <div class="logo">
+            <h2>LD<span>.</span></h2>
+        </div>
+        <nav class="product-links">
+            <a href="../index.html" class="product-link">ACCUEIL</a>
+            <a href="auto.html" class="product-link">AUTO</a>
+            <a href="sante.html" class="product-link">SANTÉ</a>
+            <a href="habitation.html" class="product-link">HABITATION</a>
+            <a href="vie.html" class="product-link">VIE</a>
+            <a href="pme.html" class="product-link">PME</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero-micro animate-fade-in">
+        <a href="../index.html" class="product-link" style="display: inline-block; margin-bottom: 2rem;">← Retour à l'accueil</a>
+        <h1 class="text-gradient" style="font-size: clamp(2.5rem, 5vw, 4rem);">Micro <span style="background: linear-gradient(to right, #ec4899, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Protection</span></h1>
+        <p style="color: var(--text-dim); max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem; line-height: 1.6;">La sécurité pour <strong style="color: #fff;">tous les Camerounais</strong>, dès 100 FCFA par jour. Souscription et paiement 100% Mobile Money.</p>
+        <div class="price-tag"><span class="pink">100</span> <span style="font-size: 1.5rem; color: var(--text-dim);">FCFA / jour</span></div>
+        <p style="color: var(--text-dim); font-size: 0.9rem;">Soit 3 000 F/mois — moins cher qu'un café</p>
     </div>
 
-    <div class="animate-fade-in" style="max-width: 600px; margin: 0 auto; padding: 0 1.5rem;">
-        <div class="titch-glass" style="padding: 3rem; text-align: center; border-color: rgba(236, 72, 153, 0.2);">
-            <div style="font-size: 4rem; font-weight: 800; color: #ec4899; margin-bottom: 1.5rem;">
-                100 F<span style="font-size: 1.2rem; color: var(--text-dim);"> / jour</span>
-            </div>
+    <!-- Grille d'offres -->
+    <div class="offer-grid">
+        <!-- Offre 1 -->
+        <div class="offer-card">
+            <span class="offer-icon">🏥</span>
+            <h3>HOSPI EXPRESS</h3>
+            <p>Couverture hospitalisation d'urgence pour vous et votre famille, activable par SMS.</p>
+            <ul>
+                <li>✓ Frais d'hospitalisation (50 000 F)</li>
+                <li>✓ Indemnité journalière maladie</li>
+                <li>✓ Décès accidentel (500 000 F)</li>
+                <li>✓ Activation en 2 min via MoMo</li>
+            </ul>
+            <div class="offer-price">100 F/jour</div>
+            <button class="titch-btn" style="width: 100%; background: #ec4899; border: none;" onclick="window.location.href='../pay.html'">Souscrire via MoMo</button>
+        </div>
 
-            <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 20px; margin-bottom: 2.5rem; border: 1px solid rgba(236, 72, 153, 0.1);">
-                <p style="font-weight: 600; margin-bottom: 0.5rem; color: white;">Couverture Hospitalisation & Prévoyance</p>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">Souscription et paiement 100% Mobile Money.</p>
-            </div>
+        <!-- Offre 2 — Featured -->
+        <div class="offer-card" style="border-color: #ec4899; background: rgba(236,72,153,0.05); transform: translateY(-8px); position: relative;">
+            <div style="background: linear-gradient(to right, #ec4899, #f97316); color: white; font-size: 0.7rem; padding: 0.3rem 1.2rem; border-radius: 20px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 1px;">LE + POPULAIRE</div>
+            <span class="offer-icon">🛡️</span>
+            <h3>FAMILLE PROTÉGÉE</h3>
+            <p>Le pack idéal : santé + prévoyance pour toute la famille, avec remboursements via Orange Money.</p>
+            <ul>
+                <li>✓ Frais médicaux (200 000 F)</li>
+                <li>✓ Maternité & accouchement</li>
+                <li>✓ Décès chef de famille (1 500 000 F)</li>
+                <li>✓ Protection jusqu'à 4 enfants</li>
+            </ul>
+            <div class="offer-price" style="font-size: 2.5rem;">250 F/jour</div>
+            <button class="titch-btn pulse" style="width: 100%; background: linear-gradient(to right, #ec4899, #f97316); color: white; border: none;" onclick="window.location.href='../pay.html'">Protéger ma famille</button>
+        </div>
 
-            <button class="titch-btn pulse" style="background: #ec4899; color: white; width: 100%; border: none;">Payer via MoMo / Orange</button>
+        <!-- Offre 3 -->
+        <div class="offer-card">
+            <span class="offer-icon">🏪</span>
+            <h3>MICRO COMMERCE</h3>
+            <p>Assurance dédiée aux petits commerçants, artisans et vendeurs de rue. Protégez votre activité.</p>
+            <ul>
+                <li>✓ incendie du stock (500 000 F)</li>
+                <li>✓ Vol avec effraction</li>
+                <li>✓ Responsabilité civile</li>
+                <li>✓ Indemnité chômage partiel</li>
+            </ul>
+            <div class="offer-price">400 F/jour</div>
+            <button class="titch-btn" style="width: 100%; background: #ec4899; border: none;" onclick="window.location.href='../pay.html'">Protéger mon commerce</button>
         </div>
     </div>
+
+    <!-- Comment ça marche -->
+    <section class="expert-section animate-fade-in" style="text-align: center;">
+        <h2 class="text-gradient">Souscription en 3 étapes</h2>
+        <p class="section-subtitle">Pas de paperasse. Pas de déplacement. Juste votre téléphone.</p>
+        <div class="steps-grid" style="max-width: 900px; margin: 3rem auto 0;">
+            <div class="step-card expert-card" style="text-align: center;">
+                <span class="benefit-icon">📱</span>
+                <h3>Choisissez</h3>
+                <p>Sélectionnez votre formule ci-dessus. Obtenez votre tarif en 30 secondes.</p>
+            </div>
+            <div class="step-card expert-card" style="text-align: center;">
+                <span class="benefit-icon">💳</span>
+                <h3>Payez</h3>
+                <p>Composez votre code MoMo ou Orange Money. Validation instantanée par SMS.</p>
+            </div>
+            <div class="step-card expert-card" style="text-align: center;">
+                <span class="benefit-icon">✅</span>
+                <h3>Êtes Couvert</h3>
+                <p>Votre certificat arrive sur WhatsApp. Couverture active dès le paiement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Canaux Directs -->
+    <div id="direct-channels">
+        <a href="https://wa.me/237640656793" class="channel-btn whatsapp" data-tooltip="WhatsApp" target="_blank">
+            <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.733 5.307 2.016 7.64L0 32l8.6-.2.03-.016C10.875 31.135 13.344 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm-3.136 21.64c-.452-.02-.876-.236-1.12-.605-.18-.276-1.504-2.528-2.616-4.32-.2-.336-.316-.716-.316-1.12 0-1.12.91-2.03 2.03-2.03h.71c.11 0 .216.036.31.09.28.16.54.49.54 1.13 0 .44-.19.86-.5 1.14l-1.04.93s.06.12.13.25c.67 1.14 1.76 2.37 2.92 3.05.13.07.25.13.25.13l.93-1.04c.28-.31.7-.5 1.14-.5.64 0 .97.26 1.13.54.05.09.09.2.09.31v.71c0 1.12-.91 2.03-2.03 2.03-.4 0-.78-.11-1.12-.31-1.79-1.11-4.04-2.43-4.32-2.61-.37-.24-.58-.67-.6-1.12z"/></svg>
+        </a>
+        <a href="https://t.me/ldassurances" class="channel-btn telegram" data-tooltip="Telegram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-1.181 4.908-1.683 7.55-.213 1.119-.623 1.493-1.021 1.53-.865.08-1.521-.571-2.359-1.121-1.312-.861-2.053-1.393-3.328-2.233-1.474-.972-.518-1.506.321-2.379.22-.228 4.037-3.702 4.112-4.022.01-.041.018-.194-.074-.275-.092-.081-.227-.053-.325-.031-.138.031-2.35 1.494-6.626 4.381-.626.431-1.192.641-1.698.629-.556-.013-1.625-.316-2.42-.575-.975-.318-1.748-.487-1.68-.975.029-.244.364-.492 1.004-.744 3.924-1.708 6.541-2.835 7.848-3.38 3.743-1.558 4.52-1.829 5.027-1.839.112-.002.364.026.527.158.138.112.176.262.188.375.013.111.026.362.011.534z"/></svg>
+        </a>
+    </div>
+
+    <!-- Footer Légal Unifié -->
+    <footer class="titch-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3 class="text-gradient">LD Assurances SA</h3>
+                <p>L'excellence digitale au service de votre foyer et de votre entreprise au Cameroun. Première plateforme d'assurance agentique.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Siège Social</h4>
+                <p>Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Tél: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@ldassurances.cm</p>
+            </div>
+            <div class="footer-col">
+                <h4>Informations Légales</h4>
+                <p>NIU: P076413521919Z<br>Capital Social: 5 000 000 000 FCFA (Entièrement Libéré)<br>Agréé CIMA<br>© 2026 LD Assurances S.A.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
