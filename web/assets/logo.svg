@@ -1,0 +1,33 @@
+<svg width="250" height="80" viewBox="0 0 250 80" xmlns="http://www.w3.org/2000/svg">
+    <!-- Shield Container -->
+    <g transform="translate(10, 10)">
+        <!-- Blue Shield Background -->
+        <path d="M0 10C0 4.47715 4.47715 0 10 0H50C55.5228 0 60 4.47715 60 10V35C60 50 45 60 30 65C15 60 0 50 0 35V10Z" fill="#1e40af" opacity="0.1"/>
+        
+        <!-- Blue Curve -->
+        <path d="M5 10C5 30 25 55 55 45" fill="none" stroke="#1e40af" stroke-width="4" stroke-linecap="round"/>
+        
+        <!-- Green Curve -->
+        <path d="M55 10C55 30 35 55 5 45" fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+        
+        <!-- Inner Shield Base -->
+        <path d="M30 60C45 55 55 45 55 30V15C55 12.2386 52.7614 10 50 10H10C7.23858 10 5 12.2386 5 15V30C5 45 15 55 30 60Z" fill="#1e40af" />
+        
+        <!-- Person Silhouette -->
+        <circle cx="30" cy="28" r="7" fill="white" />
+        <path d="M18 48C18 38 42 38 42 48V50H18V48Z" fill="white" />
+        
+        <!-- Protecting Hand / Bottom Swoosh -->
+        <path d="M15 45C22 55 38 55 45 45" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- Brand Name Text -->
+    <text x="80" y="42" font-family="Outfit, sans-serif" font-size="28" font-weight="800" fill="#22c55e">JEM</text>
+    <text x="138" y="42" font-family="Outfit, sans-serif" font-size="28" font-weight="800" fill="#1e40af">ASSURANCE</text>
+    
+    <!-- Separator Line -->
+    <rect x="80" y="52" width="160" height="1.5" fill="#1e40af" opacity="0.3" />
+    
+    <!-- Subtitle / Website -->
+    <text x="80" y="68" font-family="Outfit, sans-serif" font-size="12" font-weight="600" fill="#1e40af" letter-spacing="0.5">www.jamassurance.online</text>
+</svg>

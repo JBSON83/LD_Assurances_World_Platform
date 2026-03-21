@@ -1,5 +1,5 @@
 /**
- * LD Assurances - Universal Pixel Manager
+ * Jemassurance - Universal Pixel Manager
  * Centralized tracking for FB, Google, TikTok and internal analytics.
  */
 const LD_Pixel = {
