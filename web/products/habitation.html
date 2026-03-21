@@ -14,9 +14,27 @@
 </head>
 
 <body class="product-page">
+    <header class="titch-header">
+        <a href="../index.html" class="logo-link">
+            <img src="../assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
+        </a>
+        <nav class="product-links">
+            <a href="../index.html" class="product-link">ACCUEIL</a>
+            <a href="auto.html" class="product-link">AUTO</a>
+            <a href="sante.html" class="product-link">SANTÉ</a>
+            <a href="habitation.html" class="product-link">HABITATION</a>
+            <a href="voyage.html" class="product-link">VOYAGE</a>
+            <a href="vie.html" class="product-link">VIE</a>
+            <a href="pme.html" class="product-link">PME</a>
+        </nav>
+        <div class="lang-switcher">
+            <a href="#" class="lang-btn active">FR</a>
+            <a href="../en/products/habitation.html" class="lang-btn">EN</a>
+        </div>
+    </header>
     <div class="product-header animate-fade-in" style="text-align: center; padding: 4rem 2rem;">
         <a href="../index.html" class="product-link" style="color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block; font-weight: 600;">← Retour à l'accueil</a>
-        <h1 class="text-gradient" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Multirisque <span class="gold-gradient">Habitation</span></h1>
+        <h1 class="text-gradient" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Multirisque <span class="brand-gradient">Habitation</span></h1>
         <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">Votre foyer est votre sanctuaire. Protégez votre patrimoine et votre famille avec la couverture la plus robuste du Cameroun.</p>
         
         <div style="margin-top: 2.5rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; opacity: 0.8;">
@@ -72,43 +90,40 @@
 
 
     <!-- Canaux Directs (WhatsApp & Telegram) -->
-    <div id="direct-channels" style="position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000;">
-        <a href="https://wa.me/237640656793" class="channel-btn whatsapp" style="width: 50px; height: 50px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" target="_blank">
-            <svg viewBox="0 0 32 32" style="width: 28px; height: 28px; fill: white;"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.733 5.307 2.016 7.64L0 32l8.6-.2.03-.016C10.875 31.135 13.344 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm-3.136 21.64c-.452-.02-.876-.236-1.12-.605-.18-.276-1.504-2.528-2.616-4.32-.2-.336-.316-.716-.316-1.12 0-1.12.91-2.03 2.03-2.03h.71c.11 0 .216.036.31.09.28.16.54.49.54 1.13 0 .44-.19.86-.5 1.14l-1.04.93s.06.12.13.25c.67 1.14 1.76 2.37 2.92 3.05.13.07.25.13.25.13l.93-1.04c.28-.31.7-.5 1.14-.5.64 0 .97.26 1.13.54.05.09.09.2.09.31v.71c0 1.12-.91 2.03-2.03 2.03-.4 0-.78-.11-1.12-.31-1.79-1.11-4.04-2.43-4.32-2.61-.37-.24-.58-.67-.6-1.12z"/></svg>
+    <div id="direct-channels">
+        <a href="https://wa.me/237640656793" class="channel-btn whatsapp" data-tooltip="WhatsApp" target="_blank">
+            <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.733 5.307 2.016 7.64L0 32l8.6-.2.03-.016C10.875 31.135 13.344 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm-3.136 21.64c-.452-.02-.876-.236-1.12-.605-.18-.276-1.504-2.528-2.616-4.32-.2-.336-.316-.716-.316-1.12 0-1.12.91-2.03 2.03-2.03h.71c.11 0 .216.036.31.09.28.16.54.49.54 1.13 0 .44-.19.86-.5 1.14l-1.04.93s.06.12.13.25c.67 1.14 1.76 2.37 2.92 3.05.13.07.25.13.25.13l.93-1.04c.28-.31.7-.5 1.14-.5.64 0 .97.26 1.13.54.05.09.09.2.09.31v.71c0 1.12-.91 2.03-2.03 2.03-.4 0-.78-.11-1.12-.31-1.79-1.11-4.04-2.43-4.32-2.61-.37-.24-.58-.67-.6-1.12z"/></svg>
         </a>
-        <a href="https://t.me/ldassurances" class="channel-btn telegram" style="width: 50px; height: 50px; background: #0088cc; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" target="_blank">
-            <svg viewBox="0 0 24 24" style="width: 25px; height: 25px; fill: white;"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-1.181 4.908-1.683 7.55-.213 1.119-.623 1.493-1.021 1.53-.865.08-1.521-.571-2.359-1.121-1.312-.861-2.053-1.393-3.328-2.233-1.474-.972-.518-1.506.321-2.379.22-.228 4.037-3.702 4.112-4.022.01-.041.018-.194-.074-.275-.092-.081-.227-.053-.325-.031-.138.031-2.35 1.494-6.626 4.381-.626.431-1.192.641-1.698.629-.556-.013-1.625-.316-2.42-.575-.975-.318-1.748-.487-1.68-.975.029-.244.364-.492 1.004-.744 3.924-1.708 6.541-2.835 7.848-3.38 3.743-1.558 4.52-1.829 5.027-1.839.112-.002.364.026.527.158.138.112.176.262.188.375.013.111.026.362.011.534z"/></svg>
+        <a href="https://t.me/ldassurances" class="channel-btn telegram" data-tooltip="Telegram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-1.181 4.908-1.683 7.55-.213 1.119-.623 1.493-1.021 1.53-.865.08-1.521-.571-2.359-1.121-1.312-.861-2.053-1.393-3.328-2.233-1.474-.972-.518-1.506.321-2.379.22-.228 4.037-3.702 4.112-4.022.01-.041.018-.194-.074-.275-.092-.081-.227-.053-.325-.031-.138.031-2.35 1.494-6.626 4.381-.626.431-1.192.641-1.698.629-.556-.013-1.625-.316-2.42-.575-.975-.318-1.748-.487-1.68-.975.029-.244.364-.492 1.004-.744 3.924-1.708 6.541-2.835 7.848-3.38 3.743-1.558 4.52-1.829 5.027-1.839.112-.002.364.026.527.158.138.112.176.262.188.375.013.111.026.362.011.534z"/></svg>
         </a>
     </div>
 
     <!-- Footer Légal Unifié -->
-    <footer style="margin-top: 5rem; padding: 4rem 2rem; background: rgba(15, 23, 42, 0.4); border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
-        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; text-align: left;">
-            <div>
-                <h3 class="text-gradient">Jemassurance SA</h3>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">L'excellence digitale au service de votre foyer et de votre entreprise au Cameroun. Première plateforme d'assurance agentique.</p>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 1rem;">Siège Social</h4>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 1rem;">Contact</h4>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">Tél: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jamassurance.online</p>
-            </div>
-            <div>
-                <div class="footer-brand">
-                    <img src="../assets/logo.svg" alt="Jemassurance Logo" class="logo-footer">
-                    <p>Protection premium pour votre foyer au Cameroun. Excellence et Sérénité.</p>
+    <footer class="titch-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="../assets/logo.svg" alt="Jemassurance Logo" class="logo-footer">
+                <div class="lang-switcher">
+                    <a href="#" class="lang-btn active">FR</a>
+                    <a href="../en/products/habitation.html" class="lang-btn">EN</a>
                 </div>
-                <div class="footer-col">
-                    <h4 style="margin-bottom: 1rem;">Informations Légales</h4>
-                    <p style="font-size: 0.8rem; color: var(--text-dim);">NIU: P076413521919Z<br>Capital Social: 5 000 000 000 FCFA (Entièrement Libéré)<br>Agréé CIMA<br>© 2026 Jemassurance S.A.</p>
-                </div>
+                <p>Protégez votre foyer avec Jemassurance. Excellence et Sérénité au Cameroun.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Siège Social</h4>
+                <p>Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Tél: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jamassurance.online</p>
+            </div>
+            <div class="footer-col">
+                <h4>Informations Légales</h4>
+                <p style="font-size: 0.8rem; color: var(--text-dim);">NIU: P076413521919Z<br>Capital Social: 5 000 000 000 FCFA (Entièrement Libéré)<br>Agréé CIMA<br>© 2026 Jemassurance S.A.</p>
             </div>
         </div>
     </footer>
 </body>
-
 
 </html>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paiement Sécurisé | Jemassurance</title>
+    <title>Secure Payment | Jemassurance</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="titch.css">
-    <script src="pixel.js"></script>
+    <link rel="stylesheet" href="../titch.css">
+    <script src="../pixel.js"></script>
     <style>
         body {
             padding: 4rem 2rem;
@@ -74,13 +74,13 @@
 
 <body>
     <div class="lang-switcher" style="position: absolute; top: 20px; right: 20px; z-index: 1000;">
-        <a href="#" class="lang-btn active">FR</a>
-        <a href="en/pay.html" class="lang-btn">EN</a>
+        <a href="../pay.html" class="lang-btn">FR</a>
+        <a href="#" class="lang-btn active">EN</a>
     </div>
     <div class="payment-container animate-fade-in">
         <div class="checkout titch-glass" style="padding: 3rem;">
-            <h1 class="text-gradient">Finalisez votre protection</h1>
-            <p style="color: var(--text-dim);">Toutes les transactions sont sécurisées et cryptées.</p>
+            <h1 class="text-gradient">Finalize Your Protection</h1>
+            <p style="color: var(--text-dim);">All transactions are secure and encrypted.</p>
 
             <div class="payment-methods">
                 <div class="method-btn" onclick="selectMethod('momo')">
@@ -89,39 +89,39 @@
                 </div>
                 <div class="method-btn" onclick="selectMethod('card')">
                     <div style="width: 40px; height: 40px; background: #3b82f6; border-radius: 8px;"></div>
-                    <span>Carte Bancaire (VISA / Mastercard)</span>
+                    <span>Bank Card (VISA / Mastercard)</span>
                 </div>
             </div>
 
             <div id="card-form" class="card-form">
-                <input type="text" placeholder="Numéro de carte">
+                <input type="text" placeholder="Card Number">
                 <div style="display: flex; gap: 1rem;">
                     <input type="text" placeholder="MM/YY">
                     <input type="text" placeholder="CVC">
                 </div>
-                <button onclick="processPayment()" class="titch-btn" style="width: 100%;">Payer maintenant</button>
+                <button onclick="processPayment()" class="titch-btn" style="width: 100%;">Pay Now</button>
             </div>
 
             <div id="momo-form" class="card-form">
-                <input type="text" placeholder="Numéro de téléphone (6xx xxx xxx)">
+                <input type="text" placeholder="Phone Number (6xx xxx xxx)">
                 <button onclick="processPayment()" class="titch-btn"
-                    style="width: 100%; background: var(--secondary); color: black;">Payer avec Mobile Money</button>
+                    style="width: 100%; background: var(--secondary); color: black;">Pay with Mobile Money</button>
             </div>
         </div>
 
         <div class="summary titch-glass">
-            <h3>Récapitulatif</h3>
+            <h3>Summary</h3>
             <div style="margin-top: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                    <span>Assurance Auto Premium</span>
+                    <span>Premium Auto Insurance</span>
                     <span id="p-amount">85,000 F</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; color: #10b981;">
-                    <span>Promotion "First Year"</span>
+                    <span>"First Year" Promotion</span>
                     <span>-5,000 F</span>
                 </div>
-                <a href="index.html" class="logo-link" style="display: block; margin-top: 1rem;">
-                    <img src="assets/logo.svg" alt="Jemassurance Logo" class="logo-img" style="height: 35px;">
+                <a href="../index.html" class="logo-link" style="display: block; margin-top: 1rem;">
+                    <img src="../assets/logo.svg" alt="Jemassurance Logo" class="logo-img" style="height: 35px;">
                 </a>
             </div>
             <div
@@ -129,8 +129,7 @@
                 <span>Total</span>
                 <span id="final-total">80,000 F</span>
             </div>
-            <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 2rem;">En payant, vous acceptez nos
-                conditions générales de vente.</p>
+            <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 2rem;">By paying, you accept our general terms and conditions.</p>
         </div>
     </div>
 
@@ -142,8 +141,8 @@
         }
 
         function processPayment() {
-            LD_Pixel.trackPurchase(80000, "XAF", "Assurance Auto Premium");
-            alert("Traitement sécurisé en cours... (Simulation API)");
+            LD_Pixel.trackPurchase(80000, "XAF", "Premium Auto Insurance");
+            alert("Secure processing in progress... (API Simulation)");
             window.location.href = "thanks.html";
         }
     </script>
