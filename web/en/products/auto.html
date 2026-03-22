@@ -45,82 +45,93 @@
 
 <body class="product-page">
     <!-- Header Navigation -->
-    <header class="titch-header">
-        <a href="../index.html" class="logo-link">
-            <img src="../../assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
-        </a>
-        <nav class="product-links">
-            <a href="../index.html" class="product-link">HOME</a>
-            <a href="auto.html" class="product-link">AUTO</a>
-            <a href="sante.html" class="product-link">HEALTH</a>
-            <a href="habitation.html" class="product-link">HOME</a>
-            <a href="voyage.html" class="product-link">TRAVEL</a>
-            <a href="vie.html" class="product-link">LIFE</a>
-            <a href="pme.html" class="product-link">SME</a>
-        </nav>
-        <div class="lang-switcher">
-            <a href="../../products/auto.html" class="lang-btn">FR</a>
-            <a href="#" class="lang-btn active">EN</a>
+    <header class="titch-header stitch-center">
+        <div class="stitch-max-width stitch-center" style="flex-direction: row; justify-content: space-between; width: 100%;">
+            <div class="lang-switcher" style="margin-left: 0; margin-right: 1.5rem;">
+                <a href="../../products/auto.html" class="lang-btn">FR</a>
+                <a href="#" class="lang-btn active">EN</a>
+            </div>
+            <a href="../index.html" class="logo-link" style="margin-right: auto;">
+                <img src="../../assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
+            </a>
+            <nav class="product-links">
+                <a href="../index.html" class="product-link">HOME</a>
+                <a href="auto.html" class="product-link">AUTO</a>
+                <a href="sante.html" class="product-link">HEALTH</a>
+                <a href="habitation.html" class="product-link">HOME</a>
+                <a href="voyage.html" class="product-link">TRAVEL</a>
+                <a href="vie.html" class="product-link">LIFE</a>
+                <a href="pme.html" class="product-link">SME</a>
+            </nav>
         </div>
     </header>
 
     <!-- Product Hero -->
-    <div class="product-header animate-fade-in">
-        <h1 class="text-gradient hero-title">Premium <span class="brand-gradient">Car Insurance</span></h1>
-        <p class="section-subtitle">Take the road with absolute peace of mind. The most comprehensive protection in Cameroon, managed by our experts and AI.</p>
+    <div class="product-header animate-fade-in stitch-center" style="padding: 100px 5%;">
+        <h1 class="text-gradient hero-title text-center" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1.5rem;">Premium <span class="brand-gradient-glow">Car Insurance</span></h1>
+        <p class="section-subtitle text-center" style="max-width: 800px; margin: 0 auto; font-size: 1.25rem;">Take the road with absolute peace of mind. The most comprehensive protection in Cameroon, managed by our experts and AI.</p>
     </div>
 
     <!-- Coverage Grid: 3 Offers -->
-    <div class="steps-grid" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
-        <div class="step-card titch-glass">
+    <div class="steps-grid stitch-grid-3" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
+        <div class="step-card expert-card stitch-border-refined stitch-center">
             <span class="step-num">01</span>
-            <h3 style="margin-top: 1rem;">THIRD PARTY ONLY</h3>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">The mandatory legal base to drive in full compliance.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 0.5rem;">✓ Civil Liability (RC)</li>
-                <li style="margin-bottom: 0.5rem;">✓ Legal Defense & Recourse</li>
-                <li style="margin-bottom: 0.5rem;">✓ 24/7 Assistance</li>
+            <h3 class="text-center" style="margin-top: 1rem;">THIRD PARTY ONLY</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">The mandatory legal base to drive in full compliance.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Civil Liability (RC)</li>
+                <li style="margin-bottom: 0.8rem;">✓ Legal Defense & Recourse</li>
+                <li style="margin-bottom: 0.8rem;">✓ 24/7 Assistance</li>
             </ul>
-            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;" onclick="window.location.href='../../pay.html'">Select</button>
+            <button class="titch-btn" style="width: 100%; padding: 18px;" onclick="window.location.href='../../pay.html'">Select</button>
         </div>
 
-        <div class="step-card titch-glass" style="border-color: var(--secondary); transform: translateY(-10px); position: relative;">
-            <div style="background: var(--secondary-gradient); color: black; font-size: 0.7rem; padding: 0.3rem 1.2rem; border-radius: 20px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 1px;">POPULAR</div>
-            <span class="step-num" style="color: var(--secondary);">02</span>
-            <h3 style="margin-top: 1rem; color: var(--secondary);">COLLISION DAMAGE</h3>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">The ideal compromise to protect your vehicle in case of an accident with an identified third party.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 0.5rem;">✓ Third Party Only +</li>
-                <li style="margin-bottom: 0.5rem;">✓ Theft and Fire</li>
-                <li style="margin-bottom: 0.5rem;">✓ Windshield Breakage</li>
-                <li style="margin-bottom: 0.5rem;">✓ Collision Damage</li>
+        <div class="step-card expert-card stitch-border-refined stitch-center" style="border-color: var(--secondary); transform: translateY(-10px); position: relative;">
+            <div style="background: var(--secondary-gradient); color: white; font-size: 0.85rem; padding: 0.5rem 2rem; border-radius: 20px; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.4); z-index: 10; white-space: nowrap;">POPULAR</div>
+            <span class="step-num" style="color: var(--secondary); opacity: 0.1;">02</span>
+            <h3 class="text-center" style="margin-top: 1rem; color: var(--secondary);">COLLISION DAMAGE</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">The ideal compromise to protect your vehicle in case of an accident.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Third Party Only +</li>
+                <li style="margin-bottom: 0.8rem;">✓ Theft and Fire</li>
+                <li style="margin-bottom: 0.8rem;">✓ Windshield Breakage</li>
+                <li style="margin-bottom: 0.8rem;">✓ Collision Damage</li>
             </ul>
-            <button class="titch-btn pulse" style="width: 100%; margin-top: 2rem; padding: 1rem; background: var(--secondary-gradient); color: black;" onclick="window.location.href='../../pay.html'">Go Premium</button>
+            <button class="titch-btn pulse" style="width: 100%; padding: 18px; background: var(--secondary-gradient); color: black;" onclick="window.location.href='../../pay.html'">Go Premium</button>
         </div>
 
-        <div class="step-card titch-glass">
+        <div class="step-card expert-card stitch-border-refined stitch-center">
             <span class="step-num">03</span>
-            <h3 style="margin-top: 1rem;">COMPREHENSIVE</h3>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Absolute protection for your vehicle, regardless of the circumstances.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 0.5rem;">✓ Collision Damage +</li>
-                <li style="margin-bottom: 0.5rem;">✓ All-Accident Damage</li>
-                <li style="margin-bottom: 0.5rem;">✓ Vandalism & Natural Events</li>
-                <li style="margin-bottom: 0.5rem;">✓ New Value (Optional)</li>
+            <h3 class="text-center" style="margin-top: 1rem;">COMPREHENSIVE</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Absolute protection for your vehicle, regardless of the circumstances.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Collision Damage +</li>
+                <li style="margin-bottom: 0.8rem;">✓ All-Accident Damage</li>
+                <li style="margin-bottom: 0.8rem;">✓ Vandalism & Natural Events</li>
+                <li style="margin-bottom: 0.8rem;">✓ New Value (Optional)</li>
             </ul>
-            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;" onclick="window.location.href='../../pay.html'">Gold Subscription</button>
+            <button class="titch-btn" style="width: 100%; padding: 18px;" onclick="window.location.href='../../pay.html'">Gold Subscription</button>
+        </div>
+    </div>
+
+    <!-- Section CTA Dédiée -->
+    <div class="stitch-center" style="margin-bottom: 8rem; padding: 0 2rem;">
+        <div class="expert-card stitch-border-refined stitch-center" style="max-width: 800px; padding: 4rem; background: var(--light-glass);">
+            <h2 class="text-gradient">Ready to hit the road safely?</h2>
+            <p style="color: var(--text-dim); margin-bottom: 2.5rem; max-width: 500px;">Our agents accompany you to finalize your car protection in a few minutes via Lola.</p>
+            <button class="titch-btn pulse" style="padding: 20px 60px; font-size: 1.1rem;" onclick="toggleChat()">Get my Quote via Lola</button>
         </div>
     </div>
 
     <!-- Instant Premium Simulator -->
-    <section style="padding: 80px 20px; text-align: center;">
-        <div class="titch-glass" style="max-width: 900px; margin: 0 auto; padding: 4rem 2rem;">
-            <h2 class="text-gradient" style="margin-bottom: 0.5rem;">Instant <span class="brand-gradient">Premium Simulator</span></h2>
-            <p style="color: var(--text-dim); margin-bottom: 2.5rem;">Get an estimate of your premium in seconds.</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: left; margin-bottom: 3rem;">
+    <section class="stitch-center" style="padding: 120px 5%;">
+        <div class="titch-glass stitch-max-width stitch-center stitch-border-refined" style="padding: 5rem 3rem;">
+            <h2 class="text-gradient text-center" style="font-size: 3.5rem; margin-bottom: 1rem;">Get my <span class="brand-gradient-glow">Auto Quote</span></h2>
+            <p class="text-center" style="color: var(--text-dim); margin-bottom: 4rem; max-width: 600px;">Get a precise and instant estimate of your insurance premium.</p>
+            <div class="stitch-center" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; width: 100%; text-align: left; margin-bottom: 4rem;">
                 <div class="form-group">
-                    <label style="color: var(--text-dim); font-weight: 600; margin-bottom: 0.5rem; display: block;">Vehicle Type & Power</label>
-                    <select id="auto-type" class="titch-input" style="width: 100%;">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Vehicle Power</label>
+                    <select id="auto-type" class="titch-input">
                         <option value="4">Private Vehicle (4-7 HP)</option>
                         <option value="8">Private Vehicle (8-10 HP)</option>
                         <option value="11">High Power (11 HP+)</option>
@@ -128,24 +139,27 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label style="color: var(--text-dim); font-weight: 600; margin-bottom: 0.5rem; display: block;">Vehicle Value</label>
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Estimated Value (FCFA)</label>
                     <input type="text" class="titch-input" id="auto-valeur" placeholder="Ex: 5,000,000 F">
                 </div>
                 <div class="form-group">
-                    <label style="color: var(--text-dim); font-weight: 600; margin-bottom: 0.5rem; display: block;">Usage</label>
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Usage & Duration</label>
                     <select class="titch-input" id="auto-usage">
-                        <option>Private / Leisure</option>
-                        <option>Professional</option>
-                        <option>Transport</option>
+                        <option value="1.0">Private / Leisure (1 Year)</option>
+                        <option value="0.6">Private / Leisure (6 Months)</option>
+                        <option value="0.35">Private / Leisure (3 Months)</option>
+                        <option value="0.15">Temporary (15 Days)</option>
+                        <option value="0.2">Transit / Border (30 Days)</option>
+                        <option value="1.5">Public Transport / Taxi (1 Year)</option>
                     </select>
                 </div>
             </div>
-            <button class="titch-btn" style="padding: 1rem 3rem;" onclick="calculateAuto()">Calculate My Instant Rate</button>
+            <button class="titch-btn pulse" style="padding: 22px 60px; font-size: 1rem;" onclick="calculateAuto()">Calculate My Instant Rate</button>
 
             <!-- Result -->
-            <div id="auto-result" class="price-display">
-                <p style="color: var(--text-dim); margin-bottom: 1rem;">Estimated Annual Premium</p>
-                <h2 id="auto-price">—</h2>
+            <div id="auto-result" class="price-display stitch-center" style="margin-top: 4rem; width: 100%; max-width: 500px; background: rgba(30, 64, 175, 0.05); border: 2px solid var(--primary); border-radius: 32px; padding: 3rem;">
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">Estimation of your annual premium</p>
+                <h2 id="auto-price" style="font-size: 3.5rem; color: var(--secondary);">—</h2>
                 <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 1rem;">Indicative rate excluding taxes. An advisor will confirm your quote.</p>
             </div>
         </div>
@@ -161,57 +175,126 @@
         </a>
     </div>
 
-    <!-- Unified Legal Footer -->
-    <footer class="titch-footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="../../assets/logo.svg" alt="Jemassurance Logo" class="logo-footer">
-                <div class="lang-switcher">
-                    <a href="../../products/auto.html" class="lang-btn">FR</a>
-                    <a href="#" class="lang-btn active">EN</a>
+    <!-- Unified Legal Footer Relooked -->
+    <footer class="titch-footer stitch-center" style="margin-top: 5rem;">
+        <div class="stitch-max-width">
+            <div class="footer-grid">
+                <div class="footer-brand stitch-center" style="text-align: center;">
+                    <img src="../../assets/logo.svg" alt="Jemassurance Logo" class="logo-footer">
+                    <p style="max-width: 300px; margin-bottom: 2rem;">Leader in digital and agentic insurance in Cameroon. Excellence, Proximity and Innovation.</p>
+                    <div class="lang-switcher">
+                        <a href="../../products/auto.html" class="lang-btn">FR</a>
+                        <a href="#" class="lang-btn active">EN</a>
+                    </div>
                 </div>
-                <p>Leader in digital insurance in Cameroon. Excellence and Innovation.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Headquarters</h4>
-                <p>Carrefour Arno, Akwa<br>Douala, Cameroon<br>BP: 2854</p>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>Tel: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jamassurance.online</p>
-            </div>
-            <div class="footer-col">
-                <h4>Legal Information</h4>
-                <p>TIN: P076413521919Z<br>Social Capital: 5,000,000,000 FCFA (Fully Paid)<br>CIMA Approved<br>© 2026 Jemassurance S.A.</p>
+                <div class="footer-col stitch-center" style="text-align: center;">
+                    <h4>Headquarters</h4>
+                    <p>Carrefour Arno, Akwa<br>Douala, Cameroon<br>BP: 2854</p>
+                </div>
+                <div class="footer-col stitch-center" style="text-align: center;">
+                    <h4>Contact</h4>
+                    <p>Tel: +237 640 65 67 93<br>233 43 99 24<br>Email: contact@jemassurance.online</p>
+                </div>
+                <div class="footer-col stitch-center" style="text-align: center;">
+                    <h4>Legal</h4>
+                    <p>TIN: P076413521919Z<br>Capital: 5B FCFA<br>© 2026 Jemassurance S.A.</p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- AI Chat Widget -->
+    <div id="chat-widget">
+        <div id="chat-window" class="titch-glass">
+            <div class="chat-header">
+                <div class="avatar">L</div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem;">Lola</div>
+                    <div style="font-size: 0.7rem; opacity: 0.8; display: flex; align-items: center; gap: 5px;">
+                        <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></span>
+                        Agent Intelligence Active
+                    </div>
+                </div>
+            </div>
+            <div id="chat-body" class="chat-body">
+                <div class="msg msg-ai">Hello! I am Lola, your Jemassurance AI assistant. How can I help you?</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Ask your question...">
+                <button onclick="sendMessage()" class="titch-btn" style="padding: 0.8rem; min-width: 50px;">→</button>
+            </div>
+        </div>
+        <div id="chat-trigger" onclick="toggleChat()">
+            <svg viewBox="0 0 24 24" style="width: 30px; height: 30px; fill: white;">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+            </svg>
+        </div>
+    </div>
+
     <script>
+        function toggleChat() {
+            const chatWindow = document.getElementById('chat-window');
+            chatWindow.classList.toggle('active');
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const body = document.getElementById('chat-body');
+            const text = input.value.trim();
+            if (!text) return;
+
+            // User Message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'msg msg-user';
+            userMsg.textContent = text;
+            body.appendChild(userMsg);
+            input.value = '';
+
+            // AI Loading
+            const loadingMsg = document.createElement('div');
+            loadingMsg.className = 'msg msg-ai';
+            loadingMsg.textContent = '...';
+            body.appendChild(loadingMsg);
+            body.scrollTop = body.scrollHeight;
+
+            // Simulate AI Response (Agentic Feel)
+            setTimeout(() => {
+                loadingMsg.textContent = "I am processing your request. A Jemassurance expert will contact you if necessary or I can simulate your quote here.";
+                body.scrollTop = body.scrollHeight;
+            }, 1000);
+        }
+
         function calculateAuto() {
             const resultDiv = document.getElementById('auto-result');
             const priceEl = document.getElementById('auto-price');
             const btn = document.querySelector('[onclick="calculateAuto()"]');
+            
             const typeVal = document.getElementById('auto-type').value;
+            const usageCoeff = parseFloat(document.getElementById('auto-usage').value);
 
-            const originalText = btn.innerText;
-            btn.innerText = "Consulting Lola...";
+            btn.innerText = "ASAC Consultation by Lola...";
             btn.disabled = true;
 
-            // Rate simulation by power
-            const tarifs = { '4': '45,000 - 80,000 F', '8': '80,000 - 130,000 F', '11': '130,000 - 220,000 F', 'taxi': '180,000 - 350,000 F' };
-            const tarif = tarifs[typeVal] || '80,000 - 150,000 F';
+            // Base annual rates
+            const baseTarifs = { 
+                '4': 65000, 
+                '8': 95000, 
+                '11': 160000, 
+                'taxi': 250000 
+            };
+            
+            const base = baseTarifs[typeVal] || 85000;
 
             setTimeout(() => {
+                const total = Math.round(base * usageCoeff);
                 resultDiv.style.display = 'block';
                 resultDiv.classList.add('animate-fade-in');
-                priceEl.textContent = tarif + ' FCFA/year';
-                btn.innerText = "Continue to Payment";
+                priceEl.textContent = total.toLocaleString() + ' FCFA';
+                btn.innerText = "Finalize My Subscription";
                 btn.disabled = false;
                 btn.setAttribute('onclick', "window.location.href='../../pay.html'");
             }, 1200);
         }
     </script>
 </body>
-
 </html>

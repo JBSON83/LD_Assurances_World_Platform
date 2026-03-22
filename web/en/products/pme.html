@@ -85,69 +85,186 @@
 </head>
 
 <body class="product-page">
-    <header class="titch-header">
-        <a href="../index.html" class="logo-link">
-            <img src="../../assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
-        </a>
-        <nav class="product-links">
-            <a href="../index.html" class="product-link">HOME</a>
-            <a href="auto.html" class="product-link">AUTO</a>
-            <a href="sante.html" class="product-link">HEALTH</a>
-            <a href="habitation.html" class="product-link">HOME</a>
-            <a href="voyage.html" class="product-link">TRAVEL</a>
-            <a href="vie.html" class="product-link">LIFE</a>
-            <a href="pme.html" class="product-link">SME</a>
-        </nav>
-        <div class="lang-switcher">
-            <a href="../../products/pme.html" class="lang-btn">FR</a>
-            <a href="#" class="lang-btn active">EN</a>
+    <!-- Header Navigation -->
+    <header class="titch-header stitch-center">
+        <div class="stitch-max-width stitch-center" style="flex-direction: row; justify-content: space-between; width: 100%;">
+            <div class="lang-switcher" style="margin-left: 0; margin-right: 1.5rem;">
+                <a href="../../products/pme.html" class="lang-btn">FR</a>
+                <a href="#" class="lang-btn active">EN</a>
+            </div>
+            <a href="../index.html" class="logo-link" style="margin-right: auto;">
+                <img src="../../assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
+            </a>
+            <nav class="product-links">
+                <a href="../index.html" class="product-link">HOME</a>
+                <a href="auto.html" class="product-link">AUTO</a>
+                <a href="sante.html" class="product-link">HEALTH</a>
+                <a href="habitation.html" class="product-link">HOME</a>
+                <a href="voyage.html" class="product-link">TRAVEL</a>
+                <a href="vie.html" class="product-link">LIFE</a>
+                <a href="pme.html" class="product-link">SME</a>
+            </nav>
         </div>
     </header>
 
-    <div class="product-header animate-fade-in" style="text-align: center; padding: 4rem 2rem;">
-
-        <h1 class="text-gradient" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;"><span class="brand-gradient">SME</span> Solutions</h1>
-        <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">Your business deserves superior protection. Our specialized experts support your growth with tailor-made solutions.</p>
+    <div class="product-header animate-fade-in stitch-center" style="padding: 100px 5%;">
+        <h1 class="text-gradient hero-title text-center" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1.5rem;">SME <span class="brand-gradient-glow">Protection</span></h1>
+        <p class="section-subtitle text-center" style="max-width: 800px; margin: 0 auto; font-size: 1.25rem;">Boost your business resilience with tailor-made insurance solutions in Cameroon.</p>
     </div>
 
-    <div class="steps-grid" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
-        <div class="step-card titch-glass">
+    <div class="steps-grid stitch-grid-3" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
+        <div class="step-card expert-card stitch-border-refined stitch-center">
             <span class="step-num">01</span>
-            <h3 style="margin-top: 1rem;">PROFESSIONAL MULTI-RISK</h3>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Comprehensive protection for your premises, equipment, and stock.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left;">
-                <li style="margin-bottom: 0.5rem;">✓ Fire & Water Damage</li>
-                <li style="margin-bottom: 0.5rem;">✓ Theft & Vandalism</li>
-                <li style="margin-bottom: 0.5rem;">✓ Operating Loss</li>
-                <li style="margin-bottom: 0.5rem;">✓ Electronic Brissage</li>
+            <h3 class="text-center" style="margin-top: 1rem;">MULTI-RISK PRO</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Total protection for your premises, equipment, and stock.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Fire & Water Damage</li>
+                <li style="margin-bottom: 0.8rem;">✓ Theft & Vandalism</li>
+                <li style="margin-bottom: 0.8rem;">✓ Business Interruption</li>
             </ul>
-            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;" onclick="window.location.href='../../pay.html'">Get a Quote</button>
+            <button class="titch-btn" style="width: 100%; padding: 18px;" onclick="window.location.href='../../pay.html'">Select</button>
         </div>
-        <div class="step-card titch-glass" style="border-color: var(--secondary); transform: translateY(-10px);">
-            <div style="background: var(--secondary-gradient); color: black; font-size: 0.7rem; padding: 0.3rem 1.2rem; border-radius: 20px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 1px;">ESSENTIAL</div>
-            <span class="step-num" style="color: var(--secondary);">02</span>
-            <h3 style="margin-top: 1rem; color: var(--secondary);">CIVIL LIABILITY</h3>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Protect your business against damages caused to third parties during your activity.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left;">
-                <li style="margin-bottom: 0.5rem;">✓ Professional Liability</li>
-                <li style="margin-bottom: 0.5rem;">✓ Recourse Defense</li>
-                <li style="margin-bottom: 0.5rem;">✓ Legal Protection</li>
+        <div class="step-card expert-card stitch-border-refined stitch-center" style="border-color: var(--secondary); transform: translateY(-10px); position: relative;">
+            <div style="background: var(--secondary-gradient); color: white; font-size: 0.85rem; padding: 0.5rem 2rem; border-radius: 20px; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.4); z-index: 10; white-space: nowrap;">POPULAR</div>
+            <span class="step-num" style="color: var(--secondary); opacity: 0.1;">02</span>
+            <h3 class="text-center" style="margin-top: 1rem; color: var(--secondary);">PROFESSIONAL RC</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Cover your liability for errors or damages to third parties.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Exploitation RC</li>
+                <li style="margin-bottom: 0.8rem;">✓ Professional RC</li>
+                <li style="margin-bottom: 0.8rem;">✓ Legal Protection</li>
             </ul>
-            <button class="titch-btn pulse" style="width: 100%; margin-top: 2rem; padding: 1rem; background: var(--secondary-gradient); color: black;" onclick="window.location.href='../../pay.html'">Guarantee Details</button>
+            <button class="titch-btn pulse" style="width: 100%; padding: 18px; background: var(--secondary-gradient); color: black;" onclick="window.location.href='../../pay.html'">Go Premium</button>
         </div>
-        <div class="step-card titch-glass">
+        <div class="step-card expert-card stitch-border-refined stitch-center">
             <span class="step-num">03</span>
-            <h3 style="margin-top: 1rem;">GROUP HEALTH</h3>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Build loyalty among your employees with excellent health coverage.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left;">
-                <li style="margin-bottom: 0.5rem;">✓ Premium Care Network</li>
-                <li style="margin-bottom: 0.5rem;">✓ Family Portfolios</li>
-                <li style="margin-bottom: 0.5rem;">✓ Simplified Third-Party Payer</li>
-                <li style="margin-bottom: 0.5rem;">✓ Advantageous Group Rates</li>
+            <h3 class="text-center" style="margin-top: 1rem;">HEALTH & LIFE</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Attract and retain talent with premium benefit packages.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Group Health Plan</li>
+                <li style="margin-bottom: 0.8rem;">✓ Key Man Insurance</li>
+                <li style="margin-bottom: 0.8rem;">✓ Retirement Savings</li>
             </ul>
-            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;" onclick="window.location.href='../../pay.html'">Simulate for my Team</button>
+            <button class="titch-btn" style="width: 100%; padding: 18px;" onclick="window.location.href='../../pay.html'">Select</button>
         </div>
     </div>
+
+    <!-- SME Simulator -->
+    <section class="stitch-center" style="padding: 120px 5%; background: rgba(59, 130, 246, 0.02);">
+        <div class="titch-glass stitch-max-width stitch-center stitch-border-refined" style="padding: 5rem 3rem;">
+            <h2 class="text-gradient text-center" style="font-size: 3.5rem; margin-bottom: 1rem;">SME <span class="brand-gradient-glow">Simulator</span></h2>
+            <p class="text-center" style="color: var(--text-dim); margin-bottom: 4rem; max-width: 600px;">Estimate your professional protection needs in Cameroon.</p>
+            
+            <div class="stitch-center" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; width: 100%; text-align: left; margin-bottom: 4rem;">
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Number of Employees</label>
+                    <input type="number" id="sme-staff" class="titch-input" placeholder="Ex: 15" min="1">
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Equipment Value (FCFA)</label>
+                    <input type="text" id="sme-capital" class="titch-input" placeholder="Ex: 50,000,000">
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Activity Risk</label>
+                    <select id="sme-risk" class="titch-input">
+                        <option value="1.0">Office / Services</option>
+                        <option value="1.5">Commerce / Distribution</option>
+                        <option value="2.5">Industry / Construction</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="titch-btn pulse" style="padding: 22px 60px; font-size: 1rem;" onclick="calculateSME()">Calculate Quote</button>
+
+            <!-- Result -->
+            <div id="sme-result" class="price-display stitch-center" style="margin-top: 4rem; width: 100%; max-width: 500px; background: rgba(59, 130, 246, 0.05); border: 2px solid var(--primary); border-radius: 32px; padding: 3rem; display: none;">
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">Estimated annual contribution</p>
+                <h2 id="sme-price" style="font-size: 3rem; color: var(--secondary);">—</h2>
+                <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 1rem;">Indicative rate. An expert will contact you for a technical visit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chat Widget -->
+    <div id="chat-widget">
+        <div id="chat-window" class="titch-glass">
+            <div class="chat-header">
+                <div class="avatar">L</div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem;">Lola</div>
+                    <div style="font-size: 0.7rem; opacity: 0.8; display: flex; align-items: center; gap: 5px;">
+                        <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></span>
+                        Active Intelligence Agent
+                    </div>
+                </div>
+            </div>
+            <div id="chat-body" class="chat-body">
+                <div class="msg msg-ai">Hello! I am Lola, your SME expert. How can I protect your business today?</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Ask Lola anything...">
+                <button onclick="sendMessage()" class="titch-btn" style="padding: 0.8rem; min-width: 50px;">→</button>
+            </div>
+        </div>
+        <div id="chat-trigger" onclick="toggleChat()">
+            <svg viewBox="0 0 24 24" style="width: 30px; height: 30px; fill: white;">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatWindow = document.getElementById('chat-window');
+            chatWindow.classList.toggle('active');
+        }
+
+        function calculateSME() {
+            const resultDiv = document.getElementById('sme-result');
+            const priceEl = document.getElementById('sme-price');
+            const btn = document.querySelector('[onclick="calculateSME()"]');
+            
+            const staff = parseInt(document.getElementById('sme-staff').value) || 1;
+            const risk = parseFloat(document.getElementById('sme-risk').value);
+
+            btn.innerText = "Technical analysis by Lola...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                const total = Math.round((150000 + (staff * 15000)) * risk);
+                resultDiv.style.display = 'flex';
+                resultDiv.classList.add('animate-fade-in');
+                priceEl.textContent = total.toLocaleString() + ' FCFA';
+                btn.innerText = "Finalize my Quote";
+                btn.disabled = false;
+                btn.setAttribute('onclick', "toggleChat()");
+            }, 1200);
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const body = document.getElementById('chat-body');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const userMsg = document.createElement('div');
+            userMsg.className = 'msg msg-user';
+            userMsg.textContent = text;
+            body.appendChild(userMsg);
+            input.value = '';
+
+            const loadingMsg = document.createElement('div');
+            loadingMsg.className = 'msg msg-ai';
+            loadingMsg.textContent = '...';
+            body.appendChild(loadingMsg);
+            body.scrollTop = body.scrollHeight;
+
+            setTimeout(() => {
+                loadingMsg.textContent = "I am processing your business request. A Jemassurance corporate advisor will call you within 2 hours.";
+                body.scrollTop = body.scrollHeight;
+            }, 1000);
+        }
+    </script>
 
     <!-- Direct Channels (WhatsApp & Telegram) -->
     <div id="direct-channels" style="position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000;">
@@ -162,13 +279,9 @@
     <!-- Unified Legal Footer -->
     <footer class="titch-footer">
         <div class="footer-grid">
-            <div class="footer-brand">
+            <div class="footer-brand stitch-center" style="text-align: center;">
                 <img src="../../assets/logo.svg" alt="Jemassurance Logo" class="logo-footer">
-                <div class="lang-switcher">
-                    <a href="../../products/pme.html" class="lang-btn">FR</a>
-                    <a href="#" class="lang-btn active">EN</a>
-                </div>
-                <p>Partner in business growth in Cameroon. Solutions Excellence.</p>
+                <p style="max-width: 300px; margin-bottom: 2rem;">Partner in business growth in Cameroon. Solutions Excellence.</p>
             </div>
             <div class="footer-col">
                 <h4>Headquarters</h4>
@@ -176,7 +289,7 @@
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p>Tel: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jamassurance.online</p>
+                <p>Tel: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jemassurance.online</p>
             </div>
             <div class="footer-col">
                 <h4>Legal Information</h4>
@@ -186,4 +299,4 @@
     </footer>
 </body>
 
-</html>
+</html>

@@ -15,49 +15,124 @@
 </head>
 
 <body class="product-page">
-    <div class="product-header animate-fade-in" style="text-align: center; padding: 4rem 2rem;">
-        <a href="../index.html" class="product-link" style="color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block; font-weight: 600;">← Back to Home</a>
-        <h1 class="text-gradient" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Premium <span class="brand-gradient">Health Insurance</span></h1>
-        <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">Your health is your most precious asset. Access the best care in Cameroon and internationally with Jemassurance.</p>
+    <header class="titch-header stitch-center">
+        <div class="stitch-max-width stitch-center" style="flex-direction: row; justify-content: space-between; width: 100%;">
+            <div class="lang-switcher" style="margin-left: 0; margin-right: 1.5rem;">
+                <a href="../../products/sante.html" class="lang-btn">FR</a>
+                <a href="#" class="lang-btn active">EN</a>
+            </div>
+            <a href="../index.html" class="logo-link" style="margin-right: auto;">
+                <img src="../../assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
+            </a>
+            <nav class="product-links">
+                <a href="../index.html" class="product-link">HOME</a>
+                <a href="auto.html" class="product-link">AUTO</a>
+                <a href="sante.html" class="product-link">HEALTH</a>
+                <a href="habitation.html" class="product-link">HOME</a>
+                <a href="voyage.html" class="product-link">TRAVEL</a>
+                <a href="vie.html" class="product-link">LIFE</a>
+                <a href="pme.html" class="product-link">SME</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="product-header animate-fade-in stitch-center" style="padding: 100px 5%;">
+        <h1 class="text-gradient hero-title text-center" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1.5rem;">Premium <span class="brand-gradient-glow">Health Insurance</span></h1>
+        <p class="section-subtitle text-center" style="max-width: 800px; margin: 0 auto; font-size: 1.25rem;">Your health is your most precious asset. Access the best care in Cameroon and internationally with Jemassurance.</p>
     </div>
 
-    <div class="steps-grid" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
-        <div class="step-card titch-glass">
+    <div class="steps-grid stitch-grid-3" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
+        <div class="step-card expert-card stitch-border-refined stitch-center">
             <span class="step-num">01</span>
-            <h3 style="margin-top: 1rem;">ESSENTIAL</h3>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Fundamental coverage for your common health needs in Cameroon.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 0.5rem;">✓ Hospitalization (100%)</li>
-                <li style="margin-bottom: 0.5rem;">✓ Consultations & Pharmacy</li>
-                <li style="margin-bottom: 0.5rem;">✓ Medical Lab Tests</li>
-                <li style="margin-bottom: 0.5rem;">✓ Premium Local Network</li>
+            <h3 class="text-center" style="margin-top: 1rem;">ESSENTIAL</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Fundamental coverage for your current health needs.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Hospitalization (100%)</li>
+                <li style="margin-bottom: 0.8rem;">✓ Consultations & Pharmacy</li>
+                <li style="margin-bottom: 0.8rem;">✓ Medical Lab Tests</li>
+                <li style="margin-bottom: 0.8rem;">✓ Premium Local Network</li>
             </ul>
-            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;" onclick="window.location.href='../../pay.html'">Select</button>
+            <button class="titch-btn" style="width: 100%; padding: 18px;" onclick="window.location.href='../../pay.html'">Select</button>
         </div>
-        <div class="step-card titch-glass" style="border-color: var(--secondary); transform: translateY(-10px);">
-            <div style="background: var(--secondary-gradient); color: black; font-size: 0.7rem; padding: 0.3rem 1.2rem; border-radius: 20px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 1px;">SERENITY</div>
-            <span class="step-num" style="color: var(--secondary);">02</span>
-            <h3 style="margin-top: 1rem; color: var(--secondary);">SERENITY PLUS</h3>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Extended protection including dental, optical, and maternity.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 0.5rem;">✓ Essential Pack +</li>
-                <li style="margin-bottom: 0.5rem;">✓ Dental & Optical</li>
-                <li style="margin-bottom: 0.5rem;">✓ Maternity Bundle</li>
-                <li style="margin-bottom: 0.5rem;">✓ Medical Evacuation</li>
+        <div class="step-card expert-card stitch-border-refined stitch-center" style="border-color: var(--secondary); transform: translateY(-10px); position: relative;">
+            <div style="background: var(--secondary-gradient); color: white; font-size: 0.85rem; padding: 0.5rem 2rem; border-radius: 20px; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.4); z-index: 10; white-space: nowrap;">RECOMMENDED</div>
+            <span class="step-num" style="color: var(--secondary); opacity: 0.1;">02</span>
+            <h3 class="text-center" style="margin-top: 1rem; color: var(--secondary);">SERENITY PLUS</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Extended protection including dental and optical care.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Essential Pack +</li>
+                <li style="margin-bottom: 0.8rem;">✓ Dental & Optical</li>
+                <li style="margin-bottom: 0.8rem;">✓ Maternity Package</li>
+                <li style="margin-bottom: 0.8rem;">✓ Medical Evacuation</li>
             </ul>
-            <button class="titch-btn pulse" style="width: 100%; margin-top: 2rem; padding: 1rem; background: var(--secondary-gradient); color: black;" onclick="window.location.href='../../pay.html'">Go Premium</button>
+            <button class="titch-btn pulse" style="width: 100%; padding: 18px; background: var(--secondary-gradient); color: black;" onclick="window.location.href='../../pay.html'">Go Premium</button>
         </div>
-        <div class="step-card titch-glass">
+        <div class="step-card expert-card stitch-border-refined stitch-center">
             <span class="step-num">03</span>
-            <h3 style="margin-top: 1rem;">WORLD ELITE</h3>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Health excellence without borders. Access to hospitals worldwide.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 0.5rem;">✓ International Coverage</li>
-                <li style="margin-bottom: 0.5rem;">✓ Unlimited Ceilings</li>
-                <li style="margin-bottom: 0.5rem;">✓ Medical Concierge</li>
-                <li style="margin-bottom: 0.5rem;">✓ Gold Annual Check-up</li>
+            <h3 class="text-center" style="margin-top: 1rem;">WORLD ELITE</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Health excellence without borders. Global access.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ International Coverage</li>
+                <li style="margin-bottom: 0.8rem;">✓ Unlimited Caps</li>
+                <li style="margin-bottom: 0.8rem;">✓ Medical Concierge</li>
+                <li style="margin-bottom: 0.8rem;">✓ Annual Gold Check-up</li>
             </ul>
-            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;" onclick="window.location.href='../../pay.html'">Elite Subscription</button>
+            <button class="titch-btn" style="width: 100%; padding: 18px;" onclick="window.location.href='../../pay.html'">Elite Subscription</button>
+        </div>
+    </div>
+
+    <!-- Premium Health Simulator -->
+    <section class="stitch-center" style="padding: 120px 5%; background: rgba(16, 185, 129, 0.02);">
+        <div class="titch-glass stitch-max-width stitch-center stitch-border-refined" style="padding: 5rem 3rem;">
+            <h2 class="text-gradient text-center" style="font-size: 3.5rem; margin-bottom: 1rem;">Health <span class="brand-gradient-glow" style="--glow-color: var(--secondary);">Simulator</span></h2>
+            <p class="text-center" style="color: var(--text-dim); margin-bottom: 4rem; max-width: 600px;">Estimate your annual contribution based on your profile and desired care network.</p>
+            
+            <div class="stitch-center" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; width: 100%; text-align: left; margin-bottom: 4rem;">
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Age Group</label>
+                    <select id="sante-age" class="titch-input" style="width: 100%;">
+                        <option value="150000">18 - 35 years</option>
+                        <option value="220000">36 - 50 years</option>
+                        <option value="350000">51 - 65 years</option>
+                        <option value="550000">66 years and +</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Number of Dependents (Kids/Spouse)</label>
+                    <select id="sante-dep" class="titch-input" style="width: 100%;">
+                        <option value="1">Individual</option>
+                        <option value="1.8">Couple</option>
+                        <option value="2.5">Family (up to 3 kids)</option>
+                        <option value="3.5">Large Family</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Care Network</label>
+                    <select id="sante-network" class="titch-input" style="width: 100%;">
+                        <option value="1.0">Local (Cameroon only)</option>
+                        <option value="1.5">Regional (Central / West Africa)</option>
+                        <option value="2.5">International (World excl. USA/Canada)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="titch-btn pulse" style="padding: 22px 60px; font-size: 1rem;" onclick="calculateSante()">Calculate My Premium</button>
+
+            <!-- Result -->
+            <div id="sante-result" class="price-display stitch-center" style="margin-top: 4rem; width: 100%; max-width: 500px; background: rgba(16, 185, 129, 0.05); border: 2px solid var(--secondary); border-radius: 32px; padding: 3rem; display: none;">
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">Estimation of your annual contribution</p>
+                <h2 id="sante-price" style="font-size: 3.5rem; color: var(--secondary);">—</h2>
+                <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 1rem;">Indicative rate. Project to medical questionnaire.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA Dédiée -->
+    <div class="stitch-center" style="margin-bottom: 8rem; padding: 0 2rem;">
+        <div class="expert-card stitch-border-refined stitch-center" style="max-width: 800px; padding: 4rem; background: var(--light-glass);">
+            <h2 class="text-gradient">Ready to protect your health?</h2>
+            <p style="color: var(--text-dim); margin-bottom: 2.5rem; max-width: 500px;">Our health experts answer you instantly via our AI Lola.</p>
+            <button class="titch-btn pulse" style="padding: 20px 60px; font-size: 1.1rem;" onclick="toggleChat()">Get my Quote via Lola</button>
         </div>
     </div>
 
@@ -92,7 +167,7 @@
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p>Tel: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jamassurance.online</p>
+                <p>Tel: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jemassurance.online</p>
             </div>
             <div class="footer-col">
                 <h4>Legal Information</h4>

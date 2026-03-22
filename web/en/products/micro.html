@@ -191,14 +191,71 @@
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p>Tel: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jamassurance.online</p>
+                <p>Tel: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jemassurance.online</p>
             </div>
             <div class="footer-col">
                 <h4>Legal Information</h4>
                 <p>TIN: P076413521919Z<br>Social Capital: 5,000,000,000 FCFA (Fully Paid)<br>CIMA Approved<br>© 2026 Jemassurance S.A.</p>
             </div>
         </div>
-    </footer>
+    <!-- AI Chat Widget -->
+    <div id="chat-widget">
+        <div id="chat-window" class="titch-glass">
+            <div class="chat-header">
+                <div class="avatar">L</div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem;">Lola</div>
+                    <div style="font-size: 0.7rem; opacity: 0.8; display: flex; align-items: center; gap: 5px;">
+                        <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></span>
+                        Assistant Digital Instantané
+                    </div>
+                </div>
+            </div>
+            <div id="chat-body" class="chat-body">
+                <div class="msg msg-ai">Hi! I am Lola. Subscribe to your micro-insurance in 30 seconds via MoMo. Which pack interests you?</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Your question...">
+                <button onclick="sendMessage()" class="titch-btn" style="padding: 0.8rem; min-width: 50px;">→</button>
+            </div>
+        </div>
+        <div id="chat-trigger" onclick="toggleChat()">
+            <svg viewBox="0 0 24 24" style="width: 30px; height: 30px; fill: white;">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatWindow = document.getElementById('chat-window');
+            chatWindow.classList.toggle('active');
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const body = document.getElementById('chat-body');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const userMsg = document.createElement('div');
+            userMsg.className = 'msg msg-user';
+            userMsg.textContent = text;
+            body.appendChild(userMsg);
+            input.value = '';
+
+            const loadingMsg = document.createElement('div');
+            loadingMsg.className = 'msg msg-ai';
+            loadingMsg.textContent = '...';
+            body.appendChild(loadingMsg);
+            body.scrollTop = body.scrollHeight;
+
+            setTimeout(() => {
+                loadingMsg.innerHTML = "To subscribe, just tell me which pack you want (Express, Family or Commerce) and I will send the payment request to your phone.";
+                body.scrollTop = body.scrollHeight;
+            }, 1000);
+        }
+    </script>
 </body>
 
 </html>

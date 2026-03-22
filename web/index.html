@@ -51,40 +51,42 @@
 </head>
 
 <body>
-    <header class="titch-header">
-        <a href="index.html" class="logo-link">
-            <img src="assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
-        </a>
-        <nav class="product-links">
-            <a href="products/auto.html" class="product-link">AUTO</a>
-            <a href="products/sante.html" class="product-link">SANTÉ</a>
-            <a href="products/habitation.html" class="product-link">HABITATION</a>
-            <a href="products/voyage.html" class="product-link">VOYAGE</a>
-            <a href="products/vie.html" class="product-link">VIE</a>
-            <a href="products/pme.html" class="product-link">PME</a>
-        </nav>
-        <div class="lang-switcher">
-            <a href="#" class="lang-btn active">FR</a>
-            <a href="en/index.html" class="lang-btn">EN</a>
+    <header class="titch-header stitch-center">
+        <div class="stitch-max-width stitch-center" style="flex-direction: row; justify-content: space-between; width: 100%;">
+            <div class="lang-switcher" style="margin-left: 0; margin-right: 1.5rem;">
+                <a href="#" class="lang-btn active">FR</a>
+                <a href="en/index.html" class="lang-btn">EN</a>
+            </div>
+            <a href="index.html" class="logo-link" style="margin-right: auto;">
+                <img src="assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
+            </a>
+            <nav class="product-links">
+                <a href="products/auto.html" class="product-link">AUTO</a>
+                <a href="products/sante.html" class="product-link">SANTÉ</a>
+                <a href="products/habitation.html" class="product-link">HABITATION</a>
+                <a href="products/voyage.html" class="product-link">VOYAGE</a>
+                <a href="products/vie.html" class="product-link">VIE</a>
+                <a href="products/pme.html" class="product-link">PME</a>
+            </nav>
         </div>
     </header>
 
-    <section class="hero animate-fade-in">
-        <div class="titch-glass hero-content-expert">
-            <div class="hero-top-meta">
+    <section class="hero animate-fade-in stitch-center" style="min-height: 90vh; padding: 4rem 5%;">
+        <div class="titch-glass hero-content-expert stitch-center stitch-border-refined" style="padding: 4rem;">
+            <div class="hero-top-meta stitch-center" style="flex-direction: row; gap: 1rem; margin-bottom: 2rem;">
                 <span class="trust-badge-expert">🛡️ Certification CIMA Digitale</span>
                 <span class="status-badge-expert">● Agentic Live</span>
             </div>
             
-            <h1 class="hero-title-expert">
-                Jem <span class="brand-gradient">assurance</span>
+            <h1 class="hero-title-expert text-center" style="font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 1.5rem;">
+                Jem <span class="brand-gradient-glow">assurance</span>
             </h1>
             
-            <p class="hero-subtitle-expert">
+            <p class="hero-subtitle-expert text-center" style="max-width: 700px; margin-bottom: 3rem; font-size: 1.25rem;">
                 <strong>L'excellence redéfinie.</strong> Une protection premium pilotée par l'intelligence artificielle. Indemnisation express via Mobile Money en moins de 24h.
             </p>
             
-            <div class="hero-trust-bar">
+            <div class="hero-trust-bar stitch-center" style="flex-direction: row; width: 100%; max-width: 600px; margin-bottom: 4rem;">
                 <div class="trust-item">
                     <span class="trust-val">5B+</span>
                     <span class="trust-label">Capital FCFA</span>
@@ -101,124 +103,122 @@
                 </div>
             </div>
             
-            <div class="hero-actions">
-                <button class="titch-btn-expert pulse" onclick="toggleChat()">Démarrer l'Expertise</button>
-                <div class="action-hint">Expertise IA gratuite & instantanée</div>
+            <div class="hero-actions stitch-center">
+                <button class="titch-btn pulse" onclick="toggleChat()" style="padding: 20px 60px; font-size: 1rem;">Démarrer l'Expertise</button>
+                <div class="action-hint" style="margin-top: 1rem; opacity: 0.7;">Expertise IA gratuite & instantanée</div>
             </div>
 
-            <div class="hero-labels-expert">
+            <div class="hero-labels-expert stitch-center" style="flex-direction: row; flex-wrap: wrap; gap: 1.5rem; margin-top: 4rem; opacity: 0.6; font-size: 0.8rem; letter-spacing: 2px;">
                 <span>AUTO</span> <span>SANTÉ</span> <span>MICRO</span> <span>VIE</span> <span>PME</span> <span>HABITATION</span>
             </div>
         </div>
     </section>
 
-    <!-- Section Étapes (Expert v3.0) -->
-    <section class="expert-section animate-fade-in">
-        <h2 class="text-gradient" style="text-align: center;">L'Assurance en 3 minutes</h2>
-        <p class="section-subtitle">Une expérience fluide, rapide et transparente.</p>
-        <div class="steps-grid">
-            <div class="step-card expert-card">
-                <span class="step-num">01</span>
-                <span class="benefit-icon">📱</span>
-                <h3>Simulez</h3>
-                <p>Choisissez votre produit et obtenez votre tarif instantanément grâce à Lola, notre intelligence agentique.</p>
-            </div>
-            <div class="step-card expert-card">
-                <span class="step-num">02</span>
-                <span class="benefit-icon">💳</span>
-                <h3>Payez</h3>
-                <p>Réglez en toute sécurité via MTN MoMo ou Orange Money. Validation immédiate et zéro paperasse.</p>
-            </div>
-            <div class="step-card expert-card">
-                <span class="step-num">03</span>
-                <span class="benefit-icon">📄</span>
-                <h3>Protégé</h3>
-                <p>Recevez votre contrat par WhatsApp et Email. Une couverture premium avec indemnisation express.</p>
+    <!-- Section Étapes (Expert v3.0 Relooked) -->
+    <section class="expert-section animate-fade-in stitch-center" style="padding: 120px 5%;">
+        <div class="stitch-max-width stitch-center">
+            <h2 class="text-gradient text-center" style="font-size: 3.5rem; margin-bottom: 1rem;">L'Assurance en 3 minutes</h2>
+            <p class="section-subtitle text-center" style="max-width: 600px; margin-bottom: 5rem;">Une expérience fluide, rapide et transparente.</p>
+            <div class="steps-grid">
+                <div class="step-card expert-card stitch-border-refined">
+                    <span class="step-num">01</span>
+                    <span class="benefit-icon">📱</span>
+                    <h3 class="text-center">Simulez</h3>
+                    <p class="text-center">Choisissez votre produit et obtenez votre tarif instantanément grâce à Lola, notre intelligence agentique.</p>
+                </div>
+                <div class="step-card expert-card stitch-border-refined" style="border-color: var(--secondary);">
+                    <span class="step-num" style="color: var(--secondary); opacity: 0.1;">02</span>
+                    <span class="benefit-icon">💳</span>
+                    <h3 class="text-center">Payez</h3>
+                    <p class="text-center">Réglez en toute sécurité via MTN MoMo ou Orange Money. Validation immédiate et zéro paperasse.</p>
+                </div>
+                <div class="step-card expert-card stitch-border-refined">
+                    <span class="step-num">03</span>
+                    <span class="benefit-icon">📄</span>
+                    <h3 class="text-center">Protégé</h3>
+                    <p class="text-center">Recevez votre contrat par WhatsApp et Email. Une couverture premium avec indemnisation express.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Partenaires (Expert v3.0) -->
-    <section class="partners-section">
-        <p class="section-label" style="text-align: center;">Nos Partenaires de Confiance</p>
-        <div class="partners-grid">
-            <span class="partner-box">ACTIVA</span>
-            <span class="partner-box">SUNU</span>
-            <span class="partner-box">ZENITHE</span>
-            <span class="partner-box">PRUDENTIAL</span>
-            <span class="partner-box">SAHAM</span>
+    <!-- Section Partenaires (Expert v3.0 Relooked) -->
+    <section class="partners-section stitch-center" style="padding: 100px 5%; background: var(--dark-bg);">
+        <div class="stitch-max-width stitch-center">
+            <p class="section-label text-center">Nos Partenaires de Confiance</p>
+            <div class="partners-grid" style="display: flex; gap: 5rem; flex-wrap: wrap; justify-content: center; align-items: center; opacity: 0.5;">
+                <span class="partner-box">ACTIVA</span>
+                <span class="partner-box">SUNU</span>
+                <span class="partner-box">ZENITHE</span>
+                <span class="partner-box">PRUDENTIAL</span>
+                <span class="partner-box">SAHAM</span>
+            </div>
         </div>
     </section>
 
-    <!-- Section Contact (Expert v3.0) -->
-    <section id="contact" class="contact-section">
-        <div class="contact-grid">
-            <div class="contact-info animate-slide-up">
-                <h2 class="text-gradient">Parlons de votre protection</h2>
-                <p class="section-subtitle" style="text-align: left; margin: 0 0 3rem;">Nos experts sont disponibles pour vous accompagner dans le choix de la meilleure couverture.</p>
-                
-                <div class="contact-methods">
-                    <div class="contact-method">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <h4>WhatsApp Express</h4>
-                            <p>+237 640 65 67 93</p>
+    <!-- Section Contact (Expert v3.0 Relooked) -->
+    <section id="contact" class="contact-section stitch-center" style="padding: 120px 5%;">
+        <div class="stitch-max-width stitch-center">
+            <div class="contact-grid">
+                <div class="contact-info animate-slide-up stitch-center" style="text-align: center;">
+                    <h2 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 1.5rem;">Parlons de votre protection</h2>
+                    <p class="section-subtitle text-center" style="margin: 0 auto 4rem;">Nos experts sont disponibles pour vous accompagner dans le choix de la meilleure couverture.</p>
+                    
+                    <div class="contact-methods stitch-center" style="width: 100%; gap: 1.5rem;">
+                        <div class="contact-method stitch-center" style="flex-direction: row; width: 100%; max-width: 400px; text-align: left; justify-content: flex-start;">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h4 style="margin: 0;">WhatsApp Express</h4>
+                                <p style="margin: 0; opacity: 0.7;">+237 640 65 67 93</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="contact-method">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <h4>Siège Social</h4>
-                            <p>Carrefour Arno, Akwa, Douala</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <div class="contact-icon">✉️</div>
-                        <div>
-                            <h4>Email Officiel</h4>
-                            <p>contact@jamassurance.online</p>
+                        <div class="contact-method stitch-center" style="flex-direction: row; width: 100%; max-width: 400px; text-align: left; justify-content: flex-start;">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4 style="margin: 0;">Siège Social</h4>
+                                <p style="margin: 0; opacity: 0.7;">Akwa, Douala</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="contact-form-container animate-slide-up">
-                <form class="titch-form">
-                    <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-                        <div class="form-group">
-                            <label>Nom complet</label>
-                            <input type="text" class="titch-input" placeholder="Ex: Jean Dupont">
+                <div class="contact-form-container animate-slide-up stitch-border-refined" style="padding: 3.5rem; border-radius: 40px; background: #fff;">
+                    <form class="titch-form stitch-center" style="gap: 1.5rem; width: 100%;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; width: 100%;">
+                            <div class="form-group">
+                                <label>Nom complet</label>
+                                <input type="text" class="titch-input" placeholder="Ex: Jean Dupont">
+                            </div>
+                            <div class="form-group">
+                                <label>Téléphone</label>
+                                <input type="tel" class="titch-input" placeholder="Ex: 6xx xxx xxx">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Téléphone</label>
-                            <input type="tel" class="titch-input" placeholder="Ex: 6xx xxx xxx">
+                        
+                        <div class="form-group" style="width: 100%;">
+                            <label>Votre Email</label>
+                            <input type="email" class="titch-input" placeholder="votre@email.com">
                         </div>
-                    </div>
-                    
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label>Votre Email</label>
-                        <input type="email" class="titch-input" placeholder="votre@email.com">
-                    </div>
 
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label>Produit d'intérêt</label>
-                        <select class="titch-input">
-                            <option value="auto">Assurance Automobile</option>
-                            <option value="sante">Assurance Santé</option>
-                            <option value="habitation">Assurance Habitation</option>
-                            <option value="autre">Autre demande</option>
-                        </select>
-                    </div>
+                        <div class="form-group" style="width: 100%;">
+                            <label>Produit d'intérêt</label>
+                            <select class="titch-input">
+                                <option value="auto">Assurance Automobile</option>
+                                <option value="sante">Assurance Santé</option>
+                                <option value="habitation">Assurance Habitation</option>
+                                <option value="autre">Autre demande</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group" style="margin-bottom: 2rem;">
-                        <label>Message</label>
-                        <textarea class="titch-input" placeholder="Comment pouvons-nous vous aider ?" style="height: 120px;"></textarea>
-                    </div>
+                        <div class="form-group" style="width: 100%;">
+                            <label>Message</label>
+                            <textarea class="titch-input" placeholder="Comment pouvons-nous vous aider ?" style="height: 100px;"></textarea>
+                        </div>
 
-                    <button type="submit" class="titch-btn-expert" style="width: 100%;">Envoyer ma demande</button>
-                </form>
+                        <button type="submit" class="titch-btn" style="width: 100%; padding: 20px;">Envoyer ma demande</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -233,28 +233,26 @@
         </a>
     </div>
 
-    <!-- Footer Expert v3.0 -->
-    <footer class="titch-footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="assets/logo.svg" alt="Jemassurance Logo" class="logo-footer">
-                <div class="lang-switcher">
-                    <a href="#" class="lang-btn active">FR</a>
-                    <a href="en/index.html" class="lang-btn">EN</a>
+    <!-- Footer Expert v3.0 Relooked -->
+    <footer class="titch-footer stitch-center">
+        <div class="stitch-max-width">
+            <div class="footer-grid">
+                <div class="footer-brand stitch-center" style="text-align: center;">
+                    <img src="assets/logo.svg" alt="Jemassurance Logo" class="logo-footer">
+                    <p style="max-width: 300px; margin-bottom: 2rem;">Leader de l'assurance digitale et agentique au Cameroun. Excellence, Proximité et Innovation.</p>
                 </div>
-                <p>Leader de l'assurance digitale et agentique au Cameroun. Excellence, Proximité et Innovation.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Siège Social</h4>
-                <p>Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>Tél: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jamassurance.online</p>
-            </div>
-            <div class="footer-col">
-                <h4>Légal</h4>
-                <p>NIU: P076413521919Z<br>Capital: 5 000 000 000 FCFA<br>Agréé CIMA<br>© 2026 Jemassurance S.A.</p>
+                <div class="footer-col stitch-center" style="text-align: center;">
+                    <h4>Siège Social</h4>
+                    <p>Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
+                </div>
+                <div class="footer-col stitch-center" style="text-align: center;">
+                    <h4>Contact</h4>
+                    <p>Tél: +237 640 65 67 93<br>233 43 99 24<br>Email: contact@jemassurance.online</p>
+                </div>
+                <div class="footer-col stitch-center" style="text-align: center;">
+                    <h4>Légal</h4>
+                    <p>NIU: P076413521919Z<br>Capital: 5B FCFA<br>© 2026 Jemassurance S.A.</p>
+                </div>
             </div>
         </div>
     </footer>

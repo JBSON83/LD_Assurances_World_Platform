@@ -10,120 +10,124 @@
     <meta property="og:image" content="https://jemassurance.online/social-preview.png">
     <link rel="canonical" href="https://jemassurance.online/products/pme.html">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #1e293b;
-            --accent: #3b82f6;
-            --dark: #0b1121;
-            --glass: rgba(15, 23, 42, 0.7);
-            --text: #f1f5f9;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        body {
-            background-color: var(--dark);
-            color: var(--text);
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 30px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: #fff;
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-
-        .sme-services {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-box {
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            padding: 1.5rem;
-            border-radius: 15px;
-            transition: background 0.3s;
-        }
-
-        .service-box:hover {
-            background: rgba(59, 130, 246, 0.05);
-        }
-
-        .cta-btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--accent);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            margin-top: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="../titch.css">
 </head>
 
 <body class="product-page">
-    <header class="titch-header">
-        <a href="../index.html" class="logo-link">
-            <img src="../assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
-        </a>
-        <nav class="product-links">
-            <a href="../index.html" class="product-link">ACCUEIL</a>
-            <a href="auto.html" class="product-link">AUTO</a>
-            <a href="sante.html" class="product-link">SANTÉ</a>
-            <a href="habitation.html" class="product-link">HABITATION</a>
-            <a href="voyage.html" class="product-link">VOYAGE</a>
-            <a href="vie.html" class="product-link">VIE</a>
-            <a href="pme.html" class="product-link">PME</a>
-        </nav>
-        <div class="lang-switcher">
-            <a href="#" class="lang-btn active">FR</a>
-            <a href="../en/products/pme.html" class="lang-btn">EN</a>
+    <header class="titch-header stitch-center">
+        <div class="stitch-max-width stitch-center" style="flex-direction: row; justify-content: space-between; width: 100%;">
+            <div class="lang-switcher" style="margin-left: 0; margin-right: 1.5rem;">
+                <a href="#" class="lang-btn active">FR</a>
+                <a href="../en/products/pme.html" class="lang-btn">EN</a>
+            </div>
+            <a href="../index.html" class="logo-link" style="margin-right: auto;">
+                <img src="../assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
+            </a>
+            <nav class="product-links">
+                <a href="../index.html" class="product-link">ACCUEIL</a>
+                <a href="auto.html" class="product-link">AUTO</a>
+                <a href="sante.html" class="product-link">SANTÉ</a>
+                <a href="habitation.html" class="product-link">HABITATION</a>
+                <a href="voyage.html" class="product-link">VOYAGE</a>
+                <a href="vie.html" class="product-link">VIE</a>
+                <a href="pme.html" class="product-link">PME</a>
+            </nav>
         </div>
     </header>
-    <div class="product-header animate-fade-in" style="text-align: center; padding: 4rem 2rem;">
-        <a href="../index.html" class="product-link" style="color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block; font-weight: 600;">← Retour à l'accueil</a>
-                <li style="margin-bottom: 0.5rem;">✓ RC Professionnelle</li>
-                <li style="margin-bottom: 0.5rem;">✓ Défense Recours</li>
-                <li style="margin-bottom: 0.5rem;">✓ Protection Juridique</li>
+    <div class="product-header animate-fade-in stitch-center" style="padding: 100px 5%;">
+        <h1 class="text-gradient hero-title text-center" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1.5rem;">Assurance <span class="brand-gradient-glow">PME & Entreprises</span></h1>
+        <p class="section-subtitle text-center" style="max-width: 800px; margin: 0 auto; font-size: 1.25rem;">Boostez la résilience de votre entreprise avec des solutions d'assurance sur-mesure au Cameroun.</p>
+    </div>
+
+    <div class="steps-grid stitch-grid-3" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
+        <div class="step-card expert-card stitch-border-refined stitch-center">
+            <span class="step-num">01</span>
+            <h3 class="text-center" style="margin-top: 1rem;">MULTIRISQUE PRO</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Protégez vos locaux, votre matériel et votre activité contre tous les risques.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Incendie & Vol</li>
+                <li style="margin-bottom: 0.8rem;">✓ Dégâts des Eaux</li>
+                <li style="margin-bottom: 0.8rem;">✓ Pertes d'Exploitation</li>
             </ul>
-            <button class="titch-btn pulse" style="width: 100%; margin-top: 2rem; padding: 1rem; background: var(--secondary-gradient); color: black;">Détails garanties</button>
+            <button class="titch-btn" style="width: 100%; padding: 18px;" onclick="window.location.href='../pay.html'">Choisir</button>
         </div>
-        <div class="step-card titch-glass">
-            <span class="step-num">03</span>
-            <h3 style="margin-top: 1rem;">SANTÉ GROUPE</h3>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Fidélisez vos collaborateurs avec une couverture santé d'excellence.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left;">
-                <li style="margin-bottom: 0.5rem;">✓ Réseau de Soins Premium</li>
-                <li style="margin-bottom: 0.5rem;">✓ Portefeuilles Famille</li>
-                <li style="margin-bottom: 0.5rem;">✓ Tiers-Payant Simplifié</li>
-                <li style="margin-bottom: 0.5rem;">✓ Tarifs de Groupe Avantageux</li>
+        <div class="step-card expert-card stitch-border-refined stitch-center" style="border-color: var(--secondary); transform: translateY(-10px);">
+            <div style="background: var(--secondary-gradient); color: white; font-size: 0.85rem; padding: 0.5rem 2rem; border-radius: 20px; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.4); z-index: 10; white-space: nowrap;">VITAL</div>
+            <span class="step-num" style="color: var(--secondary); opacity: 0.1;">02</span>
+            <h3 class="text-center" style="margin-top: 1rem; color: var(--secondary);">RC ENTREPRISE</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Votre bouclier juridique face aux tiers et aux imprévus.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ RC Professionnelle</li>
+                <li style="margin-bottom: 0.8rem;">✓ Défense Recours</li>
+                <li style="margin-bottom: 0.8rem;">✓ Protection Juridique</li>
             </ul>
-            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;">Simuler pour mon équipe</button>
+            <button class="titch-btn pulse" style="width: 100%; padding: 18px; background: var(--secondary-gradient); color: black;" onclick="window.location.href='../pay.html'">Détails garanties</button>
+        </div>
+        <div class="step-card expert-card stitch-border-refined stitch-center">
+            <span class="step-num">03</span>
+            <h3 class="text-center" style="margin-top: 1rem;">SANTÉ GROUPE</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Fidélisez vos collaborateurs avec une couverture santé d'excellence.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Réseau de Soins Premium</li>
+                <li style="margin-bottom: 0.8rem;">✓ Portefeuilles Famille</li>
+                <li style="margin-bottom: 0.8rem;">✓ Tiers-Payant Simplifié</li>
+            </ul>
+            <button class="titch-btn" style="width: 100%; padding: 18px;" onclick="window.location.href='../pay.html'">Simuler pour mon équipe</button>
+        </div>
+    </div>
+
+    <!-- Simulateur PME Performant -->
+    <section class="stitch-center" style="padding: 120px 5%; background: rgba(30, 64, 175, 0.02);">
+        <div class="titch-glass stitch-max-width stitch-center stitch-border-refined" style="padding: 5rem 3rem;">
+            <h2 class="text-gradient text-center" style="font-size: 3.5rem; margin-bottom: 1rem;">Simulateur <span class="brand-gradient-glow">PME</span></h2>
+            <p class="text-center" style="color: var(--text-dim); margin-bottom: 4rem; max-width: 600px;">Optimisez vos coûts d'assurance en fonction de votre secteur d'activité et de votre CA.</p>
+            
+            <div class="stitch-center" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; width: 100%; text-align: left; margin-bottom: 4rem;">
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Secteur d'Activité</label>
+                    <select id="pme-sector" class="titch-input" style="width: 100%;">
+                        <option value="1.0">Services / Bureau</option>
+                        <option value="1.3">Commerce / Boutique</option>
+                        <option value="1.8">Artisanat / Petite Industrie</option>
+                        <option value="2.5">BTP / Risques Spéciaux</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Chiffre d'Affaires Annuel</label>
+                    <select id="pme-ca" class="titch-input" style="width: 100%;">
+                        <option value="50000">Moins de 10 millions FCFA</option>
+                        <option value="120000">10 - 50 millions FCFA</option>
+                        <option value="250000">50 - 250 millions FCFA</option>
+                        <option value="600000">Plus de 250 millions FCFA</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Effectif (Salariés)</label>
+                    <select id="pme-staff" class="titch-input" style="width: 100%;">
+                        <option value="1.0">1 - 5 employés</option>
+                        <option value="1.2">6 - 20 employés</option>
+                        <option value="1.5">Plus de 20 employés</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="titch-btn pulse" style="padding: 22px 60px; font-size: 1rem;" onclick="calculatePme()">Estimer ma Prime Pro</button>
+
+            <!-- Résultat -->
+            <div id="pme-result" class="price-display stitch-center" style="margin-top: 4rem; width: 100%; max-width: 500px; background: rgba(30, 64, 175, 0.05); border: 2px solid var(--primary); border-radius: 32px; padding: 3rem; display: none;">
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">Prime multirisque annuelle estimée</p>
+                <h2 id="pme-price" style="font-size: 3.5rem; color: var(--secondary);">—</h2>
+                <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 1rem;">Estimation basée sur les garanties standards Multirisque PME.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA Dédiée -->
+    <div class="stitch-center" style="margin-bottom: 8rem; padding: 0 2rem;">
+        <div class="expert-card stitch-border-refined stitch-center" style="max-width: 800px; padding: 4rem; background: var(--light-glass);">
+            <h2 class="text-gradient">Relancez votre activité avec sérénité</h2>
+            <p style="color: var(--text-dim); margin-bottom: 2.5rem; max-width: 500px;">Des solutions sur-mesure pour votre PME, prêtes en quelques clics avec Lola.</p>
+            <button class="titch-btn pulse" style="padding: 20px 60px; font-size: 1.1rem;" onclick="toggleChat()">Obtenir mon Devis via Lola</button>
         </div>
     </div>
 
@@ -138,30 +142,117 @@
     </div>
 
     <!-- Footer Légal Unifié -->
-    <footer class="titch-footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="../assets/logo.svg" alt="Jemassurance Logo" class="logo-footer">
-                <div class="lang-switcher">
-                    <a href="#" class="lang-btn active">FR</a>
-                    <a href="../en/products/pme.html" class="lang-btn">EN</a>
+    <!-- Footer Légal Unifié Relooked -->
+    <footer class="titch-footer stitch-center">
+        <div class="stitch-max-width">
+            <div class="footer-grid">
+                <div class="footer-brand stitch-center" style="text-align: center;">
+                    <img src="../assets/logo.svg" alt="Jemassurance Logo" class="logo-footer">
+                    <p style="max-width: 300px; margin-bottom: 2rem;">Leader de l'assurance digitale et agentique au Cameroun. Excellence, Proximité et Innovation.</p>
+                    <div class="lang-switcher">
+                        <a href="#" class="lang-btn active">FR</a>
+                        <a href="../en/products/pme.html" class="lang-btn">EN</a>
+                    </div>
                 </div>
-                <p>Partenaire de la croissance des entreprises au Cameroun. Solutions expertes.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Siège Social</h4>
-                <p>Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>Tél: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jamassurance.online</p>
-            </div>
-            <div class="footer-col">
-                <h4>Informations Légales</h4>
-                <p style="font-size: 0.8rem; color: var(--text-dim);">NIU: P076413521919Z<br>Capital Social: 5 000 000 000 FCFA (Entièrement Libéré)<br>Agréé CIMA<br>© 2026 Jemassurance S.A.</p>
+                <div class="footer-col stitch-center" style="text-align: center;">
+                    <h4>Siège Social</h4>
+                    <p>Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
+                </div>
+                <div class="footer-col stitch-center" style="text-align: center;">
+                    <h4>Contact</h4>
+                    <p>Tél: +237 640 65 67 93<br>233 43 99 24<br>Email: contact@jemassurance.online</p>
+                </div>
+                <div class="footer-col stitch-center" style="text-align: center;">
+                    <h4>Légal</h4>
+                    <p>NIU: P076413521919Z<br>Capital: 5B FCFA<br>© 2026 Jemassurance S.A.</p>
+                </div>
             </div>
         </div>
     </footer>
+    <!-- AI Chat Widget -->
+    <div id="chat-widget">
+        <div id="chat-window" class="titch-glass">
+            <div class="chat-header">
+                <div class="avatar">L</div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem;">Lola</div>
+                    <div style="font-size: 0.7rem; opacity: 0.8; display: flex; align-items: center; gap: 5px;">
+                        <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></span>
+                        Agent Intelligence Active
+                    </div>
+                </div>
+            </div>
+            <div id="chat-body" class="chat-body">
+                <div class="msg msg-ai">Bonjour ! Je suis Lola, votre assistante IA Jemassurance. Comment puis-je vous aider ?</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Posez votre question...">
+                <button onclick="sendMessage()" class="titch-btn" style="padding: 0.8rem; min-width: 50px;">→</button>
+            </div>
+        </div>
+        <div id="chat-trigger" onclick="toggleChat()">
+            <svg viewBox="0 0 24 24" style="width: 30px; height: 30px; fill: white;">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatWindow = document.getElementById('chat-window');
+            chatWindow.classList.toggle('active');
+        }
+
+        function calculatePme() {
+            const resultDiv = document.getElementById('pme-result');
+            const priceEl = document.getElementById('pme-price');
+            const btn = document.querySelector('[onclick="calculatePme()"]');
+            
+            const sector = parseFloat(document.getElementById('pme-sector').value);
+            const baseCA = parseFloat(document.getElementById('pme-ca').value);
+            const staff = parseFloat(document.getElementById('pme-staff').value);
+
+            btn.innerText = "Analyse des risques Entreprise...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                const total = Math.round(baseCA * sector * staff);
+                resultDiv.style.display = 'flex';
+                resultDiv.classList.add('animate-fade-in');
+                priceEl.textContent = total.toLocaleString() + ' FCFA/an';
+                btn.innerText = "Finaliser mon dossier avec Lola";
+                btn.disabled = false;
+                btn.setAttribute('onclick', "toggleChat()");
+            }, 1200);
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const body = document.getElementById('chat-body');
+            const text = input.value.trim();
+            if (!text) return;
+
+            // User Message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'msg msg-user';
+            userMsg.textContent = text;
+            body.appendChild(userMsg);
+            input.value = '';
+
+            // AI Loading
+            const loadingMsg = document.createElement('div');
+            loadingMsg.className = 'msg msg-ai';
+            loadingMsg.textContent = '...';
+            body.appendChild(loadingMsg);
+            body.scrollTop = body.scrollHeight;
+
+            // Simulate AI Response (Agentic Feel)
+            setTimeout(() => {
+                loadingMsg.textContent = "Je prends en charge votre demande. Un expert Jemassurance vous contactera si nécessaire ou je peux simuler votre devis ici.";
+                body.scrollTop = body.scrollHeight;
+            }, 1000);
+        }
+    </script>
 </body>
 
 </html>

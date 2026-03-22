@@ -14,59 +14,125 @@
 </head>
 
 <body class="product-page">
-    <div class="product-header animate-fade-in" style="text-align: center; padding: 4rem 2rem;">
-        <a href="../index.html" class="product-link" style="color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block; font-weight: 600;">← Back to Home</a>
-        <h1 class="text-gradient" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Multi-Risk <span class="brand-gradient">Home Insurance</span></h1>
-        <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">Your home is your sanctuary. Protect your assets and your family with the most robust coverage in Cameroon.</p>
-        
-        <div style="margin-top: 2.5rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; opacity: 0.8;">
-            <span class="titch-glass" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; border-radius: 50px;">🏠 Homeowner</span>
-            <span class="titch-glass" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; border-radius: 50px;">🔑 Tenant</span>
-            <span class="titch-glass" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; border-radius: 50px;">🏢 Co-ownership</span>
+    <!-- Header Navigation -->
+    <header class="titch-header stitch-center">
+        <div class="stitch-max-width stitch-center" style="flex-direction: row; justify-content: space-between; width: 100%;">
+            <div class="lang-switcher" style="margin-left: 0; margin-right: 1.5rem;">
+                <a href="../../products/habitation.html" class="lang-btn">FR</a>
+                <a href="#" class="lang-btn active">EN</a>
+            </div>
+            <a href="../index.html" class="logo-link" style="margin-right: auto;">
+                <img src="../../assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
+            </a>
+            <nav class="product-links">
+                <a href="../index.html" class="product-link">HOME</a>
+                <a href="auto.html" class="product-link">AUTO</a>
+                <a href="sante.html" class="product-link">HEALTH</a>
+                <a href="habitation.html" class="product-link">HOME</a>
+                <a href="voyage.html" class="product-link">TRAVEL</a>
+                <a href="vie.html" class="product-link">LIFE</a>
+                <a href="pme.html" class="product-link">SME</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Product Hero -->
+    <div class="product-header animate-fade-in stitch-center" style="padding: 100px 5%;">
+        <h1 class="text-gradient hero-title text-center" style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1.5rem;">Home Assurance <span class="brand-gradient-glow">Expert</span></h1>
+        <p class="section-subtitle text-center" style="max-width: 800px; margin: 0 auto; font-size: 1.25rem;">Protect your home and your most precious memories with Jemassurance's premium digital protection.</p>
+    </div>
+
+    <!-- Coverage Grid: 3 Offers -->
+    <div class="steps-grid stitch-grid-3" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
+        <div class="step-card expert-card stitch-border-refined stitch-center">
+            <span class="step-num">01</span>
+            <h3 class="text-center" style="margin-top: 1rem;">ESSENTIAL PACK</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Fundamental coverage for tenants and small apartments.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Fire & Explosion</li>
+                <li style="margin-bottom: 0.8rem;">✓ Water Damage</li>
+                <li style="margin-bottom: 0.8rem;">✓ Civil Liability</li>
+            </ul>
+            <button class="titch-btn" style="width: 100%; padding: 18px;" onclick="window.location.href='../../pay.html'">Select</button>
+        </div>
+
+        <div class="step-card expert-card stitch-border-refined stitch-center" style="border-color: var(--secondary); transform: translateY(-10px); position: relative;">
+            <div style="background: var(--secondary-gradient); color: white; font-size: 0.85rem; padding: 0.5rem 2rem; border-radius: 20px; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.4); z-index: 10; white-space: nowrap;">RECOMMENDED</div>
+            <span class="step-num" style="color: var(--secondary); opacity: 0.1;">02</span>
+            <h3 class="text-center" style="margin-top: 1rem; color: var(--secondary);">SÉRÉNITÉ PLUS</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Expanded protection including theft and glass breakage.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ Essential Pack +</li>
+                <li style="margin-bottom: 0.8rem;">✓ Theft & Vandalism</li>
+                <li style="margin-bottom: 0.8rem;">✓ Glass Breakage</li>
+                <li style="margin-bottom: 0.8rem;">✓ Electrical Damage</li>
+            </ul>
+            <button class="titch-btn pulse" style="width: 100%; padding: 18px; background: var(--secondary-gradient); color: black;" onclick="window.location.href='../../pay.html'">Go Premium</button>
+        </div>
+
+        <div class="step-card expert-card stitch-border-refined stitch-center">
+            <span class="step-num">03</span>
+            <h3 class="text-center" style="margin-top: 1rem;">GOLD EXPERTISE</h3>
+            <p class="text-center" style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">Absolute protection for your villas and high-value assets.</p>
+            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%; margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem;">✓ All Risks Included</li>
+                <li style="margin-bottom: 0.8rem;">✓ IT Risks Protection</li>
+                <li style="margin-bottom: 0.8rem;">✓ Machine Breakdown</li>
+            </ul>
+            <button class="titch-btn" style="width: 100%; padding: 18px;" onclick="window.location.href='../../pay.html'">Gold Subscription</button>
         </div>
     </div>
 
-    <!-- Coverage Grid -->
-    <div class="steps-grid" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
-        <div class="step-card titch-glass">
-            <span class="step-num">01</span>
-            <h3 style="margin-top: 1rem;">ESSENTIAL PACK</h3>
-            <div style="font-size: 1.5rem; font-weight: 800; color: var(--secondary); margin: 1rem 0;">10,000 F <span style="font-size: 0.9rem; color: var(--text-dim); font-weight: 400;">/year</span></div>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">The essential base for your peace of mind.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 0.5rem;">✓ Fire, Explosion & Lightning</li>
-                <li style="margin-bottom: 0.5rem;">✓ Electrical Damage</li>
-                <li style="margin-bottom: 0.5rem;">✓ Family Liability</li>
-                <li style="margin-bottom: 0.5rem;">✓ Storm, Hail & Flood</li>
-            </ul>
-            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;" onclick="window.location.href='../../pay.html'">Select</button>
+    <!-- Premium Home Simulator -->
+    <section class="stitch-center" style="padding: 120px 5%; background: rgba(59, 130, 246, 0.02);">
+        <div class="titch-glass stitch-max-width stitch-center stitch-border-refined" style="padding: 5rem 3rem;">
+            <h2 class="text-gradient text-center" style="font-size: 3.5rem; margin-bottom: 1rem;">Home <span class="brand-gradient-glow">Simulator</span></h2>
+            <p class="text-center" style="color: var(--text-dim); margin-bottom: 4rem; max-width: 600px;">Estimate your annual premium based on your residence area and property type in Cameroon.</p>
+            
+            <div class="stitch-center" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; width: 100%; text-align: left; margin-bottom: 4rem;">
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Residence Zone</label>
+                    <select id="hab-zone" class="titch-input" style="width: 100%;">
+                        <option value="1.2">Zone A (Akwa, Bonapriso, Bastos)</option>
+                        <option value="1.0">Zone B (Other Urban Areas)</option>
+                        <option value="0.8">Zone C (Peri-urban / Rural)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Housing Type</label>
+                    <select id="hab-type" class="titch-input" style="width: 100%;">
+                        <option value="25000">Studio / 2 Rooms</option>
+                        <option value="45000">Apartment (3+ Rooms)</option>
+                        <option value="85000">Villa / Private House</option>
+                        <option value="150000">Large Estate / Prestige</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--text-main); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; display: block; text-transform: uppercase;">Security Level</label>
+                    <select id="hab-security" class="titch-input" style="width: 100%;">
+                        <option value="1.0">Standard Security</option>
+                        <option value="0.9">Reinforced (Alarm/Steel Doors)</option>
+                        <option value="0.8">Premium (24/7 Guarding)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="titch-btn pulse" style="padding: 22px 60px; font-size: 1rem;" onclick="calculateHab()">Calculate My Estimate</button>
+
+            <!-- Result -->
+            <div id="hab-result" class="price-display stitch-center" style="margin-top: 4rem; width: 100%; max-width: 500px; background: rgba(59, 130, 246, 0.05); border: 2px solid var(--primary); border-radius: 32px; padding: 3rem; display: none;">
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">Estimated annual premium</p>
+                <h2 id="hab-price" style="font-size: 3.5rem; color: var(--secondary);">—</h2>
+                <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 1rem;">Indicative rate. Final price depends on content value.</p>
+            </div>
         </div>
-        <div class="step-card titch-glass" style="border-color: var(--secondary); transform: translateY(-10px);">
-            <div style="background: var(--secondary-gradient); color: black; font-size: 0.7rem; padding: 0.3rem 1.2rem; border-radius: 20px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-weight: 900; letter-spacing: 1px;">OPTIMAL</div>
-            <span class="step-num" style="color: var(--secondary);">02</span>
-            <h3 style="margin-top: 1rem; color: var(--secondary);">SERENITY PLUS</h3>
-            <div style="font-size: 1.5rem; font-weight: 800; color: var(--secondary); margin: 1rem 0;">On Quote</div>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Comprehensive protection against everyday risks.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 0.5rem;">✓ Essential Pack +</li>
-                <li style="margin-bottom: 0.5rem;">✓ Water Damage</li>
-                <li style="margin-bottom: 0.5rem;">✓ Theft, Vandalism & Deterioration</li>
-                <li style="margin-bottom: 0.5rem;">✓ Glass & Mirror Breakage</li>
-            </ul>
-            <button class="titch-btn pulse" style="width: 100%; margin-top: 2rem; padding: 1rem; background: var(--secondary-gradient); color: black;" onclick="window.location.href='../../pay.html'">Get My Quote</button>
-        </div>
-        <div class="step-card titch-glass">
-            <span class="step-num">03</span>
-            <h3 style="margin-top: 1rem;">GOLD EXCELLENCE</h3>
-            <div style="font-size: 1.5rem; font-weight: 800; color: var(--secondary); margin: 1rem 0;">Premium</div>
-            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem;">Tailor-made for your high-value assets.</p>
-            <ul style="list-style: none; padding: 0; color: var(--text-dim); font-size: 0.95rem; text-align: left; width: 100%;">
-                <li style="margin-bottom: 0.5rem;">✓ Integral "All Risks" Protection</li>
-                <li style="margin-bottom: 0.5rem;">✓ All IT Risks</li>
-                <li style="margin-bottom: 0.5rem;">✓ Machinery & Equipment Breakage</li>
-                <li style="margin-bottom: 0.5rem;">✓ Valuables & Jewelry</li>
-            </ul>
-            <button class="titch-btn" style="width: 100%; margin-top: 2rem; padding: 1rem;" onclick="window.location.href='../../pay.html'">Contact an Expert</button>
+    </section>
+
+    <!-- Section CTA Dédiée -->
+    <div class="stitch-center" style="margin-bottom: 8rem; padding: 0 2rem;">
+        <div class="expert-card stitch-border-refined stitch-center" style="max-width: 800px; padding: 4rem; background: var(--light-glass);">
+            <h2 class="text-gradient">Ready to protect your home?</h2>
+            <p style="color: var(--text-dim); margin-bottom: 2.5rem; max-width: 500px;">Our agents accompany you for a tailor-made coverage in less than 15 minutes.</p>
+            <button class="titch-btn pulse" style="padding: 20px 60px; font-size: 1.1rem;" onclick="toggleChat()">Get my Quote via Lola</button>
         </div>
     </div>
 
@@ -94,7 +160,7 @@
             </div>
             <div>
                 <h4 style="margin-bottom: 1rem;">Contact</h4>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">Tel: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jamassurance.online</p>
+                <p style="font-size: 0.9rem; color: var(--text-dim);">Tel: +237 640 65 67 93<br>233 43 99 24 / 233 42 51 82<br>Email: contact@jemassurance.online</p>
             </div>
             <div class="logo">
                 <a href="../index.html" style="text-decoration: none;">
@@ -108,6 +174,90 @@
             </div>
         </div>
     </footer>
+    <!-- AI Chat Widget -->
+    <div id="chat-widget">
+        <div id="chat-window" class="titch-glass">
+            <div class="chat-header">
+                <div class="avatar">L</div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem;">Lola</div>
+                    <div style="font-size: 0.7rem; opacity: 0.8; display: flex; align-items: center; gap: 5px;">
+                        <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></span>
+                        Active Intelligence Agent
+                    </div>
+                </div>
+            </div>
+            <div id="chat-body" class="chat-body">
+                <div class="msg msg-ai">Hello! I am Lola, your Jemassurance AI assistant. How can I help you today?</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Ask your question...">
+                <button onclick="sendMessage()" class="titch-btn" style="padding: 0.8rem; min-width: 50px;">→</button>
+            </div>
+        </div>
+        <div id="chat-trigger" onclick="toggleChat()">
+            <svg viewBox="0 0 24 24" style="width: 30px; height: 30px; fill: white;">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatWindow = document.getElementById('chat-window');
+            chatWindow.classList.toggle('active');
+        }
+
+        function calculateHab() {
+            const resultDiv = document.getElementById('hab-result');
+            const priceEl = document.getElementById('hab-price');
+            const btn = document.querySelector('[onclick="calculateHab()"]');
+            
+            const zone = parseFloat(document.getElementById('hab-zone').value);
+            const type = parseFloat(document.getElementById('hab-type').value);
+            const security = parseFloat(document.getElementById('hab-security').value);
+
+            btn.innerText = "Risk assessment by Lola...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                const total = Math.round(type * zone * security);
+                resultDiv.style.display = 'flex';
+                resultDiv.classList.add('animate-fade-in');
+                priceEl.textContent = total.toLocaleString() + ' FCFA/year';
+                btn.innerText = "Finalize with Lola";
+                btn.disabled = false;
+                btn.setAttribute('onclick', "toggleChat()");
+            }, 1200);
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const body = document.getElementById('chat-body');
+            const text = input.value.trim();
+            if (!text) return;
+
+            // User Message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'msg msg-user';
+            userMsg.textContent = text;
+            body.appendChild(userMsg);
+            input.value = '';
+
+            // AI Loading
+            const loadingMsg = document.createElement('div');
+            loadingMsg.className = 'msg msg-ai';
+            loadingMsg.textContent = '...';
+            body.appendChild(loadingMsg);
+            body.scrollTop = body.scrollHeight;
+
+            // Simulate AI Response (Agentic Feel)
+            setTimeout(() => {
+                loadingMsg.textContent = "I am processing your request. A Jemassurance expert will contact you if necessary or I can simulate your quote here.";
+                body.scrollTop = body.scrollHeight;
+            }, 1000);
+        }
+    </script>
 </body>
 
 

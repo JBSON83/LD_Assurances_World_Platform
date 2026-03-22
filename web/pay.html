@@ -10,7 +10,7 @@
     <script src="pixel.js"></script>
     <style>
         body {
-            padding: 4rem 2rem;
+            padding: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -18,133 +18,185 @@
         }
 
         .payment-container {
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 3rem;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+            align-items: start;
         }
 
-        .summary {
-            padding: 2.5rem;
-            background: rgba(59, 130, 246, 0.05);
-            border-radius: 20px;
-        }
-
-        .payment-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
+        @media (max-width: 768px) {
+            .payment-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         .method-btn {
-            padding: 1.5rem;
+            padding: 1.2rem;
             border: 1px solid var(--border);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.03);
             display: flex;
             align-items: center;
             gap: 15px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .method-btn:hover {
             border-color: var(--primary);
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(59, 130, 246, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .method-btn.active {
+            border-color: var(--primary);
+            background: rgba(59, 130, 246, 0.15);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
         }
 
         .card-form {
             margin-top: 2rem;
             display: none;
+            animation: slideDown 0.4s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         input {
             width: 100%;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.3);
+            padding: 1.2rem;
+            background: rgba(0, 0, 0, 0.4);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 12px;
             color: white;
             margin-bottom: 1rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
         }
     </style>
 </head>
 
-<body>
-    <div class="lang-switcher" style="position: absolute; top: 20px; right: 20px; z-index: 1000;">
-        <a href="#" class="lang-btn active">FR</a>
-        <a href="en/pay.html" class="lang-btn">EN</a>
+<body class="product-page">
+    <div style="position: fixed; top: 30px; left: 30px; display: flex; align-items: center; gap: 1.5rem; z-index: 1000;">
+        <div class="lang-switcher">
+            <a href="#" class="lang-btn active">FR</a>
+            <a href="en/pay.html" class="lang-btn">EN</a>
+        </div>
+        <a href="index.html" class="logo-link">
+            <img src="assets/logo.svg" alt="Jemassurance Logo" class="logo-img" style="height: 50px;">
+        </a>
     </div>
-    <div class="payment-container animate-fade-in">
-        <div class="checkout titch-glass" style="padding: 3rem;">
-            <h1 class="text-gradient">Finalisez votre protection</h1>
-            <p style="color: var(--text-dim);">Toutes les transactions sont sécurisées et cryptées.</p>
 
-            <div class="payment-methods">
-                <div class="method-btn" onclick="selectMethod('momo')">
-                    <div style="width: 40px; height: 40px; background: #ffcc00; border-radius: 8px;"></div>
-                    <span>MTN MoMo / Orange Money</span>
+    <div class="payment-container animate-fade-in stitch-center">
+        <!-- Section Paiement -->
+        <div class="checkout expert-card stitch-border-refined stitch-center" style="padding: 3.5rem; width: 100%;">
+            <a href="index.html" class="logo-link" style="display: block; margin-bottom: 2rem; text-align: center;">
+                <img src="assets/logo.svg" alt="Jemassurance Logo" class="logo-img" style="height: 60px;">
+            </a>
+            <h1 class="text-gradient text-center" style="margin-bottom: 0.5rem;">Finalisez votre protection</h1>
+            <p class="text-center" style="color: var(--text-dim); margin-bottom: 3rem;">Transactions ultra-sécurisées et cryptées AES-256.</p>
+
+            <div class="payment-methods" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                <div class="method-btn stitch-center" onclick="selectMethod('momo', this)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MTN_Logo.svg" alt="MoMo" style="height: 30px; width: 30px; border-radius: 6px;">
+                    <span style="font-weight: 600;">Mobile Money</span>
                 </div>
-                <div class="method-btn" onclick="selectMethod('card')">
-                    <div style="width: 40px; height: 40px; background: #3b82f6; border-radius: 8px;"></div>
-                    <span>Carte Bancaire (VISA / Mastercard)</span>
+                <div class="method-btn stitch-center" onclick="selectMethod('card', this)">
+                    <div style="width: 30px; height: 30px; background: var(--primary-gradient); border-radius: 6px; display: flex; align-items: center; justify-content: center;">💳</div>
+                    <span style="font-weight: 600;">Carte Bancaire</span>
                 </div>
             </div>
 
+            <!-- Formulaire Carte -->
             <div id="card-form" class="card-form">
-                <input type="text" placeholder="Numéro de carte">
-                <div style="display: flex; gap: 1rem;">
+                <input type="text" placeholder="Numéro de carte (0000 0000 0000 0000)">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                     <input type="text" placeholder="MM/YY">
                     <input type="text" placeholder="CVC">
                 </div>
-                <button onclick="processPayment()" class="titch-btn" style="width: 100%;">Payer maintenant</button>
+                <button onclick="processPayment()" class="titch-btn" style="width: 100%; margin-top: 1rem;">Confirmer le paiement</button>
             </div>
 
+            <!-- Formulaire MoMo -->
             <div id="momo-form" class="card-form">
-                <input type="text" placeholder="Numéro de téléphone (6xx xxx xxx)">
-                <button onclick="processPayment()" class="titch-btn"
-                    style="width: 100%; background: var(--secondary); color: black;">Payer avec Mobile Money</button>
+                <input type="text" placeholder="Numéro 6xx xxx xxx (MTN / Orange)">
+                <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 2rem; text-align: center;">Une notification de paiement sera envoyée sur votre téléphone après validation.</p>
+                <button onclick="processPayment()" class="titch-btn" style="width: 100%; background: var(--secondary-gradient); color: black; font-weight: 800;">Payer avec Mobile Money</button>
             </div>
         </div>
 
-        <div class="summary titch-glass">
-            <h3>Récapitulatif</h3>
-            <div style="margin-top: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                    <span>Assurance Auto Premium</span>
-                    <span id="p-amount">85,000 F</span>
+        <!-- Section Panier -->
+        <div class="summary expert-card stitch-border-refined stitch-center" style="padding: 2.5rem; width: 100%;">
+            <h3 class="text-center" style="margin-bottom: 2.5rem; font-size: 1.4rem;">Récapitulatif</h3>
+            
+            <div style="padding-bottom: 2rem; border-bottom: 1px solid var(--border);">
+                <div class="summary-item">
+                    <span>Produit Selectionné</span>
+                    <strong style="color: white;">Assurance Auto Standard</strong>
                 </div>
-                <div style="display: flex; justify-content: space-between; color: #10b981;">
-                    <span>Promotion "First Year"</span>
-                    <span>-5,000 F</span>
+                <div class="summary-item" style="color: var(--text-dim);">
+                    <span>Prix de base</span>
+                    <span>85 000 FCFA</span>
                 </div>
-                <a href="index.html" class="logo-link" style="display: block; margin-top: 1rem;">
-                    <img src="assets/logo.svg" alt="Jemassurance Logo" class="logo-img" style="height: 35px;">
-                </a>
+                <div class="summary-item" style="color: #10b981; font-weight: 600;">
+                    <span>Remise Premium (10%)</span>
+                    <span>- 8 500 FCFA</span>
+                </div>
             </div>
-            <div
-                style="margin-top: 2rem; display: flex; justify-content: space-between; font-weight: 800; font-size: 1.5rem;">
-                <span>Total</span>
-                <span id="final-total">80,000 F</span>
+
+            <div style="margin-top: 2.5rem; display: flex; justify-content: space-between; align-items: baseline;">
+                <span style="font-size: 1.1rem;">Total à payer</span>
+                <span class="text-gradient" style="font-size: 2rem; font-weight: 800;">76 500 F</span>
             </div>
-            <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 2rem;">En payant, vous acceptez nos
-                conditions générales de vente.</p>
+
+            <div style="margin-top: 3rem; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; font-size: 0.8rem; color: var(--text-dim); line-height: 1.5;">
+                <p>🔒 Paiement sécurisé par cryptage TLS 1.3<br>📄 Facture envoyée instantanément par email et WhatsApp après validation.</p>
+            </div>
         </div>
     </div>
 
     <script>
-        function selectMethod(m) {
+        function selectMethod(m, el) {
             document.querySelectorAll('.card-form').forEach(f => f.style.display = 'none');
+            document.querySelectorAll('.method-btn').forEach(b => b.classList.remove('active'));
+            
             document.getElementById(`${m}-form`).style.display = 'block';
-            LD_Pixel.emit("InitiateCheckout", { method: m });
+            el.classList.add('active');
+            
+            if(window.LD_Pixel) LD_Pixel.emit("InitiateCheckout", { method: m });
         }
 
         function processPayment() {
-            LD_Pixel.trackPurchase(80000, "XAF", "Assurance Auto Premium");
-            alert("Traitement sécurisé en cours... (Simulation API)");
-            window.location.href = "thanks.html";
+            if(window.LD_Pixel) LD_Pixel.trackPurchase(76500, "XAF", "Assurance Auto Standard");
+            
+            // Simulation UI
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "Traitement en cours...";
+            btn.disabled = true;
+            btn.style.opacity = "0.7";
+
+            setTimeout(() => {
+                window.location.href = "thanks.html";
+            }, 1500);
         }
     </script>
 </body>

@@ -83,10 +83,11 @@ h1, h2, h3 { letter-spacing: -0.04em; line-height: 1.05; font-weight: 800; color
 }
 
 .logo-img {
-    height: clamp(35px, 5vw, 50px);
+    height: clamp(45px, 6vw, 55px); /* Optimized for wide SVG logo */
     width: auto;
     display: block;
     transition: var(--transition-smooth);
+    object-fit: contain;
 }
 
 .logo-link:hover .logo-img {
@@ -94,9 +95,9 @@ h1, h2, h3 { letter-spacing: -0.04em; line-height: 1.05; font-weight: 800; color
 }
 
 .logo-footer {
-    height: clamp(50px, 8vw, 70px);
+    height: clamp(60px, 8vw, 85px); /* Adjusted for wide logo */
     width: auto;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 /* Glassmorphism 2.1 (Expert) */
@@ -325,7 +326,7 @@ h1, h2, h3 { letter-spacing: -0.04em; line-height: 1.05; font-weight: 800; color
     flex: 1 1 320px;
     max-width: 380px;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; -- Removed to allow badges to pop out */
 }
 
 .step-card p {
@@ -409,16 +410,16 @@ h1, h2, h3 { letter-spacing: -0.04em; line-height: 1.05; font-weight: 800; color
 
 .product-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 1.2rem;
     align-items: center;
 }
 
 .product-link {
     text-decoration: none;
     color: var(--text-dim);
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
     transition: var(--transition-smooth);
     position: relative;
     padding: 5px 0;
@@ -629,13 +630,13 @@ h1, h2, h3 { letter-spacing: -0.04em; line-height: 1.05; font-weight: 800; color
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 4rem;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 3rem;
 }
 
 .footer-col h3 { margin-bottom: 1.5rem; font-size: 1.4rem; }
 .footer-col h4 { margin-bottom: 1.5rem; color: #fff; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-.footer-col p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.8; }
+.footer-col p { font-size: 0.9rem; color: #94a3b8; line-height: 1.8; } /* Lighter color for better visibility on dark bg */
 
 /* Responsive Expert */
 @media (max-width: 768px) {
@@ -703,5 +704,60 @@ h1, h2, h3 { letter-spacing: -0.04em; line-height: 1.05; font-weight: 800; color
         margin-left: 0;
         margin-top: 1rem;
         justify-content: center;
+    }
+}
+
+/* Stitch Utility Classes (Relooking v3.1) */
+.stitch-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stitch-max-width {
+    max-width: 1200px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stitch-border-refined {
+    border: 1px solid var(--border-bright);
+    position: relative;
+    border-radius: 32px;
+}
+
+.text-center { text-align: center; }
+
+/* Enhanced Gradients */
+.brand-gradient-glow {
+    background: var(--secondary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px rgba(34, 197, 94, 0.3));
+}
+
+.steps-grid, .partners-grid, .contact-grid {
+    justify-items: center;
+    justify-content: center;
+}
+
+.stitch-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    margin: 4rem auto;
+}
+
+@media (max-width: 992px) {
+    .stitch-grid-3 {
+        grid-template-columns: 1fr;
+        max-width: 500px;
     }
 }
