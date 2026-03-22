@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin | Jemassurance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../titch.css">
+    <style>
+        :root { --sidebar-width: 260px; }
+        body { background: var(--dark); display: flex; min-height: 100vh; overflow: hidden; }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: rgba(255, 255, 255, 0.03);
+            border-right: 1px solid var(--border);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 3rem;
+            overflow-y: auto;
+        }
+
+        .section { display: none; max-width: 1000px; margin: 0 auto; }
+        .section.active { display: block; }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .admin-card {
+            padding: 2rem;
+            border-radius: 20px;
+        }
+
+        .admin-card h3 { margin-bottom: 1.5rem; color: var(--primary); }
+
+        .input-group { margin-bottom: 1.5rem; }
+        .input-group label { display: block; margin-bottom: 0.5rem; color: var(--text-dim); font-size: 0.9rem; }
+        
+        input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: white;
+        }
+
+        .token-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+
+        .token-table th, .token-table td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .status-badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+        .status-active { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+        .status-revoked { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="../assets/logo.svg" alt="Logo" style="height: 35px; margin-bottom: 1rem;">
+        <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div class="nav-link active" onclick="showSection('pixels')">Tracking Pixels</div>
+            <div class="nav-link" onclick="showSection('payments')">Gestion des Paiements</div>
+            <div class="nav-link" onclick="showSection('content')">Contenu & Coordonnées</div>
+            <div class="nav-link" onclick="showSection('lola')">Configuration Lola</div>
+            <div class="nav-link" onclick="showSection('simulators')">Simulateurs</div>
+            <div class="nav-link" onclick="showSection('seo')">SEO & Métadonnées</div>
+            <div class="nav-link" onclick="showSection('maintenance')">Maintenance</div>
+            <div class="nav-link" onclick="showSection('security')">Sécurité Admin</div>
+            <div class="nav-link" onclick="showSection('connectors')">Connecteurs Externes</div>
+            <div class="nav-link" onclick="showSection('api')">Tokens du Site</div>
+            <div class="nav-link" onclick="logout()">Déconnexion</div>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="dashboard-header animate-fade-in">
+            <h1 class="text-gradient">Tableau de Bord Administrateur</h1>
+        </div>
+
+        <!-- Section: Pixels -->
+        <div id="pixels" class="section active animate-fade-in">
+            <div class="admin-card titch-glass">
+                <h3>Configuration du Tracking Universel</h3>
+                <p style="color: var(--text-dim); margin-bottom: 2rem;">Configurez ici les IDs de tracking qui seront automatiquement injectés dans pixel.js.</p>
+                
+                <form id="pixelForm">
+                    <div class="card-grid">
+                        <div class="input-group">
+                            <label>Google Analytics 4 ID (G-XXXX)</label>
+                            <input type="text" id="ga4_id" placeholder="G-XXXXXXXXX">
+                        </div>
+                        <div class="input-group">
+                            <label>Facebook Pixel ID</label>
+                            <input type="text" id="fb_id" placeholder="1234567890">
+                        </div>
+                        <div class="input-group">
+                            <label>TikTok Pixel ID</label>
+                            <input type="text" id="tiktok_id" placeholder="TCXXXXXXXX">
+                        </div>
+                    </div>
+                    <button type="submit" class="titch-btn" style="margin-top: 1rem;">Enregistrer les modifications</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section: Paiements -->
+        <div id="payments" class="section animate-fade-in">
+            <div class="admin-card titch-glass">
+                <h3>Passerelles de Paiement</h3>
+                <p style="color: var(--text-dim); margin-bottom: 2rem;">Configurez les accès aux solutions de paiement (Maviance, Orange, MTN).</p>
+                
+                <form id="paymentForm">
+                    <div class="card-grid">
+                        <div class="input-group">
+                            <label>Maviance API Key</label>
+                            <input type="text" id="maviance_key" placeholder="api-key-...">
+                        </div>
+                        <div class="input-group">
+                            <label>Orange Money Merchant ID</label>
+                            <input type="text" id="om_merchant" placeholder="ID de marchand">
+                        </div>
+                        <div class="input-group">
+                            <label>MTN MoMo API User</label>
+                            <input type="text" id="momo_user" placeholder="User ID">
+                        </div>
+                        <div class="input-group">
+                            <label>MTN MoMo API Key</label>
+                            <input type="password" id="momo_key" placeholder="••••••••">
+                        </div>
+                    </div>
+                    <button type="submit" class="titch-btn" style="margin-top: 1rem;">Enregistrer les credentials</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section: Contenu -->
+        <div id="content" class="section animate-fade-in">
+            <div class="admin-card titch-glass">
+                <h3>Coordonnées & Informations du Site</h3>
+                <form id="contentForm">
+                    <div class="card-grid">
+                        <div class="input-group">
+                            <label>Téléphone Clientèle</label>
+                            <input type="text" id="site_phone" placeholder="+237 ...">
+                        </div>
+                        <div class="input-group">
+                            <label>Email de Contact</label>
+                            <input type="email" id="site_email" placeholder="contact@jemassurance.online">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Adresse du Siège Social</label>
+                        <input type="text" id="site_address" placeholder="Douala, Cameroun...">
+                    </div>
+                    <button type="submit" class="titch-btn">Mettre à jour les coordonnées</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section: Lola -->
+        <div id="lola" class="section animate-fade-in">
+            <div class="admin-card titch-glass">
+                <h3>Paramétrage de Lola (Assistant IA)</h3>
+                <form id="lolaForm">
+                    <div class="input-group">
+                        <label>Message d'accueil personnalisé</label>
+                        <input type="text" id="lola_message" placeholder="Bonjour ! Je suis Lola...">
+                    </div>
+                    <div class="card-grid">
+                        <div class="input-group">
+                            <label>Lien Telegram</label>
+                            <input type="text" id="telegram_link" placeholder="t.me/...">
+                        </div>
+                        <div class="input-group">
+                            <label>Lien WhatsApp</label>
+                            <input type="text" id="whatsapp_link" placeholder="wa.me/...">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label><input type="checkbox" id="lola_enabled" style="width: auto; margin-right: 10px;"> Activer Lola sur le site</label>
+                    </div>
+                    <button type="submit" class="titch-btn">Sauvegarder la config Lola</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section: Simulateurs -->
+        <div id="simulators" class="section animate-fade-in">
+            <div class="admin-card titch-glass">
+                <h3>Taux des Simulateurs (Risque Cameroun)</h3>
+                <form id="simForm">
+                    <div class="card-grid">
+                        <div class="input-group">
+                            <label>Taux Auto (%)</label>
+                            <input type="number" step="0.01" id="sim_auto_rate" placeholder="0.05">
+                        </div>
+                        <div class="input-group">
+                            <label>Taux Santé (%)</label>
+                            <input type="number" step="0.01" id="sim_health_rate" placeholder="0.10">
+                        </div>
+                        <div class="input-group">
+                            <label>Taux Habitation (%)</label>
+                            <input type="number" step="0.01" id="sim_home_rate" placeholder="0.02">
+                        </div>
+                    </div>
+                    <button type="submit" class="titch-btn">Appliquer les nouveaux taux</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section: SEO -->
+        <div id="seo" class="section animate-fade-in">
+            <div class="admin-card titch-glass">
+                <h3>SEO & Visibilité</h3>
+                <form id="seoForm">
+                    <div class="input-group">
+                        <label>Meta Title (Accueil)</label>
+                        <input type="text" id="seo_title" placeholder="Jemassurance | Votre courtier en ligne">
+                    </div>
+                    <div class="input-group">
+                        <label>Meta Description</label>
+                        <input type="text" id="seo_description" placeholder="Les meilleures assurances au Cameroun...">
+                    </div>
+                    <button type="submit" class="titch-btn">Actualiser le SEO</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section: Maintenance -->
+        <div id="maintenance" class="section animate-fade-in">
+            <div class="admin-card titch-glass">
+                <h3>Mode Maintenance</h3>
+                <p style="color: var(--text-dim); margin-bottom: 2rem;">Si activé, les visiteurs verront une page de maintenance au lieu de votre site.</p>
+                <form id="maintForm">
+                    <div class="input-group">
+                        <label><input type="checkbox" id="maintenance_mode" style="width: auto; margin-right: 10px;"> Activer le mode maintenance</label>
+                    </div>
+                    <button type="submit" class="titch-btn">Mettre à jour le statut</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section: Sécurité -->
+        <div id="security" class="section animate-fade-in">
+            <div class="admin-card titch-glass">
+                <h3>Sécurité de l'Espace Admin</h3>
+                <form id="securityForm">
+                    <div class="input-group">
+                        <label>Nouveau Mot de Passe Administrateur</label>
+                        <input type="password" id="new_admin_pass" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="titch-btn">Changer le mot de passe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section: Connecteurs -->
+        <div id="connectors" class="section animate-fade-in">
+            <div class="admin-card titch-glass">
+                <h3>Connecteurs Externes (n8n, Zapier...)</h3>
+                <p style="color: var(--text-dim); margin-bottom: 2rem;">Configurez ici les points de sortie de vos données vers vos outils de gestion ou d'automatisation.</p>
+                
+                <form id="connectorForm">
+                    <div class="input-group">
+                        <label>Main Webhook URL (POST)</label>
+                        <input type="url" id="webhook_url" placeholder="https://votre-instance-n8n.com/webhook/...">
+                    </div>
+                    <div class="input-group">
+                        <label>Auth Secret / Bearer Token (Optionnel)</label>
+                        <input type="text" id="webhook_secret" placeholder="votre-cle-secrete">
+                    </div>
+                    <button type="submit" class="titch-btn">Enregistrer le connecteur</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section: API -->
+        <div id="api" class="section animate-fade-in">
+            <div class="admin-card titch-glass">
+                <h3>Tokens API du Site</h3>
+                <p style="color: var(--text-dim); margin-bottom: 2rem;">Générez des clés API pour permettre à d'autres applications de lire des données sécurisées depuis Jemassurance.</p>
+                
+                <div style="display: flex; gap: 1rem;">
+                    <input type="text" id="new_key_name" placeholder="Nom de l'application (ex: n8n, CRM...)" style="max-width: 400px;">
+                    <button onclick="generateKey()" class="titch-btn">Générer Clé API</button>
+                </div>
+
+                <table class="token-table">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Token (Extrémité)</th>
+                            <th>Créé le</th>
+                            <th>Statut</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tokenList">
+                        <!-- Clés injectées par JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8001/admin';
+        const token = localStorage.getItem('admin_token');
+
+        if (!token) window.location.href = 'login.html';
+
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.target.classList.add('active');
+            if (id === 'api') loadKeys();
+        }
+
+        function logout() {
+            localStorage.removeItem('admin_token');
+            window.location.href = 'login.html';
+        }
+
+        // --- Config Persistence ---
+        async function loadConfig() {
+            const resp = await fetch(`${API_BASE}/config`, { headers: { 'Authorization': token }});
+            const config = await resp.json();
+            
+            // Pixels
+            if (config.GA4_ID) document.getElementById('ga4_id').value = config.GA4_ID;
+            if (config.FB_ID) document.getElementById('fb_id').value = config.FB_ID;
+            if (config.TIKTOK_ID) document.getElementById('tiktok_id').value = config.TIKTOK_ID;
+            
+            // Payments
+            if (config.MAVIANCE_KEY) document.getElementById('maviance_key').value = config.MAVIANCE_KEY;
+            if (config.OM_MERCHANT) document.getElementById('om_merchant').value = config.OM_MERCHANT;
+            if (config.MOMO_USER) document.getElementById('momo_user').value = config.MOMO_USER;
+            if (config.MOMO_KEY) document.getElementById('momo_key').value = config.MOMO_KEY;
+            
+            // Content
+            if (config.SITE_PHONE) document.getElementById('site_phone').value = config.SITE_PHONE;
+            if (config.SITE_EMAIL) document.getElementById('site_email').value = config.SITE_EMAIL;
+            if (config.SITE_ADDRESS) document.getElementById('site_address').value = config.SITE_ADDRESS;
+            
+            // Lola
+            if (config.LOLA_MESSAGE) document.getElementById('lola_message').value = config.LOLA_MESSAGE;
+            if (config.TELEGRAM_LINK) document.getElementById('telegram_link').value = config.TELEGRAM_LINK;
+            if (config.WHATSAPP_LINK) document.getElementById('whatsapp_link').value = config.WHATSAPP_LINK;
+            document.getElementById('lola_enabled').checked = config.LOLA_ENABLED === 'true';
+            
+            // Simulators
+            if (config.SIM_AUTO_RATE) document.getElementById('sim_auto_rate').value = config.SIM_AUTO_RATE;
+            if (config.SIM_HEALTH_RATE) document.getElementById('sim_health_rate').value = config.SIM_HEALTH_RATE;
+            if (config.SIM_HOME_RATE) document.getElementById('sim_home_rate').value = config.SIM_HOME_RATE;
+            
+            // SEO
+            if (config.SEO_TITLE) document.getElementById('seo_title').value = config.SEO_TITLE;
+            if (config.SEO_DESCRIPTION) document.getElementById('seo_description').value = config.SEO_DESCRIPTION;
+            
+            // Maintenance
+            document.getElementById('maintenance_mode').checked = config.MAINTENANCE_MODE === 'true';
+
+            // Connectors
+            if (config.WEBHOOK_URL) document.getElementById('webhook_url').value = config.WEBHOOK_URL;
+            if (config.WEBHOOK_SECRET) document.getElementById('webhook_secret').value = config.WEBHOOK_SECRET;
+        }
+
+        async function saveConfig(data) {
+            await fetch(`${API_BASE}/config`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': token },
+                body: JSON.stringify(data)
+            });
+            alert('Configuration enregistrée !');
+        }
+
+        document.getElementById('pixelForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            saveConfig({
+                GA4_ID: document.getElementById('ga4_id').value,
+                FB_ID: document.getElementById('fb_id').value,
+                TIKTOK_ID: document.getElementById('tiktok_id').value
+            });
+        });
+
+        document.getElementById('paymentForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            saveConfig({
+                MAVIANCE_KEY: document.getElementById('maviance_key').value,
+                OM_MERCHANT: document.getElementById('om_merchant').value,
+                MOMO_USER: document.getElementById('momo_user').value,
+                MOMO_KEY: document.getElementById('momo_key').value
+            });
+        });
+
+        document.getElementById('contentForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            saveConfig({
+                SITE_PHONE: document.getElementById('site_phone').value,
+                SITE_EMAIL: document.getElementById('site_email').value,
+                SITE_ADDRESS: document.getElementById('site_address').value
+            });
+        });
+
+        document.getElementById('lolaForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            saveConfig({
+                LOLA_MESSAGE: document.getElementById('lola_message').value,
+                TELEGRAM_LINK: document.getElementById('telegram_link').value,
+                WHATSAPP_LINK: document.getElementById('whatsapp_link').value,
+                LOLA_ENABLED: document.getElementById('lola_enabled').checked ? 'true' : 'false'
+            });
+        });
+
+        document.getElementById('simForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            saveConfig({
+                SIM_AUTO_RATE: document.getElementById('sim_auto_rate').value,
+                SIM_HEALTH_RATE: document.getElementById('sim_health_rate').value,
+                SIM_HOME_RATE: document.getElementById('sim_home_rate').value
+            });
+        });
+
+        document.getElementById('seoForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            saveConfig({
+                SEO_TITLE: document.getElementById('seo_title').value,
+                SEO_DESCRIPTION: document.getElementById('seo_description').value
+            });
+        });
+
+        document.getElementById('maintForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            saveConfig({
+                MAINTENANCE_MODE: document.getElementById('maintenance_mode').checked ? 'true' : 'false'
+            });
+        });
+
+        document.getElementById('securityForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const password = document.getElementById('new_admin_pass').value;
+            if (!password) return alert('Entrez un mot de passe');
+            await fetch(`${API_BASE}/change-password`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': token },
+                body: JSON.stringify({ password })
+            });
+            alert('Mot de passe mis à jour !');
+        });
+
+        document.getElementById('connectorForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            saveConfig({
+                WEBHOOK_URL: document.getElementById('webhook_url').value,
+                WEBHOOK_SECRET: document.getElementById('webhook_secret').value
+            });
+        });
+
+        // --- API Keys Logic ---
+        async function loadKeys() {
+            const resp = await fetch(`${API_BASE}/api-keys`, { headers: { 'Authorization': token }});
+            const keys = await resp.json();
+            const list = document.getElementById('tokenList');
+            list.innerHTML = keys.map(k => `
+                <tr>
+                    <td>${k.name}</td>
+                    <td style="font-family: monospace;">${k.token.substring(0, 10)}...</td>
+                    <td>${new Date(k.created_at * 1000).toLocaleDateString()}</td>
+                    <td><span class="status-badge ${k.is_active ? 'status-active' : 'status-revoked'}">${k.is_active ? 'Actif' : 'Révoqué'}</span></td>
+                    <td>${k.is_active ? `<button onclick="revokeKey('${k.token}')" style="background:none; border:none; color:#ef4444; cursor:pointer;">Révoquer</button>` : ''}</td>
+                </tr>
+            `).join('');
+        }
+
+        async function generateKey() {
+            const name = document.getElementById('new_key_name').value;
+            if (!name) return alert('Entrez un nom');
+            const resp = await fetch(`${API_BASE}/api-keys`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': token },
+                body: JSON.stringify({ name })
+            });
+            const data = await resp.json();
+            alert(`Clé générée (copiez-la maintenant) :\n\n${data.token}`);
+            loadKeys();
+        }
+
+        async function revokeKey(tokenStr) {
+            if (!confirm('Voulez-vous vraiment révoquer cette clé ?')) return;
+            await fetch(`${API_BASE}/api-keys/revoke`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': token },
+                body: JSON.stringify({ token: tokenStr })
+            });
+            loadKeys();
+        }
+
+        loadConfig();
+    </script>
+</body>
+</html>
