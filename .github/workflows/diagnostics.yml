@@ -1,0 +1,42 @@
+name: System Diagnostics
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Diagnostics on Hostinger
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST_IP }}
+          username: ${{ secrets.HOST_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            echo "====================================="
+            echo "1. IP TABLES & UFW STATUS"
+            echo "====================================="
+            sudo ufw status verbose
+            sudo iptables -L -n | grep -E "dpt:80|dpt:443" || echo "No iptables rules found for 80/443"
+
+            echo "====================================="
+            echo "2. DOCKER CONTAINERS STATUS"
+            echo "====================================="
+            docker ps -a
+
+            echo "====================================="
+            echo "3. LOCAL CURL TEST (HTTP)"
+            echo "====================================="
+            curl -v -m 5 http://localhost || echo "Curl HTTP failed"
+
+            echo "====================================="
+            echo "4. LOCAL CURL TEST (HTTPS)"
+            echo "====================================="
+            curl -v -k -m 5 https://localhost || echo "Curl HTTPS failed"
+
+            echo "====================================="
+            echo "5. LISTEN PORTS"
+            echo "====================================="
+            sudo ss -tulpn | grep -E ":80|:443" || echo "No process listening on 80/443"
