@@ -641,6 +641,8 @@ h1, h2, h3 { letter-spacing: -0.04em; line-height: 1.05; font-weight: 800; color
 .footer-col {
     flex: 1 1 0;
     min-width: 0;
+    justify-content: flex-start !important;
+    align-items: center;
 }
 
 .footer-col h3 { margin-bottom: 1.5rem; font-size: 1.4rem; }
