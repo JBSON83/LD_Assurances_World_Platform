@@ -1,0 +1,551 @@
+﻿diagnose	Set up job	´╗┐2026-03-22T19:42:06.9428769Z Current runner version: '2.332.0'
+diagnose	Set up job	2026-03-22T19:42:06.9458449Z ##[group]Runner Image Provisioner
+diagnose	Set up job	2026-03-22T19:42:06.9459965Z Hosted Compute Agent
+diagnose	Set up job	2026-03-22T19:42:06.9461562Z Version: 20260213.493
+diagnose	Set up job	2026-03-22T19:42:06.9463150Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+diagnose	Set up job	2026-03-22T19:42:06.9464777Z Build Date: 2026-02-13T00:28:41Z
+diagnose	Set up job	2026-03-22T19:42:06.9466259Z Worker ID: {de66baf4-54f5-4de7-ba27-0f51100a685e}
+diagnose	Set up job	2026-03-22T19:42:06.9467749Z Azure Region: northcentralus
+diagnose	Set up job	2026-03-22T19:42:06.9469118Z ##[endgroup]
+diagnose	Set up job	2026-03-22T19:42:06.9471955Z ##[group]Operating System
+diagnose	Set up job	2026-03-22T19:42:06.9473301Z Ubuntu
+diagnose	Set up job	2026-03-22T19:42:06.9474349Z 24.04.3
+diagnose	Set up job	2026-03-22T19:42:06.9475405Z LTS
+diagnose	Set up job	2026-03-22T19:42:06.9476451Z ##[endgroup]
+diagnose	Set up job	2026-03-22T19:42:06.9477577Z ##[group]Runner Image
+diagnose	Set up job	2026-03-22T19:42:06.9478727Z Image: ubuntu-24.04
+diagnose	Set up job	2026-03-22T19:42:06.9479862Z Version: 20260309.50.1
+diagnose	Set up job	2026-03-22T19:42:06.9481685Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260309.50/images/ubuntu/Ubuntu2404-Readme.md
+diagnose	Set up job	2026-03-22T19:42:06.9484229Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260309.50
+diagnose	Set up job	2026-03-22T19:42:06.9485887Z ##[endgroup]
+diagnose	Set up job	2026-03-22T19:42:06.9487962Z ##[group]GITHUB_TOKEN Permissions
+diagnose	Set up job	2026-03-22T19:42:06.9490486Z Contents: read
+diagnose	Set up job	2026-03-22T19:42:06.9491767Z Metadata: read
+diagnose	Set up job	2026-03-22T19:42:06.9492981Z Packages: read
+diagnose	Set up job	2026-03-22T19:42:06.9494064Z ##[endgroup]
+diagnose	Set up job	2026-03-22T19:42:06.9496821Z Secret source: Actions
+diagnose	Set up job	2026-03-22T19:42:06.9498312Z Prepare workflow directory
+diagnose	Set up job	2026-03-22T19:42:06.9858558Z Prepare all required actions
+diagnose	Set up job	2026-03-22T19:42:06.9897213Z Getting action download info
+diagnose	Set up job	2026-03-22T19:42:07.3079361Z Download action repository 'appleboy/ssh-action@v1.0.3' (SHA:029f5b4aeeeb58fdfe1410a5d17f967dacf36262)
+diagnose	Set up job	2026-03-22T19:42:07.7734354Z Complete job name: diagnose
+diagnose	Build appleboy/ssh-action@v1.0.3	´╗┐2026-03-22T19:42:07.8261445Z ##[group]Build container for action use: '/home/runner/work/_actions/appleboy/ssh-action/v1.0.3/Dockerfile'.
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:07.8322055Z ##[command]/usr/bin/docker build -t bfbff6:821097a9c7a94b469f0d63afc4a75a27 -f "/home/runner/work/_actions/appleboy/ssh-action/v1.0.3/Dockerfile" "/home/runner/work/_actions/appleboy/ssh-action/v1.0.3"
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.1102659Z #0 building with "default" instance using docker driver
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.1104855Z 
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.1106124Z #1 [internal] load build definition from Dockerfile
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.1109021Z #1 transferring dockerfile: 149B done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.1111816Z #1 DONE 0.0s
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.1113070Z 
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.1114490Z #2 [internal] load metadata for ghcr.io/appleboy/drone-ssh:1.7.3
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.3597452Z #2 DONE 0.4s
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4768005Z 
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4769574Z #3 [internal] load .dockerignore
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4771237Z #3 transferring context: 2B done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4772162Z #3 DONE 0.0s
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4772690Z 
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4773040Z #4 [internal] load build context
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4773874Z #4 transferring context: 108B done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4774822Z #4 DONE 0.0s
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4775605Z 
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4776524Z #5 [1/2] FROM ghcr.io/appleboy/drone-ssh:1.7.3@sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4778503Z #5 resolve ghcr.io/appleboy/drone-ssh:1.7.3@sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158 done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4781253Z #5 sha256:1a52f94820e830bc9734623deb03bbafa6a248fba19cdc2e5605c70d90d91441 1.24kB / 1.24kB done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4782833Z #5 sha256:c4781b8d012b16b6c7468dc9104fad0a63f2a8815b2af8b7176bb544253ea8c7 3.86kB / 3.86kB done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4784563Z #5 sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca 3.38MB / 3.38MB 0.1s done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4786302Z #5 sha256:654aaee5654be60f81172539ecd74485cf8bbe2e9137bab0d429862c31c676f6 284.83kB / 284.83kB 0.1s done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4788013Z #5 sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c 1.20kB / 1.20kB 0.1s done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4789512Z #5 sha256:066e5b821e26d8313055e0314c056e6c297847bcf963e5df10e7aa03107f2246 0B / 125B 0.1s
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4791483Z #5 sha256:47353a6f9201a145b687290e5ae0278ac269faf4bb61bee3e9246c37a8d74277 0B / 2.44MB 0.1s
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.4793032Z #5 sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158 2.38kB / 2.38kB done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.5918707Z #5 sha256:066e5b821e26d8313055e0314c056e6c297847bcf963e5df10e7aa03107f2246 125B / 125B 0.1s done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.5921022Z #5 sha256:47353a6f9201a145b687290e5ae0278ac269faf4bb61bee3e9246c37a8d74277 2.44MB / 2.44MB 0.1s done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.5922418Z #5 extracting sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca 0.1s done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.5923598Z #5 extracting sha256:654aaee5654be60f81172539ecd74485cf8bbe2e9137bab0d429862c31c676f6
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:11.7842970Z #5 extracting sha256:654aaee5654be60f81172539ecd74485cf8bbe2e9137bab0d429862c31c676f6 0.0s done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:14.4342121Z #5 extracting sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:14.6784118Z #5 extracting sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:14.6786277Z #5 extracting sha256:066e5b821e26d8313055e0314c056e6c297847bcf963e5df10e7aa03107f2246 done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:14.6788352Z #5 extracting sha256:47353a6f9201a145b687290e5ae0278ac269faf4bb61bee3e9246c37a8d74277 0.0s done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:14.6790369Z #5 DONE 3.1s
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:14.6791399Z 
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:14.6791993Z #6 [2/2] COPY entrypoint.sh /bin/entrypoint.sh
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:14.6793342Z #6 DONE 0.0s
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:14.6793817Z 
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:14.6794211Z #7 exporting to image
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:14.6795030Z #7 exporting layers
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:15.0054889Z #7 exporting layers 0.5s done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:15.0250926Z #7 writing image sha256:b823db2b6905d8fce8c30a1949707f3243b18715a1e01682e8bbc1bded43e894 done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:15.0255069Z #7 naming to docker.io/library/bfbff6:821097a9c7a94b469f0d63afc4a75a27 done
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:15.0256224Z #7 DONE 0.5s
+diagnose	Build appleboy/ssh-action@v1.0.3	2026-03-22T19:42:15.0360537Z ##[endgroup]
+diagnose	Run Diagnostics on Hostinger	´╗┐2026-03-22T19:42:15.0732342Z ##[group]Run appleboy/ssh-action@v1.0.3
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0735236Z with:
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0736292Z   host: 	***
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0736672Z   username: ***
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0751769Z   key: ***
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0752104Z   port: 22
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0754662Z   script: echo "====================================="
+diagnose	Run Diagnostics on Hostinger	echo "1. IP TABLES & UFW STATUS"
+diagnose	Run Diagnostics on Hostinger	echo "====================================="
+diagnose	Run Diagnostics on Hostinger	sudo ufw status verbose
+diagnose	Run Diagnostics on Hostinger	sudo iptables -L -n | grep -E "dpt:80|dpt:443" || echo "No iptables rules found for 80/443"
+diagnose	Run Diagnostics on Hostinger	
+diagnose	Run Diagnostics on Hostinger	echo "====================================="
+diagnose	Run Diagnostics on Hostinger	echo "2. DOCKER CONTAINERS STATUS"
+diagnose	Run Diagnostics on Hostinger	echo "====================================="
+diagnose	Run Diagnostics on Hostinger	docker ps -a
+diagnose	Run Diagnostics on Hostinger	
+diagnose	Run Diagnostics on Hostinger	echo "====================================="
+diagnose	Run Diagnostics on Hostinger	echo "3. LOCAL CURL TEST (HTTP)"
+diagnose	Run Diagnostics on Hostinger	echo "====================================="
+diagnose	Run Diagnostics on Hostinger	curl -v -m 5 http://localhost || echo "Curl HTTP failed"
+diagnose	Run Diagnostics on Hostinger	
+diagnose	Run Diagnostics on Hostinger	echo "====================================="
+diagnose	Run Diagnostics on Hostinger	echo "4. LOCAL CURL TEST (HTTPS)"
+diagnose	Run Diagnostics on Hostinger	echo "====================================="
+diagnose	Run Diagnostics on Hostinger	curl -v -k -m 5 https://localhost || echo "Curl HTTPS failed"
+diagnose	Run Diagnostics on Hostinger	
+diagnose	Run Diagnostics on Hostinger	echo "====================================="
+diagnose	Run Diagnostics on Hostinger	echo "5. LISTEN PORTS"
+diagnose	Run Diagnostics on Hostinger	echo "====================================="
+diagnose	Run Diagnostics on Hostinger	sudo ss -tulpn | grep -E ":80|:443" || echo "No process listening on 80/443"
+diagnose	Run Diagnostics on Hostinger	
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0757366Z   timeout: 30s
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0757691Z   command_timeout: 10m
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0758036Z   proxy_port: 22
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0758360Z   proxy_timeout: 30s
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0759294Z ##[endgroup]
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.0904762Z ##[command]/usr/bin/docker run --name bfbff6821097a9c7a94b469f0d63afc4a75a27_4e691e --label bfbff6 --workdir /github/workspace --rm -e "INPUT_HOST" -e "INPUT_USERNAME" -e "INPUT_KEY" -e "INPUT_PORT" -e "INPUT_SCRIPT" -e "INPUT_PASSPHRASE" -e "INPUT_PASSWORD" -e "INPUT_SYNC" -e "INPUT_USE_INSECURE_CIPHER" -e "INPUT_CIPHER" -e "INPUT_TIMEOUT" -e "INPUT_COMMAND_TIMEOUT" -e "INPUT_KEY_PATH" -e "INPUT_FINGERPRINT" -e "INPUT_PROXY_HOST" -e "INPUT_PROXY_PORT" -e "INPUT_PROXY_USERNAME" -e "INPUT_PROXY_PASSWORD" -e "INPUT_PROXY_PASSPHRASE" -e "INPUT_PROXY_TIMEOUT" -e "INPUT_PROXY_KEY" -e "INPUT_PROXY_KEY_PATH" -e "INPUT_PROXY_FINGERPRINT" -e "INPUT_PROXY_CIPHER" -e "INPUT_PROXY_USE_INSECURE_CIPHER" -e "INPUT_SCRIPT_STOP" -e "INPUT_ENVS" -e "INPUT_ENVS_FORMAT" -e "INPUT_DEBUG" -e "INPUT_ALLENVS" -e "INPUT_REQUEST_PTY" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e "ACTIONS_ORCHESTRATION_ID" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp":"/github/runner_temp" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/LD_Assurances_World_Platform/LD_Assurances_World_Platform":"/github/workspace" bfbff6:821097a9c7a94b469f0d63afc4a75a27
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2854144Z ======CMD======
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2854699Z echo "====================================="
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2855170Z echo "1. IP TABLES & UFW STATUS"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2855640Z echo "====================================="
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2856364Z sudo ufw status verbose
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2856908Z sudo iptables -L -n | grep -E "dpt:80|dpt:443" || echo "No iptables rules found for 80/443"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2857338Z 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2857505Z echo "====================================="
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2857924Z echo "2. DOCKER CONTAINERS STATUS"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2858329Z echo "====================================="
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2858718Z docker ps -a
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2858906Z 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2859062Z echo "====================================="
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2859466Z echo "3. LOCAL CURL TEST (HTTP)"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2859888Z echo "====================================="
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2860414Z curl -v -m 5 http://localhost || echo "Curl HTTP failed"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2861033Z 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2861218Z echo "====================================="
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2861657Z echo "4. LOCAL CURL TEST (HTTPS)"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2862072Z echo "====================================="
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2862575Z curl -v -k -m 5 https://localhost || echo "Curl HTTPS failed"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2862925Z 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2863090Z echo "====================================="
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2863503Z echo "5. LISTEN PORTS"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2863870Z echo "====================================="
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2864436Z sudo ss -tulpn | grep -E ":80|:443" || echo "No process listening on 80/443"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2864808Z 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:15.2864952Z ======END======
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.5042390Z out: =====================================
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.5043089Z out: 1. IP TABLES & UFW STATUS
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.5043622Z out: =====================================
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.5626565Z out: Status: inactive
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.5820975Z out: ACCEPT     6    --  0.0.0.0/0            172.20.0.3           tcp dpt:80
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.5822346Z out: ACCEPT     6    --  0.0.0.0/0            172.20.0.2           tcp dpt:8001
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.5823850Z out: =====================================
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.5824732Z out: 2. DOCKER CONTAINERS STATUS
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.5825519Z out: =====================================
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6484772Z out: CONTAINER ID   IMAGE                                  COMMAND                  CREATED         STATUS                           PORTS                                                   NAMES
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6588239Z out: b890d447acd6   nginx:alpine                           "/docker-entrypoint.ÔÇª"   2 seconds ago   Up 1 second (health: starting)   0.0.0.0:80->80/tcp, [::]:80->80/tcp                     ld_assurances_world_platform_frontend_1
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6590708Z out: 8f359ae04cf3   ld_assurances_world_platform_backend   "python core/server.ÔÇª"   2 seconds ago   Up 1 second (health: starting)   8000/tcp, 0.0.0.0:8001->8001/tcp, [::]:8001->8001/tcp   ld_assurances_world_platform_backend_1
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6592416Z out: e7f706b48332   tradingbot-trading_bot                 "python mon_trader.py"   2 weeks ago     Restarting (0) 25 seconds ago                                                            trading_bot_v3
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6594079Z out: 1e9ee69b9167   tradingbot-dashboard                   "streamlit run app.pÔÇª"   2 weeks ago     Up 9 days                        0.0.0.0:8501->8501/tcp, [::]:8501->8501/tcp             trading_dashboard_v3
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6595541Z out: cd187a828d14   docker.n8n.io/n8nio/n8n                "tini -- /docker-entÔÇª"   4 weeks ago     Up 9 days                        127.0.0.1:5678->5678/tcp                                n8n-n8n-1
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6596373Z out: =====================================
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6596807Z out: 3. LOCAL CURL TEST (HTTP)
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6597187Z out: =====================================
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6708022Z err: * Host localhost:80 was resolved.
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6708491Z err: * IPv6: ::1
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6708831Z err: * IPv4: 127.0.0.1
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6709388Z err:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6710336Z err:                                  Dload  Upload   Total   Spent    Left  Speed
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6710939Z err: 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6711396Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:80...
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6711927Z err: * Connected to localhost (::1) port 80
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6712341Z err: > GET / HTTP/1.1
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6712680Z err: > Host: localhost
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6713030Z err: > User-Agent: curl/8.5.0
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6713395Z err: > Accept: */*
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6713712Z err: > 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6740587Z err: < HTTP/1.1 200 OK
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6741327Z err: < Server: nginx/1.29.6
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6741872Z err: < Date: Sun, 22 Mar 2026 19:42:16 GMT
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6742381Z err: < Content-Type: text/html
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6742748Z err: < Content-Length: 21784
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6743188Z err: < Last-Modified: Sun, 22 Mar 2026 19:07:09 GMT
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6743643Z err: < Connection: keep-alive
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6744012Z err: < ETag: "69c03ddd-5518"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6744373Z err: < X-Debug-Status: Frontend-OK
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6744758Z err: < Accept-Ranges: bytes
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.6745098Z err: < 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7749758Z err: { [21784 bytes data]
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7750948Z out: <!DOCTYPE html>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7751733Z err: 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7752734Z 100 21784  100 21784    0     0  4270k      0 --:--:-- --:--:-- --:--:-- 5318k
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7753955Z err: * Connection #0 to host localhost left intact
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7754858Z err: * Host localhost:443 was resolved.
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7755747Z err: * IPv6: ::1
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7756451Z out: <html lang="fr">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7757172Z err: * IPv4: 127.0.0.1
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7758229Z err:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7760008Z err:                                  Dload  Upload   Total   Spent    Left  Speed
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7761236Z err: 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7762201Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:443...
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7763642Z err: * connect to ::1 port 443 from ::1 port 56160 failed: Connection refused
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7764580Z out: <head>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7765154Z out:     <meta charset="UTF-8">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7766035Z out:     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7767158Z out:     <title>Jemassurance | L'Excellence Digitale au Cameroun</title>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7769510Z out:     <meta name="description" content="Jemassurance : La premi├¿re plateforme d'assurance agentique au Cameroun. Solutions premium pour Auto, Sant├®, Vie et PME avec expertise IA instantan├®e.">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7772142Z out:     <meta name="keywords" content="assurance cameroun, Jemassurance, assurance auto douala, assurance sante yaounde, assurance vie, micro assurance, lola ia">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7773348Z out:     
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7773737Z out:     <!-- Open Graph / Facebook / WhatsApp -->
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7774236Z out:     <meta property="og:type" content="website">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7774804Z out:     <meta property="og:url" content="https://jemassurance.online/">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7775520Z out:     <meta property="og:title" content="Jemassurance | L'Excellence Digitale au Cameroun">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7776761Z out:     <meta property="og:description" content="D├®couvrez une protection premium sans compromis. L'assurance r├®invent├®e par l'IA pour les particuliers et entreprises au Cameroun.">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7777662Z err: *   Trying 127.0.0.1:443...
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7778228Z out:     <meta property="og:image" content="https://jemassurance.online/social-preview.png">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7778819Z out:     <!-- Twitter -->
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7779256Z out:     <meta property="twitter:card" content="summary_large_image">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7779930Z out:     <meta property="twitter:url" content="https://jemassurance.online/">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7780967Z err: * connect to 127.0.0.1 port 443 from 127.0.0.1 port 37102 failed: Connection refused
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7781679Z err: * Failed to connect to localhost port 443 after 0 ms: Couldn't connect to server
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7782212Z err: 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7782609Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7783084Z err: * Closing connection
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7783653Z err: curl: (7) Failed to connect to localhost port 443 after 0 ms: Couldn't connect to server
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7784463Z out:     <meta property="twitter:title" content="Jemassurance | L'Excellence Digitale au Cameroun">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7785595Z out:     <meta property="twitter:description" content="D├®couvrez une protection premium sans compromis. L'assurance r├®invent├®e par l'IA au Cameroun.">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7786643Z out:     <meta property="twitter:image" content="https://jemassurance.online/social-preview.png">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7787494Z out:     <link rel="canonical" href="https://jemassurance.online/">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7787982Z out:     
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7788342Z out:     <!-- JSON-LD Structured Data -->
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7788804Z out:     <script type="application/ld+json">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7789225Z out:     {
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7789585Z out:       "@context": "https://schema.org",
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7790041Z out:       "@type": "InsuranceAgency",
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7790461Z out:       "name": "Jemassurance",
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7791031Z out:       "alternateName": "Jemassurance World Platform",
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7791552Z out:       "url": "https://jemassurance.online/",
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7792108Z out:       "logo": "https://jemassurance.online/social-preview.png",
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7792782Z out:       "description": "Leader de l'assurance digitale et agentique au Cameroun.",
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7793489Z out:       "address": {
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7793874Z out:         "@type": "PostalAddress",
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7794302Z out:         "addressCountry": "CM",
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7794717Z out:         "addressLocality": "Douala"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7795120Z out:       },
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7795453Z out:       "serviceArea": {
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7795832Z out:         "@type": "Country",
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7796215Z out:         "name": "Cameroon"
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7796580Z out:       }
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7796894Z out:     }
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7797213Z out:     </script>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7797891Z out:     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7798638Z out:     <link rel="stylesheet" href="titch.css">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7799136Z out:     <script src="config.js" defer></script>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7799574Z out: </head>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7799888Z out: <body>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7800277Z out:     <header class="titch-header stitch-center">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7801365Z out:         <div class="stitch-max-width stitch-center" style="flex-direction: row; justify-content: space-between; width: 100%;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7802296Z out:             <div class="lang-switcher" style="margin-left: 0; margin-right: 1.5rem;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7802946Z out:                 <a href="#" class="lang-btn active">FR</a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7803512Z out:                 <a href="en/index.html" class="lang-btn">EN</a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7803991Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7804495Z out:             <a href="index.html" class="logo-link" style="margin-right: auto;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7805182Z out:                 <img src="assets/logo.svg" alt="Jemassurance Logo" class="logo-img">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7805724Z out:             </a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7806100Z out:             <nav class="product-links">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7806652Z out:                 <a href="products/auto.html" class="product-link">AUTO</a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7807386Z out:                 <a href="products/sante.html" class="product-link">SANT├ë</a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7808227Z out:                 <a href="products/habitation.html" class="product-link">HABITATION</a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7808928Z out:                 <a href="products/voyage.html" class="product-link">VOYAGE</a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7809600Z out:                 <a href="products/agricole.html" class="product-link">AGRICOLE</a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7810255Z out:                 <a href="products/pme.html" class="product-link">PME</a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7810875Z out:             </nav>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7811223Z out:         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7811561Z out:     </header>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7812171Z out:     <section class="hero animate-fade-in stitch-center" style="min-height: 90vh; padding: 4rem 5%;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7813127Z out:         <div class="titch-glass hero-content-expert stitch-center stitch-border-refined" style="padding: 4rem;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7814103Z out:             <div class="hero-top-meta stitch-center" style="flex-direction: row; gap: 1rem; margin-bottom: 2rem;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7815045Z out:                 <span class="trust-badge-expert">­ƒøí´©Å Certification CIMA Digitale</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7815787Z out:                 <span class="status-badge-expert">ÔùÅ Agentic Live</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7816294Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7816636Z out:             
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7817288Z out:             <h1 class="hero-title-expert text-center" style="font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 1.5rem;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7818081Z out:                 Jem <span class="brand-gradient-glow">assurance</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7818582Z out:             </h1>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7818919Z out:             
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7819586Z out:             <p class="hero-subtitle-expert text-center" style="max-width: 700px; margin-bottom: 3rem; font-size: 1.25rem;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7821040Z out:                 <strong>L'excellence red├®finie.</strong> Une protection premium pilot├®e par l'intelligence artificielle. Indemnisation express via Mobile Money en moins de 24h.
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7822079Z out:             </p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7822426Z out:             
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7823144Z out:             <div class="hero-trust-bar stitch-center" style="flex-direction: row; width: 100%; max-width: 600px; margin-bottom: 4rem;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7823914Z out:                 <div class="trust-item">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7824401Z out:                     <span class="trust-val">5B+</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7824946Z out:                     <span class="trust-label">Capital FCFA</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7825428Z out:                 </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7825829Z out:                 <div class="divider"></div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7826307Z out:                 <div class="trust-item">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7826786Z out:                     <span class="trust-val">100%</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7827321Z out:                     <span class="trust-label">Digital</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7827807Z out:                 </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7828201Z out:                 <div class="divider"></div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7828648Z out:                 <div class="trust-item">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7829121Z out:                     <span class="trust-val">< 24h</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7829660Z out:                     <span class="trust-label">Remboursement</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7830144Z out:                 </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7830495Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7830940Z out:             
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7831330Z out:             <div class="hero-actions stitch-center">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7832279Z out:                 <button class="titch-btn pulse" onclick="toggleChat()" style="padding: 20px 60px; font-size: 1rem;">D├®marrer l'Expertise</button>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7833412Z out:                 <div class="action-hint" style="margin-top: 1rem; opacity: 0.7;">Expertise IA gratuite & instantan├®e</div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7834094Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7835143Z out:             <div class="hero-labels-expert stitch-center" style="flex-direction: row; flex-wrap: wrap; gap: 1.5rem; margin-top: 4rem; opacity: 0.6; font-size: 0.8rem; letter-spacing: 2px;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7836444Z out:                 <span>AUTO</span> <span>SANT├ë</span> <span>MICRO</span> <span>VIE</span> <span>PME</span> <span>HABITATION</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7837125Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7837462Z out:         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7837803Z out:     </section>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7838236Z out:     <!-- Section ├ëtapes (Expert v3.0 Relooked) -->
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7838929Z out:     <section class="expert-section animate-fade-in stitch-center" style="padding: 120px 5%;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7839598Z out:         <div class="stitch-max-width stitch-center">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7840381Z out:             <h2 class="text-gradient text-center" style="font-size: 3.5rem; margin-bottom: 1rem;">L'Assurance en 3 minutes</h2>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7841717Z out:             <p class="section-subtitle text-center" style="max-width: 600px; margin-bottom: 5rem;">Une exp├®rience fluide, rapide et transparente.</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7842529Z out:             <div class="steps-grid">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7843634Z out:                 <a href="products/auto.html" class="step-card expert-card animate-slide-up stitch-border-refined stitch-center" style="animation-delay: 0.1s; text-decoration: none; color: inherit; cursor: pointer;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7844759Z out:                     <div class="benefit-icon">­ƒÜù</div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7845239Z out:                     <h3>Assurance Auto</h3>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7845998Z out:                     <p>Obtenez votre vignette digitale en 3 minutes. Tarifs comp├®titifs et assistance 24/7.</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7846917Z out:                     <span class="titch-btn" style="width: 100%; display: block; text-align: center;">Simuler mon tarif</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7847720Z out:                 </a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7848781Z out:                 <a href="products/agricole.html" class="step-card expert-card animate-slide-up stitch-border-refined stitch-center" style="animation-delay: 0.2s; text-decoration: none; color: inherit; cursor: pointer;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7849935Z out:                     <div class="benefit-icon">­ƒÉä</div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7850467Z out:                     <h3>Agriculture & B├®tail</h3>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7851354Z out:                     <p>Protection contre les al├®as climatiques et sanitaires pour vos cultures et votre ├®levage.</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7852278Z out:                     <span class="titch-btn" style="width: 100%; display: block; text-align: center;">Voir l'offre</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7852917Z out:                 </a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7853954Z out:                 <a href="products/pme.html" class="step-card expert-card animate-slide-up stitch-border-refined stitch-center" style="animation-delay: 0.3s; text-decoration: none; color: inherit; cursor: pointer;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7855083Z out:                     <div class="benefit-icon">­ƒÅó</div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7855567Z out:                     <h3>Solutions PME</h3>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7856359Z out:                     <p>Protection multirisque pour votre entreprise, vos stocks et votre responsabilit├® civile.</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7857498Z out:                     <span class="titch-btn" style="width: 100%; display: block; text-align: center;">D├®couvrir</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7858233Z out:                 </a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7859033Z out:                 <a href="#contact" class="step-card expert-card stitch-border-refined" style="text-decoration: none; color: inherit; cursor: pointer;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7859850Z out:                     <span class="step-num">01</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7860415Z out:                     <span class="benefit-icon">­ƒô▒</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7861040Z out:                     <h3 class="text-center">Simulez</h3>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7862059Z out:                     <p class="text-center">Choisissez votre produit et obtenez votre tarif instantan├®ment gr├óce ├á Lola, notre intelligence agentique.</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7863037Z out:                 </a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7863932Z out:                 <a href="#contact" class="step-card expert-card stitch-border-refined" style="border-color: var(--secondary); text-decoration: none; color: inherit; cursor: pointer;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7865028Z out:                     <span class="step-num" style="color: var(--secondary); opacity: 0.1;">02</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7865717Z out:                     <span class="benefit-icon">­ƒÆ│</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7866224Z out:                     <h3 class="text-center">Payez</h3>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7867114Z out:                     <p class="text-center">R├®glez en toute s├®curit├® via MTN MoMo ou Orange Money. Validation imm├®diate et z├®ro paperasse.</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7867869Z out:                 </a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7868660Z out:                 <a href="#contact" class="step-card expert-card stitch-border-refined" style="text-decoration: none; color: inherit; cursor: pointer;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7869489Z out:                     <span class="step-num">03</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7870035Z out:                     <span class="benefit-icon">­ƒôä</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7870602Z out:                     <h3 class="text-center">Prot├®g├®</h3>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7871538Z out:                     <p class="text-center">Recevez votre contrat par WhatsApp et Email. Une couverture premium avec indemnisation express.</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7872288Z out:                 </a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7872643Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7872988Z out:         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7873325Z out:     </section>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7873732Z out:     <!-- Section Partenaires (Expert v3.0 Relooked) -->
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7874474Z out:     <section class="partners-section stitch-center" style="padding: 100px 5%; background: var(--dark-bg);">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7875331Z out:         <div class="stitch-max-width stitch-center">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7875936Z out:             <p class="section-label text-center">Nos Partenaires de Confiance</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7876910Z out:             <div class="partners-grid" style="display: flex; gap: 5rem; flex-wrap: wrap; justify-content: center; align-items: center; opacity: 0.5;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7877743Z out:                 <span class="partner-box">ACTIVA</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7878257Z out:                 <span class="partner-box">SUNU</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7878762Z out:                 <span class="partner-box">ZENITHE</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7879292Z out:                 <span class="partner-box">PRUDENTIAL</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7879813Z out:                 <span class="partner-box">SAHAM</span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7880259Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7880612Z out:         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7881056Z out:     </section>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7899105Z out:     <!-- Section Contact (Expert v3.0 Relooked) -->
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7900419Z out:     <section id="contact" class="contact-section stitch-center" style="padding: 120px 5%;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7901714Z out:         <div class="stitch-max-width stitch-center">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7902586Z out:             <div class="contact-grid">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7903730Z out:                 <div class="contact-info animate-slide-up stitch-center" style="text-align: center;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7905357Z out:                     <h2 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 1.5rem;">Parlons de votre protection</h2>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7906622Z out:                     <p class="section-subtitle text-center" style="margin: 0 auto 4rem;">Nos experts sont disponibles pour vous accompagner dans le choix de la meilleure couverture.</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7907582Z out:                     
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7908157Z out:                     <div class="contact-methods stitch-center" style="width: 100%; gap: 1.5rem;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7910170Z out:                         <div class="contact-method stitch-center" style="flex-direction: row; width: 100%; max-width: 400px; text-align: left; justify-content: flex-start;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7911757Z out:                             <div class="contact-icon">­ƒô▒</div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7912296Z out:                             <div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7913988Z out:                                 <h4 style="margin: 0;">WhatsApp Express</h4>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7915218Z out:                                 <p style="margin: 0; opacity: 0.7;" data-config="SITE_PHONE">+237 640 65 67 93</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7916094Z out:                             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7916675Z out:                         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7917804Z out:                         <div class="contact-method stitch-center" style="flex-direction: row; width: 100%; max-width: 400px; text-align: left; justify-content: flex-start;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7919398Z out:                             <div class="contact-icon">­ƒôì</div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7920091Z out:                             <div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7921079Z out:                                 <h4 style="margin: 0;">Si├¿ge Social</h4>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7922093Z out:                                 <p style="margin: 0; opacity: 0.7;" data-config="SITE_ADDRESS">Akwa, Douala</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7922971Z out:                             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7923687Z out:                         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7924333Z out:                     </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7924966Z out:                 </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7926346Z out:                 <div class="contact-form-container animate-slide-up stitch-border-refined" style="padding: 3.5rem; border-radius: 40px; background: #fff;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7927817Z out:                     <form class="titch-form stitch-center" style="gap: 1.5rem; width: 100%;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7929256Z out:                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; width: 100%;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7930099Z out:                             <div class="form-group">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7931090Z out:                                 <label>Nom complet</label>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7932172Z out:                                 <input type="text" class="titch-input" placeholder="Ex: Jean Dupont">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7933141Z out:                             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7933849Z out:                             <div class="form-group">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7934862Z out:                                 <label>T├®l├®phone</label>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7936086Z out:                                 <input type="tel" class="titch-input" placeholder="Ex: 6xx xxx xxx">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7937080Z out:                             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7937536Z out:                         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7938153Z out:                         
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7938938Z out:                         <div class="form-group" style="width: 100%;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7939945Z out:                             <label>Votre Email</label>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7941205Z out:                             <input type="email" class="titch-input" placeholder="votre@email.com">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7942122Z out:                         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7942747Z out:                         <div class="form-group" style="width: 100%;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7943612Z out:                             <label>Produit d'int├®r├¬t</label>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7944536Z out:                             <select class="titch-input">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7945459Z out:                                 <option value="auto">Assurance Automobile</option>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7946672Z out:                                 <option value="sante">Assurance Sant├®</option>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7947767Z out:                                 <option value="habitation">Assurance Habitation</option>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7948479Z out:                                 <option value="autre">Autre demande</option>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7949600Z out:                             </select>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7950360Z out:                         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7951335Z out:                         <div class="form-group" style="width: 100%;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7952000Z out:                             <label>Message</label>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7953314Z out:                             <textarea class="titch-input" placeholder="Comment pouvons-nous vous aider ?" style="height: 100px;"></textarea>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7954620Z out:                         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7955715Z out:                         <button type="submit" class="titch-btn" style="width: 100%; padding: 20px;">Envoyer ma demande</button>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7956577Z out:                     </form>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7956957Z out:                 </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7957324Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7957680Z out:         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7958157Z out:     </section>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7958547Z out:     <!-- Canaux Directs (WhatsApp & Telegram) -->
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7959155Z out:     <div id="direct-channels">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7960200Z out:         <a href="https://wa.me/237640656793" class="channel-btn whatsapp" data-tooltip="WhatsApp" target="_blank" data-config="WHATSAPP_LINK">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7963146Z out:             <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.733 5.307 2.016 7.64L0 32l8.6-.2.03-.016C10.875 31.135 13.344 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm-3.136 21.64c-.452-.02-.876-.236-1.12-.605-.18-.276-1.504-2.528-2.616-4.32-.2-.336-.316-.716-.316-1.12 0-1.12.91-2.03 2.03-2.03h.71c.11 0 .216.036.31.09.28.16.54.49.54 1.13 0 .44-.19.86-.5 1.14l-1.04.93s.06.12.13.25c.67 1.14 1.76 2.37 2.92 3.05.13.07.25.13.25.13l.93-1.04c.28-.31.7-.5 1.14-.5.64 0 .97.26 1.13.54.05.09.09.2.09.31v.71c0 1.12-.91 2.03-2.03 2.03-.4 0-.78-.11-1.12-.31-1.79-1.11-4.04-2.43-4.32-2.61-.37-.24-.58-.67-.6-1.12z"/></svg>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7965318Z out:         </a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7966052Z out:         <a href="https://t.me/ldassurances" class="channel-btn telegram" data-tooltip="Telegram" target="_blank" data-config="TELEGRAM_LINK">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7968721Z out:             <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-1.181 4.908-1.683 7.55-.213 1.119-.623 1.493-1.021 1.53-.865.08-1.521-.571-2.359-1.121-1.312-.861-2.053-1.393-3.328-2.233-1.474-.972-.518-1.506.321-2.379.22-.228 4.037-3.702 4.112-4.022.01-.041.018-.194-.074-.275-.092-.081-.227-.053-.325-.031-.138.031-2.35 1.494-6.626 4.381-.626.431-1.192.641-1.698.629-.556-.013-1.625-.316-2.42-.575-.975-.318-1.748-.487-1.68-.975.029-.244.364-.492 1.004-.744 3.924-1.708 6.541-2.835 7.848-3.38 3.743-1.558 4.52-1.829 5.027-1.839.112-.002.364.026.527.158.138.112.176.262.188.375.013.111.026.362.011.534z"/></svg>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7971117Z out:         </a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7971444Z out:     </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7971826Z out:     <!-- Footer Expert v3.0 Relooked -->
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7972480Z out:     <footer class="titch-footer stitch-center">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7973213Z out:         <div class="stitch-max-width">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7973743Z out:             <div class="footer-grid">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7974326Z out:                 <div class="footer-brand stitch-center" style="text-align: center;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7975048Z out:                     <img src="assets/logo.svg" alt="Jemassurance Logo" class="logo-footer">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7976237Z out:                     <p style="max-width: 300px; margin-bottom: 2rem;">Leader de l'assurance digitale et agentique au Cameroun. Excellence, Proximit├® et Innovation.</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7977070Z out:                 </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7977577Z out:                 <div class="footer-col stitch-center" style="text-align: center;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7978202Z out:                     <h4>Si├¿ge Social</h4>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7979004Z out:                     <p data-config="SITE_ADDRESS">Carrefour Arno, Akwa<br>Douala, Cameroun<br>BP: 2854</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7979618Z out:                 </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7980105Z out:                 <div class="footer-col stitch-center" style="text-align: center;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7980647Z out:                     <h4>Contact</h4>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7981972Z out:                     <p>T├®l: <span data-config="SITE_PHONE">+237 640 65 67 93</span><br>233 43 99 24<br>Email: <span data-config="SITE_EMAIL">contact@jemassurance.online</span></p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7982804Z out:                 </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7983295Z out:                 <div class="footer-col stitch-center" style="text-align: center;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7984163Z out:                     <h4>Nos Produits</h4>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7984882Z out:                     <p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7985694Z out:                         <a href="products/auto.html" style="color: inherit; text-decoration: none;">Assurance Auto</a><br>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7987011Z out:                         <a href="products/sante.html" style="color: inherit; text-decoration: none;">Assurance Sant├®</a><br>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7988314Z out:                         <a href="products/habitation.html" style="color: inherit; text-decoration: none;">Habitation</a><br>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7989572Z out:                         <a href="products/agricole.html" style="color: inherit; text-decoration: none;">Agricole & B├®tail</a><br>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7990694Z out:                         <a href="products/pme.html" style="color: inherit; text-decoration: none;">Solutions PME</a>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7991792Z out:                     </p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7992213Z out:                 </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7992852Z out:                 <div class="footer-col stitch-center" style="text-align: center;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7993607Z out:                     <h4>L├®gal</h4>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7994536Z out:                     <p>NIU: P076413521919Z<br>┬® 2026 Jemassurance S.A.</p>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7995113Z out:                 </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7995559Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7995965Z out:         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7996485Z out:     </footer>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7996967Z out:     <!-- AI Chat Widget -->
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7997441Z out:     <div id="chat-widget">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7997996Z out:         <div id="chat-window" class="titch-glass">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7998552Z out:             <div class="chat-header">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7999035Z out:                 <div class="avatar">L</div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.7999581Z out:                 <div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8000075Z out:                     <div style="font-weight: 800; font-size: 1.1rem;">Lola</div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8001210Z out:                     <div style="font-size: 0.7rem; opacity: 0.8; display: flex; align-items: center; gap: 5px;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8002220Z out:                         <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></span>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8003014Z out:                         Agent Intelligence Active
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8003588Z out:                     </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8003977Z out:                 </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8004467Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8004863Z out:             <div id="chat-body" class="chat-body">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8006106Z out:                 <div class="msg msg-ai" data-config="LOLA_MESSAGE">Bonjour ! Je suis Lola, votre assistante IA Jemassurance. Comment puis-je vous aider ?</div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8007099Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8007462Z out:             <div class="chat-footer">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8008533Z out:                 <input type="text" id="chat-input" class="chat-input" placeholder="Posez votre question...">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8010412Z out:                 <button onclick="sendMessage()" class="titch-btn" style="padding: 0.8rem; min-width: 50px;">ÔåÆ</button>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8011957Z out:             </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8012519Z out:         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8013206Z out:         <div id="chat-trigger" onclick="toggleChat()">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8014230Z out:             <svg viewBox="0 0 24 24" style="width: 30px; height: 30px; fill: white;">
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8015468Z out:                 <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8016170Z out:             </svg>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8016809Z out:         </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8017403Z out:     </div>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8018007Z out:     <script>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8018571Z out:         function toggleChat() {
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8019238Z out:             const chatWindow = document.getElementById('chat-window');
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8019966Z out:             chatWindow.classList.toggle('active');
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8020538Z out:         }
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8021455Z out:         async function sendMessage() {
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8022016Z out:             const input = document.getElementById('chat-input');
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8022617Z out:             const body = document.getElementById('chat-body');
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8023282Z out:             const text = input.value.trim();
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8024094Z out:             if (!text) return;
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8024813Z out:             // User Message
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8025664Z out:             const userMsg = document.createElement('div');
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8026604Z out:             userMsg.className = 'msg msg-user';
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8027133Z out:             userMsg.textContent = text;
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8027712Z out:             body.appendChild(userMsg);
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8028147Z out:             input.value = '';
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8028532Z out:             // AI Loading
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8028973Z out:             const loadingMsg = document.createElement('div');
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8030000Z out:             loadingMsg.className = 'msg msg-ai';
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8031117Z out:             loadingMsg.textContent = '...';
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8031955Z out:             body.appendChild(loadingMsg);
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8032547Z out:             body.scrollTop = body.scrollHeight;
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8033050Z out:             // Simulate AI Response (Agentic Feel)
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8033516Z out:             setTimeout(() => {
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8034626Z out:                 loadingMsg.textContent = "Je prends en charge votre demande. Un expert Jemassurance vous contactera si n├®cessaire ou je peux simuler votre devis ici.";
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8036205Z out:                 body.scrollTop = body.scrollHeight;
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8037076Z out:             }, 1000);
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8037662Z out:         }
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8038199Z out:     </script>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8038738Z out: </body>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8039248Z out: </html>
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8039803Z out: =====================================
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8040511Z out: 4. LOCAL CURL TEST (HTTPS)
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8041364Z out: =====================================
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8042042Z out: Curl HTTPS failed
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8042627Z out: =====================================
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8043375Z out: 5. LISTEN PORTS
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8044015Z out: =====================================
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8045367Z out: tcp   LISTEN 0      4096         0.0.0.0:8001      0.0.0.0:*    users:(("docker-proxy",pid=2760568,fd=8))                 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8046857Z out: tcp   LISTEN 0      4096         0.0.0.0:80        0.0.0.0:*    users:(("docker-proxy",pid=2760649,fd=8))                 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8048313Z out: tcp   LISTEN 0      4096            [::]:8001         [::]:*    users:(("docker-proxy",pid=2760573,fd=8))                 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8049856Z out: tcp   LISTEN 0      4096            [::]:80           [::]:*    users:(("docker-proxy",pid=2760655,fd=8))                 
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8051125Z ==============================================
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8052380Z Ô£à Successfully executed commands to all host.
+diagnose	Run Diagnostics on Hostinger	2026-03-22T19:42:16.8053181Z ==============================================
+diagnose	Complete job	´╗┐2026-03-22T19:42:16.8763041Z Cleaning up orphan processes
